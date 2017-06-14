@@ -17,8 +17,9 @@
         android:layout_marginLeft="73dp"
         android:layout_marginStart="73dp"
         android:layout_marginTop="108dp"
-        android:text="Username or Email:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/login_username_email_text_view"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <EditText
         android:id="@+id/loginUsernameEmailEditText"
@@ -29,8 +30,8 @@
         android:layout_below="@+id/loginUsernameEmailTextView"
         android:layout_marginTop="17dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        />
+        android:fontFamily="sans-serif-smallcaps"
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/loginPasswordTextView"
@@ -39,39 +40,45 @@
         android:layout_alignLeft="@+id/loginPasswordEditText"
         android:layout_alignStart="@+id/loginPasswordEditText"
         android:layout_centerVertical="true"
-        android:text="Password:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/login_password_text_view"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <EditText
         android:id="@+id/loginPasswordEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/loginUsernameEmailEditText"
+        android:layout_alignStart="@+id/loginUsernameEmailEditText"
+        android:layout_below="@+id/loginPasswordTextView"
         android:layout_marginTop="30dp"
         android:ems="10"
-        android:inputType="textPassword"
-        android:layout_below="@+id/loginPasswordTextView"
-        android:layout_alignLeft="@+id/loginUsernameEmailEditText"
-        android:layout_alignStart="@+id/loginUsernameEmailEditText"/>
+        android:fontFamily="sans-serif-smallcaps"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/loginLoginButton"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
         android:layout_alignBaseline="@+id/loginCancelButton"
         android:layout_alignBottom="@+id/loginCancelButton"
         android:layout_alignLeft="@+id/loginPasswordEditText"
-        android:layout_alignStart="@+id/loginPasswordEditText"/>
+        android:layout_alignStart="@+id/loginPasswordEditText"
+        android:background="@android:color/holo_blue_dark"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/login_login_button" />
 
     <Button
         android:id="@+id/loginCancelButton"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cancel"
-        android:layout_below="@+id/loginPasswordEditText"
-        android:layout_alignRight="@+id/loginPasswordEditText"
         android:layout_alignEnd="@+id/loginPasswordEditText"
-        android:layout_marginTop="56dp"/>
+        android:layout_alignRight="@+id/loginPasswordEditText"
+        android:layout_below="@+id/loginPasswordEditText"
+        android:layout_marginTop="56dp"
+        android:background="@android:color/holo_blue_dark"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/login_cancel_button" />
 </RelativeLayout>

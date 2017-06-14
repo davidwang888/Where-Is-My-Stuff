@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -15,21 +14,22 @@
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/registerUsernameTextView"
         android:layout_marginTop="16dp"
-        android:text="Full Name:"
+        android:text="@string/register_name_text_view"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
     <EditText
         android:id="@+id/registerFirstNameEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/registerRegisterButton"
         android:layout_alignLeft="@+id/registerNameTextView"
-        android:layout_alignRight="@+id/registerRegisterButton"
         android:layout_alignStart="@+id/registerNameTextView"
         android:layout_below="@+id/registerNameTextView"
+        android:layout_toStartOf="@+id/registerLastNameEditText"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="First"/>
+        android:text="@string/register_first_name_edit_text"
+        android:textSize="12sp"
+        android:layout_toLeftOf="@+id/registerLastNameEditText" />
 
     <EditText
         android:id="@+id/registerLastNameEditText"
@@ -37,13 +37,15 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/registerFirstNameEditText"
         android:layout_alignBottom="@+id/registerFirstNameEditText"
-        android:layout_alignEnd="@+id/registerEmailEditText"
-        android:layout_alignLeft="@+id/registerCancelButton"
-        android:layout_alignRight="@+id/registerEmailEditText"
-        android:layout_alignStart="@+id/registerCancelButton"
+        android:layout_alignEnd="@+id/registerUsernameEditText"
+        android:layout_alignRight="@+id/registerUsernameEditText"
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_toRightOf="@+id/registerNameTextView"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Last"/>
+        android:text="@string/register_last_name_edit_text"
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/registerEmailTextView"
@@ -53,7 +55,7 @@
         android:layout_alignStart="@+id/registerFirstNameEditText"
         android:layout_below="@+id/registerFirstNameEditText"
         android:layout_marginTop="17dp"
-        android:text="Email:"
+        android:text="@string/register_email_text_view"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
     <EditText
@@ -64,7 +66,7 @@
         android:layout_alignStart="@+id/registerEmailTextView"
         android:layout_below="@+id/registerEmailTextView"
         android:ems="10"
-        android:inputType="textEmailAddress"/>
+        android:inputType="textEmailAddress"/>/>
 
     <TextView
         android:id="@+id/registerUsernameTextView"
@@ -76,8 +78,8 @@
         android:layout_marginLeft="70dp"
         android:layout_marginStart="70dp"
         android:layout_marginTop="106dp"
-        android:text="Username:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+        android:text="@string/register_username_text_view"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <EditText
         android:id="@+id/registerUsernameEditText"
@@ -97,7 +99,7 @@
         android:layout_alignStart="@+id/registerUsernameEditText"
         android:layout_below="@+id/registerUsernameEditText"
         android:layout_marginTop="20dp"
-        android:text="Password:"
+        android:text="@string/register_password_text_view1"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
     <EditText
@@ -108,7 +110,7 @@
         android:layout_alignRight="@+id/registerUsernameEditText"
         android:layout_below="@+id/registerPasswordTextView1"
         android:ems="10"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword" />
 
     <TextView
         android:id="@+id/registerPasswordTextView2"
@@ -118,7 +120,7 @@
         android:layout_alignStart="@+id/registerPasswordEditText1"
         android:layout_below="@+id/registerPasswordEditText1"
         android:layout_marginTop="22dp"
-        android:text="Retype Password:"
+        android:text="@string/register_password_text_view2"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
     <EditText
@@ -131,26 +133,61 @@
         android:ems="10"
         android:inputType="textPassword"/>
 
-    <Button
-        android:id="@+id/registerRegisterButton"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:layout_alignBaseline="@+id/registerCancelButton"
-        android:layout_alignBottom="@+id/registerCancelButton"
-        android:layout_alignLeft="@+id/registerPasswordEditText2"
-        android:layout_alignStart="@+id/registerPasswordEditText2"/>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="80dip"
+        android:layout_marginTop="455dip"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:id="@+id/linearLayout">
 
-    <Button
-        android:id="@+id/registerCancelButton"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cancel"
-        android:layout_below="@+id/registerPasswordEditText2"
-        android:layout_alignRight="@+id/registerPasswordEditText2"
-        android:layout_alignEnd="@+id/registerPasswordEditText2"
-        android:layout_marginTop="13dp"/>
+        <Button
+            android:id="@+id/registerRegisterButton"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/registerCancelButton"
+            android:layout_alignBottom="@+id/registerCancelButton"
+            android:layout_alignLeft="@+id/registerPasswordEditText2"
+            android:layout_alignStart="@+id/registerPasswordEditText2"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:text="@string/register_register_button" />
+
+        <Button
+            android:id="@+id/registerCancelButton"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/registerCancelButton"
+            android:layout_alignBottom="@+id/registerCancelButton"
+            android:layout_alignLeft="@+id/registerPasswordEditText2"
+            android:layout_alignStart="@+id/registerPasswordEditText2"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:text="@string/register_cancel_button" />
+    </LinearLayout>
+    <!--<Button-->
+        <!--android:id="@+id/registerRegisterButton"-->
+        <!--style="@style/Widget.AppCompat.Button.Colored"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignBaseline="@+id/registerCancelButton"-->
+        <!--android:layout_alignBottom="@+id/registerCancelButton"-->
+        <!--android:layout_alignLeft="@+id/registerPasswordEditText2"-->
+        <!--android:layout_alignStart="@+id/registerPasswordEditText2"-->
+        <!--android:background="@android:color/holo_blue_dark"-->
+        <!--android:text="Register" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/registerCancelButton"-->
+        <!--style="@style/Widget.AppCompat.Button.Colored"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignEnd="@+id/registerPasswordEditText2"-->
+        <!--android:layout_alignRight="@+id/registerPasswordEditText2"-->
+        <!--android:layout_below="@+id/registerPasswordEditText2"-->
+        <!--android:layout_marginTop="13dp"-->
+        <!--android:backgroundTint="@android:color/holo_blue_dark"-->
+        <!--android:text="Cancel" />-->
 
 </RelativeLayout>
