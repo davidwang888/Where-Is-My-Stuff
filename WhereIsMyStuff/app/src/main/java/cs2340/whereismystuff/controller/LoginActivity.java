@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import cs2340.whereismystuff.R;
 import cs2340.whereismystuff.model.Model;
 

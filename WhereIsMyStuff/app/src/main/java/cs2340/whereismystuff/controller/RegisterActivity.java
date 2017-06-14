@@ -11,15 +11,36 @@ import android.widget.Toast;
 import cs2340.whereismystuff.R;
 import cs2340.whereismystuff.model.Model;
 
+/**
+ * Represents the screen that allows the user to register by setting their name,
+ * username, email, and password
+ */
 public class RegisterActivity extends AppCompatActivity {
+
+    /**
+     * The text boxes in which the user will enter their information
+     */
     private EditText _firstName;
     private EditText _lastName;
     private EditText _email;
     private EditText _username;
     private EditText _password1;
     private EditText _password2;
+
+    /**
+     * Allows the user to attempt to register after entering their information
+     */
     private Button _registerButton;
+
+    /**
+     * Allows the user to cancel registration and return to the welcome screen
+     */
     private Button _cancelButton;
+
+    /**
+     * Singular instance of model that the entire project uses to communicate
+     * with the backend
+     */
     private static Model model;
 
     @Override
@@ -49,6 +70,13 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Upon being clicked, verifies that the information the user has entered is
+     * acceptable and creates an account
+     *
+     * If the information the user has entered is invalid, displays toasts that
+     * explain what the user needs to change
+     */
     private void onRegisterButtonClick() {
         String firstName = _firstName.getText().toString();
         String lastName = _lastName.getText().toString();
@@ -98,6 +126,10 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Upon being clicked, creates and intent to return to the welcome screen
+     * and starts it
+     */
     private void onCancelButtonClick() {
         Intent intent = new Intent(RegisterActivity.this,
                 WelcomeActivity.class);
