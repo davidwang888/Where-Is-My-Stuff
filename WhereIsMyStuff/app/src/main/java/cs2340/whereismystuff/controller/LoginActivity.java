@@ -11,11 +11,38 @@ import android.widget.Toast;
 import cs2340.whereismystuff.R;
 import cs2340.whereismystuff.model.Model;
 
+/**
+ * Represents the login screen
+ *
+ * Contains two text boxes for the user to enter their username and password in
+ * and allows them to attempt to login or return to the welcome screen
+ */
 public class LoginActivity extends AppCompatActivity {
+
+    /**
+     * Text box user will enter username in
+     */
     private EditText _usernameEmail;
+
+    /**
+     * Text box user will enter password in
+     */
     private EditText _password;
+
+    /**
+     * Button user will click when they want to login
+     */
     private Button _loginButton;
+
+    /**
+     * Button user will click when they want to return to the welcome screen
+     */
     private Button _cancelButton;
+
+    /**
+     * Singular instance of model that the entire project uses to communicate
+     * with the backend
+     */
     private static Model model;
 
     @Override
@@ -42,6 +69,10 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Upon the login button being clicked, checks the username and password the
+     * user has entered and responds appropriately
+     */
     private void onLoginButtonClick() {
         int code = model.loginUser(_usernameEmail.getText().toString(),
                 _password.getText().toString());
@@ -71,6 +102,10 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Upon the cancel button being clicked, creates an intent to return to the
+     * welcome screen and starts that intent
+     */
     private void onCancelButtonClick() {
         Intent intent = new Intent(LoginActivity.this, WelcomeActivity.class);
         startActivity(intent);
