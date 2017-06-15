@@ -13,16 +13,22 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Welcome to the App!"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/main_text_view"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textSize="36sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/mainLogoutButton"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Logout"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentTop="true"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/main_logout_button" />
 </RelativeLayout>
