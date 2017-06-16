@@ -11,14 +11,15 @@
         android:id="@+id/mainTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:fontFamily="sans-serif-smallcaps"
         android:text="@string/main_text_view"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:textSize="36sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_below="@+id/mainLogoutButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp" />
 
     <Button
         android:id="@+id/mainLogoutButton"
@@ -31,4 +32,14 @@
         android:backgroundTint="@android:color/holo_blue_dark"
         android:fontFamily="sans-serif-smallcaps"
         android:text="@string/main_logout_button" />
+
+    <Button
+        android:id="@+id/mainEnterLostItemButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:text="@string/main_enter_lost_item_button"
+        android:textColor="@android:color/white" />
 </RelativeLayout>

@@ -8,6 +8,8 @@ import java.util.HashMap;
  */
 class UserManager {
 
+    private User _currentUser;
+
     /**
      * A HashMap that maps usernames to the the corresponding users
      */
@@ -53,12 +55,12 @@ class UserManager {
     /**
      * Determines whether or not the information the user has entered is valid
      * and returns 0 if it is valid and some other number if it is not
-     * @param  String firstName     The user's first name
-     * @param  String lastName      The user's last name
-     * @param  String email         The user's email
-     * @param  String username      The user's username
-     * @param  String password1     The user's password
-     * @param  String password2     Verification of the user's password                                                            password2 [description]
+     * @param  firstName     The user's first name
+     * @param  lastName      The user's last name
+     * @param  email         The user's email
+     * @param  username      The user's username
+     * @param  password1     The user's password
+     * @param  password2     Verification of the user's password                                                            password2 [description]
      * @return A number that the controller will eventually use in
      *         RegisterActivity to display a message to the user that will
      *         explain how to fix their input if it is invalid
@@ -94,7 +96,7 @@ class UserManager {
 
     /**
      * Adds the information of the user passed in to _users and _emailUser
-     * @param User user The user whose information is to be stored
+     * @param user The user whose information is to be stored
      */
     private void addUser(User user) {
         _users.put(user.getUsername(), user);
@@ -104,16 +106,16 @@ class UserManager {
     /**
      * Takes in all of the information required to create a user, makes a new
      * user, and stores that user's information in _users and _emailUser
-     * @param  String firstName     The user's first name
-     * @param  String lastName      The user's last name
-     * @param  String email         The user's email
-     * @param  String username      The user's username
-     * @param  String password1     The user's password
-     * @param  String password2     Verification of the user's password
+     * @param  firstName     The user's first name
+     * @param  lastName      The user's last name
+     * @param  email         The user's email
+     * @param  username      The user's username
+     * @param  password1     The user's password
+     * @param  password2     Verification of the user's password
      * @return The integer code from validateInput
      */
     int addUser(String firstName, String lastName, String email, String
-            username, String password1, String password2) {
+            username, String password1, String password2, boolean isAdmin) {
         firstName = firstName.trim();
         lastName = lastName.trim();
         email = email.trim();
@@ -121,7 +123,7 @@ class UserManager {
         int code = validateInput(firstName, lastName, email, username,
                 password1, password2);
         if (code == 0) {
-            addUser(new User(firstName, lastName, email, username, password1));
+            addUser(new User(firstName, lastName, email, username, password1, isAdmin));
         }
         return code;
     }
@@ -130,8 +132,8 @@ class UserManager {
      * Attempts to login the user and returns an integer that will be used by
      * the controller to know what message to display to the user based on the
      * results of their login attempt
-     * @param  String usernameEmail The username/email the user has entered
-     * @param  String password      The password the user has entered
+     * @param  usernameEmail The username/email the user has entered
+     * @param  password      The password the user has entered
      * @return A number that will eventually be used by the controller in
      *         LoginActivity to determine what message to display to the user
      */
@@ -155,6 +157,11 @@ class UserManager {
         } else if (!user.checkPassword(password)) {
             return 4;
         } else {
+            if (username) {
+                _currentUser = _users.get(usernameEmail);
+            } else {
+                _currentUser = _users.get(_emailUser.get(usernameEmail));
+            }
             return 0;
         }
     }
@@ -162,20 +169,16 @@ class UserManager {
     /**
      * Takes in the user's username or email and uses it to retrieve their name
      * from _users
-     * @param  String usernameEmail The username/email to be used
      * @return The user's name if the user exists or "Anonymous" if they don't
      */
-    String getName(String usernameEmail) {
-        usernameEmail = usernameEmail.trim();
-        User user;
-        if (usernameEmail.indexOf('@') < 0) {
-            user = _users.get(usernameEmail);
-        } else {
-            user = _users.get(_emailUser.get(usernameEmail));
-        }
-        if (user != null) {
-            return user.getName();
+    String getName() {
+        if (_currentUser != null) {
+            return _currentUser.getName();
         }
         return "Anonymous";
+    }
+
+    User getCurrentUser() {
+        return _currentUser;
     }
 }

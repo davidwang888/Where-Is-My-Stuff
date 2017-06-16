@@ -81,8 +81,6 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(LoginActivity.this, MainActivity
                     .class);
-            intent.putExtra("usernameEmail", _usernameEmail.getText()
-                    .toString());
             startActivity(intent);
         } else if (code == 1) {
             Toast.makeText(LoginActivity.this, "Please Enter Username/Email "

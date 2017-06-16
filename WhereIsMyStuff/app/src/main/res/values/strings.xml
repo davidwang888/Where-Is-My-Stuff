@@ -12,9 +12,11 @@
     <string name="register_email_text_view">Email:</string>
     <string name="register_username_text_view">Username:</string>
     <string name="register_password_text_view1">Password:</string>
-    <string name="register_password_text_view2">Retype Password:</string>
+    <string name="register_password_text_view2">Retype\nPassword:</string>
     <string name="register_register_button">Register</string>
     <string name="register_cancel_button">Cancel</string>
+    <string name="register_admin_radio_button">Admin</string>
+    <string name="register_user_radio_button">User</string>
 
     <!--activity_login-->
     <string name="login_username_email_text_view">Username or Email:</string>
@@ -25,5 +27,15 @@
     <!--activity_main-->
     <string name="main_text_view">Welcome to the App!</string>
     <string name="main_logout_button">Logout</string>
+    <string name="main_enter_lost_item_button">Enter Lost Item</string>
+
+    <!--activity_enter_lost_item-->
+    <string name="enter_lost_item_title_text_view">Enter Your Lost Item!</string>
+    <string name="enter_lost_item_type_text_view">Item Type:</string>
+    <string name="enter_lost_item_description_text_view">Item Description:</string>
+    <string name="enter_lost_item_button">Enter Item</string>
+
+    <!--activity_view_lost_items-->
+    <string name="view_lost_items_text_view">Lost Items:</string>
 
 </resources>

@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import cs2340.whereismystuff.R;
@@ -26,6 +28,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText _username;
     private EditText _password1;
     private EditText _password2;
+    private boolean _isAdmin;
 
     /**
      * Allows the user to attempt to register after entering their information
@@ -37,11 +40,13 @@ public class RegisterActivity extends AppCompatActivity {
      */
     private Button _cancelButton;
 
+
     /**
      * Singular instance of model that the entire project uses to communicate
      * with the backend
      */
     private static Model model;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,14 +89,14 @@ public class RegisterActivity extends AppCompatActivity {
         String username = _username.getText().toString();
         String password1 = _password1.getText().toString();
         String password2 = _password2.getText().toString();
+
         int code = model.addUser(firstName, lastName, email, username,
-                password1, password2);
+                password1, password2, _isAdmin);
         if (code == 0) {
             Toast.makeText(RegisterActivity.this, "User Added!", Toast
                     .LENGTH_SHORT).show();
             Intent intent = new Intent(RegisterActivity.this,
                     MainActivity.class);
-            intent.putExtra("usernameEmail", username);
             startActivity(intent);
         } else if (code == 1) {
             Toast.makeText(RegisterActivity.this, "Name Invalid", Toast
@@ -125,6 +130,25 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
         }
     }
+
+    public void onRadioButtonClick(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.adminRadioButton:
+                if (checked)
+                    _isAdmin = true;
+                    break;
+            case R.id.userRadioButton:
+                if (checked)
+                    _isAdmin = false;
+                    break;
+        }
+    }
+
+
 
     /**
      * Upon being clicked, creates and intent to return to the welcome screen

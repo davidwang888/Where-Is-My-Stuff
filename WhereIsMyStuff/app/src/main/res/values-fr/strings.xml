@@ -15,6 +15,8 @@
     <string name="register_password_text_view2">Retaper le Mot de Passe:</string>
     <string name="register_register_button">Registre</string>
     <string name="register_cancel_button">Annuler</string>
+    <string name="register_admin_radio_button">Admin</string>
+    <string name="register_user_radio_button">Utilisateur</string>
 
     <!--activity_login-->
     <string name="login_username_email_text_view">Nom d\'Utilisateur ou Email:</string>
@@ -25,4 +27,15 @@
     <!--activity_main-->
     <string name="main_text_view">Bienvenue sur l\'Application!</string>
     <string name="main_logout_button">Connectez - Out</string>
+    <string name="main_enter_lost_item_button">Entrez l\'élément perdu</string>
+
+    <!--activity_enter_lost_item-->
+    <string name="enter_lost_item_title_text_view">Entrez Votre Article Perdu!</string>
+    <string name="enter_lost_item_type_text_view">Type d\'élément:</string>
+    <string name="enter_lost_item_description_text_view">Description de l\'article:</string>
+    <string name="enter_lost_item_button">Entrez l\'article</string>
+
+    <!--activity_view_lost_items-->
+    <string name="view_lost_items_text_view">Article Perdu:</string>
+
 </resources>
