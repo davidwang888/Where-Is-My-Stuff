@@ -64,6 +64,16 @@ class UserManager {
      * @return A number that the controller will eventually use in
      *         RegisterActivity to display a message to the user that will
      *         explain how to fix their input if it is invalid
+     *         0 -> user successfully added
+     *         1 -> user entered invalid name, cannot register
+     *         2 -> user entered invalid email, cannot register
+     *         3 -> user entered invalid username, cannot register
+     *         4 -> user entered invalid username that contains whitespace chars, cannot register
+     *         5 -> user entered invalid username containing @ char, cannot register
+     *         6 -> user entered invalid password, cannot register
+     *         7 -> user entered passwords that do not match, cannot register
+     *         8 -> user entered email already in data base, cannot register
+     *         9 -> user entered username already in data base, cannot register
      */
     private int validateInput(String firstName, String lastName, String email,
                               String username, String password1, String
@@ -136,6 +146,11 @@ class UserManager {
      * @param  password      The password the user has entered
      * @return A number that will eventually be used by the controller in
      *         LoginActivity to determine what message to display to the user
+     *         0 -> user successfully logged in
+     *         1 -> user did not enter username/email and/or password, not logged in
+     *         2 -> username not in database, not logged in
+     *         3 -> email not in database, not logged in
+     *         4 -> username/email and/or password incorrect, not logged in
      */
     int loginUser(String usernameEmail, String password) {
         usernameEmail = usernameEmail.trim();
