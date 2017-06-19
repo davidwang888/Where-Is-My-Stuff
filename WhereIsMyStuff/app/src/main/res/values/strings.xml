@@ -1,3 +1,29 @@
 <resources>
+    <!--activity_welcome-->
     <string name="app_name">Where Is My Stuff</string>
+    <string name="welcome_welcome_text_view">Welcome!</string>
+    <string name="welcome_login_button">Login</string>
+    <string name="welcome_register_button">Register</string>
+
+    <!--activity_register-->
+    <string name="register_name_text_view">Full Name:</string>
+    <string name="register_first_name_edit_text">First</string>
+    <string name="register_last_name_edit_text">Last</string>
+    <string name="register_email_text_view">Email:</string>
+    <string name="register_username_text_view">Username:</string>
+    <string name="register_password_text_view1">Password:</string>
+    <string name="register_password_text_view2">Retype Password:</string>
+    <string name="register_register_button">Register</string>
+    <string name="register_cancel_button">Cancel</string>
+
+    <!--activity_login-->
+    <string name="login_username_email_text_view">Username or Email:</string>
+    <string name="login_password_text_view">Password:</string>
+    <string name="login_login_button">Login</string>
+    <string name="login_cancel_button">Cancel</string>
+
+    <!--activity_main-->
+    <string name="main_text_view">Welcome to the App!</string>
+    <string name="main_logout_button">Logout</string>
+
 </resources>
