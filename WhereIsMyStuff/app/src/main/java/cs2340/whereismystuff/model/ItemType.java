@@ -1,10 +1,6 @@
 package cs2340.whereismystuff.model;
 
-/**
- * Created by carolinekish on 6/15/17.
- */
-
-public enum ItemType {
+enum ItemType {
     TECHNOLOGICAL ("Technological"),
     FURNITURE ("Furniture"),
     RECREATIONAL ("Recreational"),
@@ -12,13 +8,18 @@ public enum ItemType {
     PET ("Pet"),
     OTHER ("Other");
 
-    private final String type;
+    private final String _type;
 
     ItemType(String ptype) {
-        type = ptype;
+        _type = ptype;
     }
 
-    public String getType() {return type; }
+    String getType() {
+        return _type;
+    }
 
-    public String toString() { return type; }
+    @Override
+    public String toString() {
+        return _type;
+    }
 }

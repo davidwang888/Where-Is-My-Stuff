@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import cs2340.whereismystuff.R;
-import cs2340.whereismystuff.model.ItemType;
 import cs2340.whereismystuff.model.Model;
 
 public class EnterFoundItemActivity extends AppCompatActivity {
@@ -39,12 +38,13 @@ public class EnterFoundItemActivity extends AppCompatActivity {
                 onEnterItemClick();
             }
         });
-        _itemTypeSpinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, ItemType.values()));
+        _itemTypeSpinner.setAdapter(new ArrayAdapter<>(this, android.R.layout
+                .simple_spinner_item, model.getItemTypes()));
     }
 
     private void onEnterItemClick() {
         String name = _itemNameEditText.getText().toString();
-        ItemType type = (ItemType) _itemTypeSpinner.getSelectedItem();
+        int type = _itemTypeSpinner.getSelectedItemPosition();
         String description = _itemDescription.getText().toString();
         model.addFoundItem(name, type, description, model.getCurrentUser());
         Intent intent = new Intent(EnterFoundItemActivity.this,

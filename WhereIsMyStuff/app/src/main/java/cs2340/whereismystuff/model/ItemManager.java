@@ -2,14 +2,9 @@ package cs2340.whereismystuff.model;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/**
- * Created by carolinekish on 6/15/17.
- */
-
 class ItemManager {
     private HashMap<String, Item> _lostItems;
     private HashMap<String, Item> _foundItems;
-
     private static final ItemManager instance = new ItemManager();
 
     private ItemManager() {
@@ -17,32 +12,20 @@ class ItemManager {
         _foundItems = new HashMap<>();
     }
 
-    static ItemManager getInstance() { return instance; }
-
-    void addLostItem(Item item) {
-        _lostItems.put(item.getName(), item);
+    static ItemManager getInstance() {
+        return instance;
     }
 
-    void addLostItem(String name, ItemType type, String description, User
+    void addLostItem(String name, int typePosition, String description, User
             user) {
-        addLostItem(new Item(name, type, description, user));
+        ItemType type = ItemType.values()[typePosition];
+        _lostItems.put(name, new Item(name, type, description, user));
     }
 
-    void addFoundItem(Item item) {
-        _foundItems.put(item.getName(), item);
-    }
-
-    void addFoundItem(String name, ItemType type, String description, User
+    void addFoundItem(String name, int typePosition, String description, User
             user) {
-        addFoundItem(new Item(name, type, description, user));
-    }
-
-    Item findLostItem(String name) {
-        return _lostItems.get(name);
-    }
-
-    Item findFoundItem(String name) {
-        return _foundItems.get(name);
+        ItemType type = ItemType.values()[typePosition];
+        _foundItems.put(name, new Item(name, type, description, user));
     }
 
     ArrayList<Item> getLostItems() {
@@ -53,19 +36,19 @@ class ItemManager {
         return new ArrayList<>(_foundItems.values());
     }
 
-    boolean search(Boolean foundItem, String name) {
+    boolean searchFound(Boolean foundItem, String name) {
         if (foundItem) {
-            return findFoundItem(name) != null;
+            return _foundItems.get(name) != null;
         } else {
-            return findLostItem(name) != null;
+            return _lostItems.get(name) != null;
         }
     }
 
     String searchResult(Boolean foundItem, String name) {
         if (foundItem) {
-            return findFoundItem(name).getDescription();
+            return _foundItems.get(name).getDescription();
         } else {
-            return findLostItem(name).getDescription();
+            return _lostItems.get(name).getDescription();
         }
     }
 }

@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import cs2340.whereismystuff.R;
-import cs2340.whereismystuff.model.ItemType;
 import cs2340.whereismystuff.model.Model;
 
 public class EnterLostItemActivity extends AppCompatActivity {
@@ -26,9 +25,12 @@ public class EnterLostItemActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter_lost_item);
         model  = Model.getInstance();
-        _itemNameEditText = (EditText) findViewById(R.id.enterLostItemNameEditText);
-        _itemTypeSpinner = (Spinner) findViewById(R.id.enterLostItemTypeSpinner);
-        _itemDescription = (EditText) findViewById(R.id.enterLostItemDescriptionEditText);
+        _itemNameEditText = (EditText) findViewById(R.id
+                .enterLostItemNameEditText);
+        _itemTypeSpinner = (Spinner) findViewById(R.id
+                .enterLostItemTypeSpinner);
+        _itemDescription = (EditText) findViewById(R.id
+                .enterLostItemDescriptionEditText);
         _enterItemButton = (Button) findViewById(R.id.enterLostItemButton);
         _enterItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,15 +38,17 @@ public class EnterLostItemActivity extends AppCompatActivity {
                 onEnterItemClick();
             }
         });
-        _itemTypeSpinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, ItemType.values()));
+        _itemTypeSpinner.setAdapter(new ArrayAdapter<>(this, android.R.layout
+                .simple_spinner_item, model.getItemTypes()));
     }
 
     private void onEnterItemClick() {
         String name = _itemNameEditText.getText().toString();
-        ItemType type = (ItemType) _itemTypeSpinner.getSelectedItem();
+        int type = _itemTypeSpinner.getSelectedItemPosition();
         String description = _itemDescription.getText().toString();
         model.addLostItem(name, type, description, model.getCurrentUser());
-        Intent intent = new Intent(EnterLostItemActivity.this, ViewLostItemsActivity.class);
+        Intent intent = new Intent(EnterLostItemActivity.this,
+                ViewLostItemsActivity.class);
         startActivity(intent);
     }
 }

@@ -48,8 +48,8 @@ class UserManager {
      * Adds the administrator to the new, empty UserManager
      */
     private void setUp() {
-        User user = new User();
-        addUser(user);
+        addUser("admin", "one", "admin@gatech.edu", "user", "pass", "pass",
+                true);
     }
 
     /**
@@ -105,15 +105,6 @@ class UserManager {
     }
 
     /**
-     * Adds the information of the user passed in to _users and _emailUser
-     * @param user The user whose information is to be stored
-     */
-    private void addUser(User user) {
-        _users.put(user.getUsername(), user);
-        _emailUser.put(user.getEmail(), user.getUsername());
-    }
-
-    /**
      * Takes in all of the information required to create a user, makes a new
      * user, and stores that user's information in _users and _emailUser
      * @param  firstName     The user's first name
@@ -133,7 +124,9 @@ class UserManager {
         int code = validateInput(firstName, lastName, email, username,
                 password1, password2);
         if (code == 0) {
-            addUser(new User(firstName, lastName, email, username, password1, isAdmin));
+            _users.put(username, new User(firstName, lastName, email, username,
+                    password1, isAdmin));
+            _emailUser.put(email, username);
         }
         return code;
     }

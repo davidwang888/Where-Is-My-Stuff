@@ -13,7 +13,6 @@ public class Model {
      * different users of the application
      */
     private static final UserManager userManager = UserManager.getInstance();
-
     private static final ItemManager itemManager = ItemManager.getInstance();
 
     /**
@@ -63,16 +62,6 @@ public class Model {
         return userManager.loginUser(usernameEmail, password);
     }
 
-    public void addLostItem(String name, ItemType type, String description, User
-            user) {
-        itemManager.addLostItem(name, type, description, user);
-    }
-
-    public void addFoundItem(String name, ItemType type, String description,
-                             User user) {
-        itemManager.addFoundItem(name, type, description, user);
-    }
-
     /**
      * Takes in the user's email and lets the UserManager use it to find and
      * return the corresponding user's username
@@ -86,20 +75,30 @@ public class Model {
         return userManager.getCurrentUser();
     }
 
-    public ArrayList<Item> getLostItems() {return itemManager.getLostItems(); }
-
-    public ArrayList<Item> getFoundItems() {return itemManager.getFoundItems();}
-
-    public Item findLostItem(String name) {
-        return itemManager.findLostItem(name);
+    public ItemType[] getItemTypes() {
+        return ItemType.values();
     }
 
-    public Item findFoundItem(String name) {
-        return itemManager.findFoundItem(name);
+    public void addLostItem(String name, int type, String description, User
+            user) {
+        itemManager.addLostItem(name, type, description, user);
     }
 
-    public boolean search(Boolean foundItem, String name) {
-        return itemManager.search(foundItem, name);
+    public void addFoundItem(String name, int type, String description,
+                             User user) {
+        itemManager.addFoundItem(name, type, description, user);
+    }
+
+    public ArrayList<Item> getLostItems() {
+        return itemManager.getLostItems();
+    }
+
+    public ArrayList<Item> getFoundItems() {
+        return itemManager.getFoundItems();
+    }
+
+    public boolean searchFound(Boolean foundItem, String name) {
+        return itemManager.searchFound(foundItem, name);
     }
 
     public String searchResult(Boolean foundItem, String name) {

@@ -61,8 +61,6 @@ class User {
         return _username;
     }
 
-    boolean isAdmin() { return _isAdmin; }
-
     /**
      * Checks to see if the user has entered their password correctly
      * @param  password      The password the user has entered
