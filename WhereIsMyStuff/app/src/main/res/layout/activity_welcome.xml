@@ -17,7 +17,9 @@
         android:layout_marginTop="68dp"
         android:background="@android:color/holo_blue_dark"
         android:fontFamily="sans-serif-smallcaps"
-        android:text="@string/welcome_login_button" />
+        android:text="@string/welcome_login_button"
+        android:textAlignment="center"
+        android:padding="5dip"/>
 
     <Button
         android:id="@+id/welcomeRegisterButton"
@@ -29,7 +31,9 @@
         android:layout_marginTop="57dp"
         android:background="@android:color/holo_blue_dark"
         android:fontFamily="sans-serif-smallcaps"
-        android:text="@string/welcome_register_button" />
+        android:text="@string/welcome_register_button"
+        android:textAlignment="center"
+        android:padding="5dip"/>
 
     <TextView
         android:id="@+id/welcomeWelcometextView"

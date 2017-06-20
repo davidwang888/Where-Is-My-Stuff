@@ -22,6 +22,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <EditText
+        android:backgroundTintMode="@android:color/holo_blue_dark"
         android:id="@+id/loginUsernameEmailEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,6 +46,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <EditText
+        android:backgroundTintMode="@android:color/holo_blue_dark"
         android:id="@+id/loginPasswordEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -67,7 +69,9 @@
         android:layout_alignStart="@+id/loginPasswordEditText"
         android:background="@android:color/holo_blue_dark"
         android:fontFamily="sans-serif-smallcaps"
-        android:text="@string/login_login_button" />
+        android:padding="5dip"
+        android:text="@string/login_login_button"
+        android:textAlignment="center" />
 
     <Button
         android:id="@+id/loginCancelButton"
@@ -80,5 +84,7 @@
         android:layout_marginTop="56dp"
         android:background="@android:color/holo_blue_dark"
         android:fontFamily="sans-serif-smallcaps"
-        android:text="@string/login_cancel_button" />
+        android:text="@string/login_cancel_button"
+        android:textAlignment="center"
+        android:padding="5dip"/>
 </RelativeLayout>

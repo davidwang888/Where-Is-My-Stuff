@@ -13,12 +13,14 @@
     <string name="register_email_text_view">Email:</string>
     <string name="register_username_text_view">Benutzername:</string>
     <string name="register_password_text_view1">Passwort:</string>
-    <string name="register_password_text_view2">Password Wiederholen:</string>
+    <string name="register_password_text_view2">Passwort Wiederholen:</string>
     <string name="register_register_button">Registrieren</string>
     <string name="register_cancel_button">Stornieren</string>
+    <string name="register_admin_radio_button">Administrator</string>
+    <string name="register_user_radio_button">Benutzer</string>
 
     <!--activity_login-->
-    <string name="login_username_email_text_view">Username or Email:</string>
+    <string name="login_username_email_text_view">Benutzername oder Email:</string>
     <string name="login_password_text_view">Passwort:</string>
     <string name="login_login_button">Anmeldedaten</string>
     <string name="login_cancel_button">Stornieren</string>
@@ -26,5 +28,17 @@
     <!--activity_main-->
     <string name="main_text_view">Willkommen in der App!</string>
     <string name="main_logout_button">Ausloggen</string>
+    <string name="main_enter_lost_item_button">Verlorene Element Eingeben</string>
+
+    <!--activity_enter_lost_item-->
+    <string name="enter_lost_item_title_text_view">Geben Sie Ihren Verlorenen
+        Gegenstand Ein!</string>
+    <string name="enter_lost_item_type_text_view">Gegenstandsart:</string>
+    <string name="enter_lost_item_description_text_view">Artikelbeschreibung:</string>
+    <string name="enter_lost_item_button">Geben Sie Item Ein</string>
+
+    <!--activity_view_lost_items-->
+    <string name="view_lost_items_text_view">Verlorenen Gegenstand:</string>
+
 
 </resources>

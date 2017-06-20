@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private Button _logoutButton;
 
+    private Button _enterLostItemButton;
+
     /**
      * Singular instance of model that the entire project uses to communicate
      * with the backend
@@ -39,17 +41,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         _text = (TextView) findViewById(R.id.mainTextView);
         _logoutButton = (Button) findViewById(R.id.mainLogoutButton);
+        _enterLostItemButton = (Button) findViewById(R.id.mainEnterLostItemButton);
         model = Model.getInstance();
-        Bundle extras = getIntent().getExtras();
-        if (extras.containsKey("usernameEmail")) {
-            String _usernameEmail = extras.getString("usernameEmail");
-            String _name = model.getName(_usernameEmail);
-            _text.setText("Welcome " + _name + "!");
-        }
+        String _name = model.getName();
+        _text.setText("Welcome " + _name + "!");
         _logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onLogoutButtonClick();
+            }
+        });
+        _enterLostItemButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onEnterLostItemButtonClick();
             }
         });
     }
@@ -63,6 +68,11 @@ public class MainActivity extends AppCompatActivity {
                 .LENGTH_SHORT).show();
         Intent intent = new Intent(MainActivity.this, WelcomeActivity
                 .class);
+        startActivity(intent);
+    }
+
+    private void onEnterLostItemButtonClick() {
+        Intent intent = new Intent(MainActivity.this, EnterLostItemActivity.class);
         startActivity(intent);
     }
 }
