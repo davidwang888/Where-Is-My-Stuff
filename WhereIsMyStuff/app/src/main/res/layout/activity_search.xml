@@ -8,7 +8,7 @@
     tools:context="cs2340.whereismystuff.controller.SearchActivity">
 
     <TextView
-        android:id="@+id/searchItemTypeTextView"
+        android:id="@+id/searchTypeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -24,14 +24,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_below="@+id/searchItemTypeTextView"
-                android:layout_alignLeft="@+id/searchItemTypeTextView"
-                android:layout_alignStart="@+id/searchItemTypeTextView"
-                android:checkedButton="@+id/foundRadioButton"
-                android:id="@+id/radioGroup">
+                android:layout_below="@+id/searchTypeTextView"
+                android:layout_alignLeft="@+id/searchTypeTextView"
+                android:layout_alignStart="@+id/searchTypeTextView"
+                android:checkedButton="@+id/searchFoundRadioButton"
+                android:id="@+id/searchRadioGroup">
 
         <RadioButton
-            android:id="@+id/foundRadioButton"
+            android:id="@+id/searchFoundRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClick"
@@ -39,35 +39,35 @@
             app:buttonTint="@android:color/holo_blue_dark" />
 
         <RadioButton
-            android:id="@+id/lostRadioButton"
+            android:id="@+id/searchLostRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"
             android:onClick="onRadioButtonClick"
             android:text="Lost Item"
-            app:buttonTint="@android:color/holo_blue_dark" />
+            app:buttonTint="@android:color/holo_blue_dark"/>
 
     </RadioGroup>
 
     <TextView
-        android:id="@+id/searchItemNameTextView"
+        android:id="@+id/searchNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/radioGroup"
-        android:layout_alignStart="@+id/radioGroup"
-        android:layout_below="@+id/radioGroup"
+        android:layout_alignLeft="@+id/searchRadioGroup"
+        android:layout_alignStart="@+id/searchRadioGroup"
+        android:layout_below="@+id/searchRadioGroup"
         android:layout_marginTop="59dp"
         android:text="Item Name:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
     <EditText
-        android:id="@+id/searchItemNameEditText"
+        android:id="@+id/searchNameEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/searchItemNameTextView"
-        android:layout_alignStart="@+id/searchItemNameTextView"
-        android:layout_below="@+id/searchItemNameTextView"
+        android:layout_alignLeft="@+id/searchNameTextView"
+        android:layout_alignStart="@+id/searchNameTextView"
+        android:layout_below="@+id/searchNameTextView"
         android:ems="10"
         android:inputType="textPersonName"/>
 
@@ -76,22 +76,22 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/searchItemNameEditText"
-        android:layout_alignStart="@+id/searchItemNameEditText"
-        android:layout_below="@+id/searchItemNameEditText"
+        android:layout_alignLeft="@+id/searchNameEditText"
+        android:layout_alignStart="@+id/searchNameEditText"
+        android:layout_below="@+id/searchNameEditText"
         android:layout_marginTop="82dp"
         android:backgroundTint="@android:color/holo_blue_dark"
         android:text="Search"/>
 
     <Button
-        android:id="@+id/searchBackButton"
+        android:id="@+id/searchCancelButton"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/searchSearchButton"
-        android:layout_toEndOf="@+id/searchItemTypeTextView"
-        android:layout_toRightOf="@+id/searchItemTypeTextView"
+        android:layout_toEndOf="@+id/searchTypeTextView"
+        android:layout_toRightOf="@+id/searchTypeTextView"
         android:backgroundTint="@android:color/holo_blue_dark"
-        android:text="Back"/>
+        android:text="Cancel"/>
 
 </RelativeLayout>

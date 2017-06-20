@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context="cs2340.whereismystuff.controller.WelcomeActivity">
     <TextView
-        android:id="@+id/welcomeWelcometextView"
+        android:id="@+id/welcomeTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -24,7 +24,7 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/welcomeWelcometextView"
+        android:layout_below="@+id/welcomeTitleTextView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:background="@android:color/holo_blue_dark"

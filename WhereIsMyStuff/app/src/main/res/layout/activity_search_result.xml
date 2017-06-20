@@ -8,7 +8,7 @@
     tools:context="cs2340.whereismystuff.controller.SearchResultActivity">
 
     <TextView
-        android:id="@+id/searchSearchResultTextView"
+        android:id="@+id/searchResultTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -21,17 +21,17 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
     <TextView
-        android:id="@+id/searchItemDescriptionTextView"
+        android:id="@+id/searchResultDescriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/searchSearchResultTextView"
-        android:layout_alignStart="@+id/searchSearchResultTextView"
-        android:layout_below="@+id/searchSearchResultTextView"
+        android:layout_alignLeft="@+id/searchResultTitleTextView"
+        android:layout_alignStart="@+id/searchResultTitleTextView"
+        android:layout_below="@+id/searchResultTitleTextView"
         android:text="Description"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
     <Button
-        android:id="@+id/searchBackButton"
+        android:id="@+id/searchResultHomeButton"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,5 +39,5 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:backgroundTint="@android:color/holo_blue_dark"
-        android:text="Back"/>
+        android:text="Home"/>
 </RelativeLayout>

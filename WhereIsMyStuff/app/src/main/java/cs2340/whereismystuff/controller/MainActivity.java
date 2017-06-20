@@ -14,20 +14,34 @@ import cs2340.whereismystuff.model.Model;
 /**
  * Represents the main screen of the app that the user is sent to after they
  * have logged in
+ *
+ * Contains multiple buttons to allow the user to decide the next course of
+ * action
  */
 public class MainActivity extends AppCompatActivity {
-
     /**
      * Displays text in the middle of the screen welcoming the user
      */
     private TextView _text;
 
     /**
-     * Allows the user to logout
+     * Button user will click when they want to logout
      */
     private Button _logoutButton;
+
+    /**
+     * Button the user will click when they want to enter a lost item
+     */
     private Button _enterLostItemButton;
+
+    /**
+     * Button the user will click when they want to enter a found item
+     */
     private Button _enterFoundItemButton;
+
+    /**
+     * Button the user will click when they want to search for an item
+     */
     private Button _searchItemsButton;
 
     /**
@@ -40,11 +54,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        _text = (TextView) findViewById(R.id.mainTextView);
+        _text = (TextView) findViewById(R.id.mainTitleTextView);
         _logoutButton = (Button) findViewById(R.id.mainLogoutButton);
-        _enterLostItemButton = (Button) findViewById(R.id.mainEnterLostItemButton);
+        _enterLostItemButton = (Button) findViewById(R.id
+                .mainEnterLostItemButton);
         _enterFoundItemButton = (Button) findViewById(R.id
-                .mainEnterFoundButton);
+                .mainEnterFoundItemButton);
         _searchItemsButton = (Button) findViewById(R.id.mainSearchItemsButton);
         model = Model.getInstance();
         String _name = model.getName();
@@ -87,17 +102,30 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Upon the enter lost item button clicked, the screen is changed to the
+     * enter lost activity screen
+     */
     private void onEnterLostItemButtonClick() {
-        Intent intent = new Intent(MainActivity.this, EnterLostItemActivity.class);
+        Intent intent = new Intent(MainActivity.this, EnterLostItemActivity
+                .class);
         startActivity(intent);
     }
 
+    /**
+     * Upon the enter found item button clicked, the screen is changed to the
+     * enter found item screen
+     */
     private void onEnterFoundItemButtonClick(){
         Intent intent = new Intent(MainActivity.this, EnterFoundItemActivity
                 .class);
         startActivity(intent);
     }
 
+    /**
+     * Upon the search items button clicked, the screen is changed to the
+     * search item
+     */
     private void onSearchItemsButtonClick() {
         Intent intent = new Intent(MainActivity.this, SearchActivity.class);
         startActivity(intent);

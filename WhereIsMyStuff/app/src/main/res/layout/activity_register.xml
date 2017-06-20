@@ -151,16 +151,17 @@
 
     <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
 
+                android:id="@+id/registerRadioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_alignBottom="@+id/registerAccountTypeTextView"
-                android:layout_toRightOf="@+id/registerFirstNameEditText"
                 android:layout_toEndOf="@+id/registerFirstNameEditText"
-                android:checkedButton="@+id/userRadioButton">
+                android:layout_toRightOf="@+id/registerFirstNameEditText"
+                android:checkedButton="@+id/registerUserRadioButton"
+                android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/adminRadioButton"
+            android:id="@+id/registerAdminRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/registerAccountTypeTextView"
@@ -169,22 +170,22 @@
             android:layout_alignTop="@+id/registerAccountTypeTextView"
             android:onClick="onRadioButtonClick"
             android:text="@string/register_admin_radio_button"
-            app:buttonTint="@android:color/holo_blue_dark" />
+            app:buttonTint="@android:color/holo_blue_dark"/>
 
         <RadioButton
-            android:id="@+id/userRadioButton"
+            android:id="@+id/registerUserRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/adminRadioButton"
+            android:layout_alignBottom="@+id/registerAdminRadioButton"
             android:layout_alignEnd="@+id/registerPasswordEditText2"
             android:layout_alignRight="@+id/registerPasswordEditText2"
-            android:layout_alignTop="@+id/adminRadioButton"
+            android:layout_alignTop="@+id/registerAdminRadioButton"
             android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"
-            android:layout_toRightOf="@+id/adminRadioButton"
+            android:layout_toRightOf="@+id/registerAdminRadioButton"
             android:onClick="onRadioButtonClick"
             android:text="@string/register_user_radio_button"
-            app:buttonTint="@android:color/holo_blue_dark" />
+            app:buttonTint="@android:color/holo_blue_dark"/>
 
     </RadioGroup>
 

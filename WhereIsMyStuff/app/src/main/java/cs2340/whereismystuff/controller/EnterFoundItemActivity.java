@@ -12,12 +12,38 @@ import android.widget.Spinner;
 import cs2340.whereismystuff.R;
 import cs2340.whereismystuff.model.Model;
 
+/**
+ * Represents the screen to enter a found item
+ *
+ * Contains a text box for the user to enter the item's name, a spinner for
+ * the item's type, and a text box for the item's description and allows them
+ * to add a new found item
+ */
 public class EnterFoundItemActivity extends AppCompatActivity {
+    /**
+     * Text box user will enter item name in
+     */
     private EditText _itemNameEditText;
+
+    /**
+     * Spinner user will use to select item's type
+     */
     private Spinner _itemTypeSpinner;
+
+    /**
+     * Text box user will enter item description in
+     */
     private EditText _itemDescription;
+
+    /**
+     * Button user will click when they want to add item
+     */
     private Button _enterItemButton;
 
+    /**
+     * Singular instance of model that the entire project uses to communicate
+     * with the backend
+     */
     private static Model model;
 
     @Override
@@ -42,6 +68,10 @@ public class EnterFoundItemActivity extends AppCompatActivity {
                 .simple_spinner_item, model.getItemTypes()));
     }
 
+    /**
+     * Upon the enter item button clicked, item is entered and screen is
+     * changed to the view found items screen
+     */
     private void onEnterItemClick() {
         String name = _itemNameEditText.getText().toString();
         int type = _itemTypeSpinner.getSelectedItemPosition();
