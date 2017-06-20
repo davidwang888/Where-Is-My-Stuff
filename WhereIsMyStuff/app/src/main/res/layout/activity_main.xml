@@ -7,20 +7,6 @@
     android:layout_height="match_parent"
     tools:context="cs2340.whereismystuff.controller.MainActivity">
 
-    <TextView
-        android:id="@+id/mainTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="@string/main_text_view"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/mainLogoutButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp" />
-
     <Button
         android:id="@+id/mainLogoutButton"
         style="@style/Widget.AppCompat.Button.Colored"
@@ -33,13 +19,40 @@
         android:fontFamily="sans-serif-smallcaps"
         android:text="@string/main_logout_button" />
 
+    <TextView
+        android:id="@+id/mainTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/main_text_view"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/mainLogoutButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+
+
     <Button
         android:id="@+id/mainEnterLostItemButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/mainTextView"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@android:color/holo_blue_dark"
         android:text="@string/main_enter_lost_item_button"
         android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/mainEtnerFoundButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mainEnterLostItemButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="67dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:text="@string/main_enter_found_item_button"/>
 </RelativeLayout>

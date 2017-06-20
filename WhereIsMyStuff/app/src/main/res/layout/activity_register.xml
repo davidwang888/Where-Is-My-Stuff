@@ -10,11 +10,11 @@
         android:id="@+id/registerNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:text="@string/register_name_text_view"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -26,7 +26,7 @@
         android:layout_alignLeft="@+id/registerNameTextView"
         android:layout_alignStart="@+id/registerNameTextView"
         android:layout_below="@+id/registerNameTextView"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="15dp"
         android:backgroundTintMode="@android:color/holo_blue_dark"
         android:ems="10"
         android:inputType="textPersonName"
@@ -42,18 +42,17 @@
         android:inputType="textPersonName"
         android:text="@string/register_last_name_edit_text"
         android:textSize="12sp"
-        android:layout_marginRight="28dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_alignBaseline="@+id/registerFirstNameEditText"
         android:layout_alignBottom="@+id/registerFirstNameEditText"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_toRightOf="@+id/registerFirstNameEditText" />
 
     <TextView
         android:id="@+id/registerEmailTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="35dp"
         android:text="@string/register_email_text_view"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:layout_below="@+id/registerFirstNameEditText"
@@ -69,8 +68,8 @@
         android:inputType="textEmailAddress"
         android:layout_alignBaseline="@+id/registerEmailTextView"
         android:layout_alignBottom="@+id/registerEmailTextView"
-        android:layout_toRightOf="@+id/registerUsernameTextView"
-        android:layout_toEndOf="@+id/registerUsernameTextView" />/>
+        android:layout_alignRight="@+id/registerLastNameEditText"
+        android:layout_alignEnd="@+id/registerLastNameEditText" />
 
     <TextView
         android:id="@+id/registerUsernameTextView"
@@ -78,8 +77,8 @@
         android:layout_height="wrap_content"
         android:text="@string/register_username_text_view"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:layout_alignBaseline="@+id/registerUsernameEditText"
-        android:layout_alignBottom="@+id/registerUsernameEditText"
+        android:layout_below="@+id/registerEmailEditText"
+        android:layout_marginTop="35dp"
         android:layout_alignLeft="@+id/registerEmailTextView"
         android:layout_alignStart="@+id/registerEmailTextView" />
 
@@ -90,10 +89,9 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:layout_marginTop="16dp"
-        android:layout_below="@+id/registerEmailEditText"
-        android:layout_alignRight="@+id/registerLastNameEditText"
-        android:layout_alignEnd="@+id/registerLastNameEditText" />
+        android:layout_alignBaseline="@+id/registerUsernameTextView"
+        android:layout_alignRight="@+id/registerEmailEditText"
+        android:layout_alignEnd="@+id/registerEmailEditText" />
 
     <TextView
         android:id="@+id/registerPasswordTextView1"
@@ -101,7 +99,7 @@
         android:layout_height="wrap_content"
         android:text="@string/register_password_text_view1"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="35dp"
         android:layout_below="@+id/registerUsernameEditText"
         android:layout_alignLeft="@+id/registerUsernameTextView"
         android:layout_alignStart="@+id/registerUsernameTextView" />
@@ -115,19 +113,19 @@
         android:inputType="textPassword"
         android:layout_alignBaseline="@+id/registerPasswordTextView1"
         android:layout_alignBottom="@+id/registerPasswordTextView1"
-        android:layout_alignLeft="@+id/registerUsernameEditText"
-        android:layout_alignStart="@+id/registerUsernameEditText" />
+        android:layout_alignRight="@+id/registerUsernameEditText"
+        android:layout_alignEnd="@+id/registerUsernameEditText" />
 
     <TextView
         android:id="@+id/registerPasswordTextView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="35dp"
         android:text="@string/register_password_text_view2"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:layout_below="@+id/registerPasswordEditText1"
-        android:layout_alignLeft="@+id/registerUsernameTextView"
-        android:layout_alignStart="@+id/registerUsernameTextView" />
+        android:layout_below="@+id/registerPasswordTextView1"
+        android:layout_alignLeft="@+id/registerPasswordTextView1"
+        android:layout_alignStart="@+id/registerPasswordTextView1" />
 
     <EditText
         android:backgroundTintMode="@android:color/holo_blue_dark"
@@ -138,7 +136,57 @@
         android:inputType="textPassword"
         android:layout_alignTop="@+id/registerPasswordTextView2"
         android:layout_alignLeft="@+id/registerPasswordEditText1"
-        android:layout_alignStart="@+id/registerPasswordEditText1" />
+        android:layout_alignStart="@+id/registerPasswordEditText1"/>
+
+    <TextView
+        android:id="@+id/registerAccountTypeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/registerPasswordTextView2"
+        android:layout_alignStart="@+id/registerPasswordTextView2"
+        android:layout_below="@+id/registerPasswordEditText2"
+        android:layout_marginTop="35dp"
+        android:text="Account Type:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignBottom="@+id/registerAccountTypeTextView"
+                android:layout_toRightOf="@+id/registerFirstNameEditText"
+                android:layout_toEndOf="@+id/registerFirstNameEditText"
+                android:checkedButton="@+id/userRadioButton">
+
+        <RadioButton
+            android:id="@+id/adminRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/registerAccountTypeTextView"
+            android:layout_alignLeft="@+id/linearLayout"
+            android:layout_alignStart="@+id/linearLayout"
+            android:layout_alignTop="@+id/registerAccountTypeTextView"
+            android:onClick="onRadioButtonClick"
+            android:text="@string/register_admin_radio_button"
+            app:buttonTint="@android:color/holo_blue_dark" />
+
+        <RadioButton
+            android:id="@+id/userRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/adminRadioButton"
+            android:layout_alignEnd="@+id/registerPasswordEditText2"
+            android:layout_alignRight="@+id/registerPasswordEditText2"
+            android:layout_alignTop="@+id/adminRadioButton"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@+id/adminRadioButton"
+            android:onClick="onRadioButtonClick"
+            android:text="@string/register_user_radio_button"
+            app:buttonTint="@android:color/holo_blue_dark" />
+
+    </RadioGroup>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -146,7 +194,7 @@
         android:orientation="horizontal"
         android:weightSum="4"
         android:id="@+id/linearLayout"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="70dp"
         android:layout_below="@+id/registerPasswordTextView2"
         android:layout_alignLeft="@+id/registerPasswordEditText2"
         android:layout_alignStart="@+id/registerPasswordEditText2">
@@ -181,57 +229,6 @@
             android:padding="5dip"
             android:layout_gravity="center"/>
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/registerAccountTypeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/registerPasswordTextView2"
-        android:layout_alignStart="@+id/registerPasswordTextView2"
-        android:layout_below="@+id/registerPasswordTextView2"
-        android:layout_marginTop="24dp"
-        android:text="Account Type:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignTop="@+id/registerAccountTypeTextView"
-        android:layout_toRightOf="@+id/registerFirstNameEditText"
-        android:layout_toEndOf="@+id/registerFirstNameEditText"
-        android:checkedButton="@+id/userRadioButton">
-
-        <RadioButton
-            android:id="@+id/adminRadioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/registerAccountTypeTextView"
-            android:layout_alignLeft="@+id/linearLayout"
-            android:layout_alignStart="@+id/linearLayout"
-            android:layout_alignTop="@+id/registerAccountTypeTextView"
-            android:onClick="onRadioButtonClick"
-            android:text="@string/register_admin_radio_button"
-            app:buttonTint="@android:color/holo_blue_dark" />
-
-        <RadioButton
-            android:id="@+id/userRadioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/adminRadioButton"
-            android:layout_alignEnd="@+id/registerPasswordEditText2"
-            android:layout_alignRight="@+id/registerPasswordEditText2"
-            android:layout_alignTop="@+id/adminRadioButton"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_toRightOf="@+id/adminRadioButton"
-            android:onClick="onRadioButtonClick"
-            android:text="@string/register_user_radio_button"
-            app:buttonTint="@android:color/holo_blue_dark" />
-
-    </RadioGroup>
-
 
 </RelativeLayout>
 

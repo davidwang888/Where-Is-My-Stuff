@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="35dp"
         android:text="@string/enter_lost_item_title_text_view"
         android:textColor="@android:color/black"
         android:textSize="24sp" />
@@ -24,9 +24,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/enterLostItemTitleTextView"
-        android:layout_marginLeft="29dp"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="114dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="110dp"
         android:text="@string/enter_lost_item_type_text_view"
         android:textSize="18sp" />
 
