@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cs2340.whereismystuff.controller.SearchActivity">
+
+    <TextView
+        android:id="@+id/searchItemTypeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:text="Item Type:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/searchItemTypeTextView"
+                android:layout_alignLeft="@+id/searchItemTypeTextView"
+                android:layout_alignStart="@+id/searchItemTypeTextView"
+                android:checkedButton="@+id/foundRadioButton"
+                android:id="@+id/radioGroup">
+
+        <RadioButton
+            android:id="@+id/foundRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClick"
+            android:text="Found Item"
+            app:buttonTint="@android:color/holo_blue_dark" />
+
+        <RadioButton
+            android:id="@+id/lostRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:onClick="onRadioButtonClick"
+            android:text="Lost Item"
+            app:buttonTint="@android:color/holo_blue_dark" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/searchItemNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioGroup"
+        android:layout_alignStart="@+id/radioGroup"
+        android:layout_below="@+id/radioGroup"
+        android:layout_marginTop="59dp"
+        android:text="Item Name:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+    <EditText
+        android:id="@+id/searchItemNameEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/searchItemNameTextView"
+        android:layout_alignStart="@+id/searchItemNameTextView"
+        android:layout_below="@+id/searchItemNameTextView"
+        android:ems="10"
+        android:inputType="textPersonName"/>
+
+    <Button
+        android:id="@+id/searchSearchButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/searchItemNameEditText"
+        android:layout_alignStart="@+id/searchItemNameEditText"
+        android:layout_below="@+id/searchItemNameEditText"
+        android:layout_marginTop="82dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:text="Search"/>
+
+</RelativeLayout>

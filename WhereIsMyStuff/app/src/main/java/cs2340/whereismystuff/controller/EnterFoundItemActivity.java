@@ -46,9 +46,9 @@ public class EnterFoundItemActivity extends AppCompatActivity {
         String name = _itemNameEditText.getText().toString();
         ItemType type = (ItemType) _itemTypeSpinner.getSelectedItem();
         String description = _itemDescription.getText().toString();
-        model.addItem(name, type, description, model.getCurrentUser());
+        model.addFoundItem(name, type, description, model.getCurrentUser());
         Intent intent = new Intent(EnterFoundItemActivity.this,
-                ViewLostItemsActivity.class);
+                ViewFoundItemsActivity.class);
         startActivity(intent);
     }
 }

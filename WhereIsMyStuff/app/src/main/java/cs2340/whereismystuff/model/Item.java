@@ -19,6 +19,10 @@ public class Item {
         count++;
     }
 
+    public String getName() {
+        return _name;
+    }
+
     @Override
     public String toString() {
         return _type.toString() + ": " + _name;

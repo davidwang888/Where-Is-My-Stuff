@@ -29,6 +29,7 @@
     <string name="main_logout_button">Logout</string>
     <string name="main_enter_lost_item_button">Enter Lost Item</string>
     <string name="main_enter_found_item_button">Enter Found Item</string>
+    <string name="main_search_item_button">Search Items</string>
 
     <!--activity_enter_lost_item-->
     <string name="enter_lost_item_title_text_view">Enter Your Lost Item!</string>
@@ -47,5 +48,8 @@
         :</string>
     <string name="enter_found_item_button">Enter Item</string>
     <string name="enter_found_item_name_text_view">Item Name:</string>
+
+    <!--activity_view_lost_items-->
+    <string name="view_found_items_text_view">Found Items:</string>
 
 </resources>

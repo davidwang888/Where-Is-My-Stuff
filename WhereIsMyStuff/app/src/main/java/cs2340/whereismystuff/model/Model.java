@@ -63,8 +63,14 @@ public class Model {
         return userManager.loginUser(usernameEmail, password);
     }
 
-    public void addItem(String name, ItemType type, String description, User user) {
-        itemManager.addItem(name, type, description, user);
+    public void addLostItem(String name, ItemType type, String description, User
+            user) {
+        itemManager.addLostItem(name, type, description, user);
+    }
+
+    public void addFoundItem(String name, ItemType type, String description,
+                             User user) {
+        itemManager.addFoundItem(name, type, description, user);
     }
 
     /**
@@ -81,4 +87,6 @@ public class Model {
     }
 
     public ArrayList<Item> getLostItems() {return itemManager.getLostItems(); }
+
+    public ArrayList<Item> getFoundItems() {return itemManager.getFoundItems();}
 }

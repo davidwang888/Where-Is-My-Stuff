@@ -26,8 +26,9 @@ public class MainActivity extends AppCompatActivity {
      * Allows the user to logout
      */
     private Button _logoutButton;
-
     private Button _enterLostItemButton;
+    private Button _enterFoundItemButton;
+    private Button _searchItemsButton;
 
     /**
      * Singular instance of model that the entire project uses to communicate
@@ -42,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
         _text = (TextView) findViewById(R.id.mainTextView);
         _logoutButton = (Button) findViewById(R.id.mainLogoutButton);
         _enterLostItemButton = (Button) findViewById(R.id.mainEnterLostItemButton);
+        _enterFoundItemButton = (Button) findViewById(R.id
+                .mainEnterFoundButton);
+        _searchItemsButton = (Button) findViewById(R.id.mainSearchItemsButton);
         model = Model.getInstance();
         String _name = model.getName();
         _text.setText("Welcome " + _name + "!");
@@ -55,6 +59,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onEnterLostItemButtonClick();
+            }
+        });
+        _enterFoundItemButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onEnterFoundItemButtonClick();
+            }
+        });
+        _searchItemsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onSearchItemsButtonClick();
             }
         });
     }
@@ -73,6 +89,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void onEnterLostItemButtonClick() {
         Intent intent = new Intent(MainActivity.this, EnterLostItemActivity.class);
+        startActivity(intent);
+    }
+
+    private void onEnterFoundItemButtonClick(){
+        Intent intent = new Intent(MainActivity.this, EnterFoundItemActivity
+                .class);
+        startActivity(intent);
+    }
+
+    private void onSearchItemsButtonClick() {
+        Intent intent = new Intent(MainActivity.this, SearchActivity.class);
         startActivity(intent);
     }
 }
