@@ -27,6 +27,8 @@
         </activity>
         <activity android:name=".controller.ViewFoundItemsActivity">
         </activity>
+        <activity android:name=".controller.SearchResultActivity">
+        </activity>
     </application>
 
 </manifest>

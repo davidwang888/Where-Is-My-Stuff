@@ -89,4 +89,20 @@ public class Model {
     public ArrayList<Item> getLostItems() {return itemManager.getLostItems(); }
 
     public ArrayList<Item> getFoundItems() {return itemManager.getFoundItems();}
+
+    public Item findLostItem(String name) {
+        return itemManager.findLostItem(name);
+    }
+
+    public Item findFoundItem(String name) {
+        return itemManager.findFoundItem(name);
+    }
+
+    public boolean search(Boolean foundItem, String name) {
+        return itemManager.search(foundItem, name);
+    }
+
+    public String searchResult(Boolean foundItem, String name) {
+        return itemManager.searchResult(foundItem, name);
+    }
 }

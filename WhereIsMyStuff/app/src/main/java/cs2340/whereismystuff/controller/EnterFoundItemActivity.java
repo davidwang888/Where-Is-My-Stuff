@@ -24,7 +24,7 @@ public class EnterFoundItemActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_enter_lost_item);
+        setContentView(R.layout.activity_enter_found_item);
         model  = Model.getInstance();
         _itemNameEditText = (EditText) findViewById(R.id
                 .enterFoundItemNameEditText);

@@ -52,5 +52,21 @@ class ItemManager {
     ArrayList<Item> getFoundItems() {
         return new ArrayList<>(_foundItems.values());
     }
+
+    boolean search(Boolean foundItem, String name) {
+        if (foundItem) {
+            return findFoundItem(name) != null;
+        } else {
+            return findLostItem(name) != null;
+        }
+    }
+
+    String searchResult(Boolean foundItem, String name) {
+        if (foundItem) {
+            return findFoundItem(name).getDescription();
+        } else {
+            return findLostItem(name).getDescription();
+        }
+    }
 }
 

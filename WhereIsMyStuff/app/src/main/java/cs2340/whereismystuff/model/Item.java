@@ -28,5 +28,8 @@ public class Item {
         return _type.toString() + ": " + _name;
     }
 
-
+    public String getDescription() {
+        return "Name: " + _name + "\nType: " + _type + "\nDescription" +
+                _description + "\nUser: " + _user.getName();
+    }
 }
