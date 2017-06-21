@@ -11,9 +11,24 @@ import android.widget.ListView;
 import cs2340.whereismystuff.R;
 import cs2340.whereismystuff.model.Model;
 
+/**
+ * Represents the screen tha shows the user the list of all the lost items
+ */
 public class ViewLostItemsActivity extends AppCompatActivity {
+    /**
+     * A list view of all the items
+     */
     private ListView _viewLostItemsListView;
+
+    /**
+     * The button users will push to go back to the welcome screen
+     */
     private Button _homeButton;
+
+    /**
+     * Singular instance of model that the entire project uses to communicate
+     * with the backend
+     */
     private static Model model;
 
     @Override
@@ -36,6 +51,10 @@ public class ViewLostItemsActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Upon the home button being clicked, the screen will change to the
+     * welcome screen
+     */
     private void onHomeButtonClick() {
         Intent intent = new Intent(ViewLostItemsActivity.this, MainActivity
                 .class);

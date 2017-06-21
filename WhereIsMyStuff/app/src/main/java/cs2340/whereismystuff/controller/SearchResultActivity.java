@@ -9,8 +9,18 @@ import android.widget.TextView;
 
 import cs2340.whereismystuff.R;
 
+/**
+ * Represents the screen that shows user the result of the search
+ */
 public class SearchResultActivity extends AppCompatActivity {
+    /**
+     * The text box with the desription of the found item
+     */
     TextView _itemDescription;
+
+    /**
+     * The button users will push to go back to the welcome screen
+     */
     Button _backButton;
 
     @Override
@@ -34,8 +44,12 @@ public class SearchResultActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Upon the back button being clicked, the user will go back to the
+     * welcome screen
+     */
     private void onBackButtonClick() {
-        Intent intent = new Intent(SearchResultActivity.this, SearchActivity
+        Intent intent = new Intent(SearchResultActivity.this, WelcomeActivity
                 .class);
         startActivity(intent);
     }

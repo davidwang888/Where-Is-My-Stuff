@@ -18,7 +18,6 @@ import cs2340.whereismystuff.model.Model;
  * and allows them to attempt to login or return to the welcome screen
  */
 public class LoginActivity extends AppCompatActivity {
-
     /**
      * Text box user will enter username in
      */
@@ -101,8 +100,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     /**
-     * Upon the cancel button being clicked, creates an intent to return to the
-     * welcome screen and starts that intent
+     * Upon the cancel button being clicked, the page is changed to the
+     * welcome screen
      */
     private void onCancelButtonClick() {
         Intent intent = new Intent(LoginActivity.this, WelcomeActivity.class);

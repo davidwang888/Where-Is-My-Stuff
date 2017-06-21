@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import cs2340.whereismystuff.R;
@@ -18,25 +17,49 @@ import cs2340.whereismystuff.model.Model;
  * username, email, and password
  */
 public class RegisterActivity extends AppCompatActivity {
-
     /**
-     * The text boxes in which the user will enter their information
+     * The text box user will enter the first name in
      */
     private EditText _firstName;
+
+    /**
+     * The text box user will enter the last name in
+     */
     private EditText _lastName;
+
+    /**
+     * The text box user will enter the email in
+     */
     private EditText _email;
+
+    /**
+     * The text box user will enter the username in
+     */
     private EditText _username;
+
+    /**
+     * The text box user will enter the first password in
+     */
     private EditText _password1;
+
+    /**
+     * The text box user will enter the second password in
+     */
     private EditText _password2;
+
+    /**
+     * The boolean representing whether the user is an admin or not
+     */
     private boolean _isAdmin;
 
     /**
-     * Allows the user to attempt to register after entering their information
+     * Button user will click when they want to register
      */
     private Button _registerButton;
 
     /**
-     * Allows the user to cancel registration and return to the welcome screen
+     * Button user will click when they want to cancel and return to the
+     * welcome screen
      */
     private Button _cancelButton;
 
@@ -76,8 +99,8 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     /**
-     * Upon being clicked, verifies that the information the user has entered is
-     * acceptable and creates an account
+     * Upon the register button being clicked, verifies that the information
+     * the user has entered is acceptable and creates an account
      *
      * If the information the user has entered is invalid, displays toasts that
      * explain what the user needs to change
@@ -131,17 +154,20 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Upon the radio button being changed, the admin status change will be
+     * reflected in the instance data
+     *
+     * @param view the admin / user radio button
+     */
     public void onRadioButtonClick(View view) {
-        // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
-
-        // Check which radio button was clicked
         switch(view.getId()) {
-            case R.id.adminRadioButton:
+            case R.id.registerAdminRadioButton:
                 if (checked)
                     _isAdmin = true;
                     break;
-            case R.id.userRadioButton:
+            case R.id.registerUserRadioButton:
                 if (checked)
                     _isAdmin = false;
                     break;

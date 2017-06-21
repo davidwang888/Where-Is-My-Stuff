@@ -20,7 +20,7 @@
         android:text="@string/main_logout_button" />
 
     <TextView
-        android:id="@+id/mainTextView"
+        android:id="@+id/mainTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-smallcaps"
@@ -39,14 +39,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/mainTextView"
+        android:layout_below="@+id/mainTitleTextView"
         android:layout_marginTop="40dp"
         android:backgroundTint="@android:color/holo_blue_dark"
         android:text="@string/main_enter_lost_item_button"
         android:textColor="@android:color/white" />
 
     <Button
-        android:id="@+id/mainEnterFoundButton"
+        android:id="@+id/mainEnterFoundItemButton"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/mainEnterFoundButton"
+        android:layout_below="@+id/mainEnterFoundItemButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:backgroundTint="@android:color/holo_blue_dark"

@@ -18,6 +18,33 @@
         android:textSize="24sp" />
 
     <TextView
+        android:id="@+id/enterLostItemNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/enterLostItemTypeSpinner"
+        android:layout_alignLeft="@+id/enterLostItemTypeTextView"
+        android:layout_alignStart="@+id/enterLostItemTypeTextView"
+        android:layout_marginBottom="47dp"
+        android:text="Item Name:"
+        android:textSize="18sp"/>
+
+    <EditText
+        android:id="@+id/enterLostItemNameEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/enterLostItemNameTextView"
+        android:layout_alignBottom="@+id/enterLostItemNameTextView"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_toEndOf="@+id/enterLostItemNameTextView"
+        android:layout_toRightOf="@+id/enterLostItemNameTextView"
+        android:ems="10"
+        android:inputType="textPersonName">
+
+        <requestFocus/>
+    </EditText>
+
+    <TextView
         android:id="@+id/enterLostItemTypeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,6 +57,14 @@
         android:text="@string/enter_lost_item_type_text_view"
         android:textSize="18sp" />
 
+    <Spinner
+        android:id="@+id/enterLostItemTypeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/enterLostItemTypeTextView"
+        android:layout_toEndOf="@+id/enterLostItemTypeTextView"
+        android:layout_toRightOf="@+id/enterLostItemTypeTextView"/>
+
     <TextView
         android:id="@+id/enterLostItemDescriptionTextView"
         android:layout_width="wrap_content"
@@ -40,14 +75,6 @@
         android:layout_marginTop="65dp"
         android:text="@string/enter_lost_item_description_text_view"
         android:textSize="18sp" />
-
-    <Spinner
-        android:id="@+id/enterLostItemTypeSpinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/enterLostItemTypeTextView"
-        android:layout_toEndOf="@+id/enterLostItemTypeTextView"
-        android:layout_toRightOf="@+id/enterLostItemTypeTextView" />
 
     <EditText
         android:id="@+id/enterLostItemDescriptionEditText"
@@ -66,7 +93,7 @@
         android:gravity="top|left"/>
 
     <Button
-        android:id="@+id/enterLostItemButton"
+        android:id="@+id/enterLostItemEnterItemButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/enterLostItemDescriptionEditText"
@@ -74,33 +101,7 @@
         android:layout_alignStart="@+id/enterLostItemDescriptionEditText"
         android:layout_marginBottom="23dp"
         android:background="@android:color/holo_blue_dark"
-        android:text="Enter Item" />
-
-    <TextView
-        android:id="@+id/enterLostItemNameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/enterLostItemTypeSpinner"
-        android:layout_alignLeft="@+id/enterLostItemTypeTextView"
-        android:layout_alignStart="@+id/enterLostItemTypeTextView"
-        android:layout_marginBottom="47dp"
-        android:text="Item Name:"
-        android:textSize="18sp" />
-
-    <EditText
-        android:id="@+id/enterLostItemNameEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/enterLostItemNameTextView"
-        android:layout_alignBottom="@+id/enterLostItemNameTextView"
-        android:layout_marginLeft="18dp"
-        android:layout_marginStart="18dp"
-        android:layout_toEndOf="@+id/enterLostItemNameTextView"
-        android:layout_toRightOf="@+id/enterLostItemNameTextView"
-        android:ems="10"
-        android:inputType="textPersonName">
-        <requestFocus />
-    </EditText>
+        android:text="Enter Item"/>
 
 
 </RelativeLayout>

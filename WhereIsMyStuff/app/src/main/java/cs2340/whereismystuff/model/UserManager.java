@@ -7,7 +7,9 @@ import java.util.HashMap;
  * validating user input and logging users in
  */
 class UserManager {
-
+    /**
+     * The current user logged in
+     */
     private User _currentUser;
 
     /**
