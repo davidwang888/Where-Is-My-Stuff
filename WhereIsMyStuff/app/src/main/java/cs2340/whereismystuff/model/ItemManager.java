@@ -1,10 +1,13 @@
 package cs2340.whereismystuff.model;
+import android.content.ContentValues;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
 class ItemManager {
     private HashMap<String, Item> _lostItems;
     private HashMap<String, Item> _foundItems;
+
     private static final ItemManager instance = new ItemManager();
 
     private ItemManager() {
@@ -19,6 +22,10 @@ class ItemManager {
     void addLostItem(String name, int typePosition, String description, User
             user) {
         ItemType type = ItemType.values()[typePosition];
+        //start db stuff
+        ContentValues values = new ContentValues();
+
+        //end db stuff
         _lostItems.put(name, new Item(name, type, description, user));
     }
 

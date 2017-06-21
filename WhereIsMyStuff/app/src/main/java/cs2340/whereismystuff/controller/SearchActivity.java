@@ -44,7 +44,7 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void onSearchButtonClick() {
-        if (model.search(_foundItem, _itemName.getText().toString())) {
+        if (model.searchFound(_foundItem, _itemName.getText().toString())) {
             Intent intent = new Intent(SearchActivity.this,
                     SearchResultActivity.class);
             intent.putExtra("description", model.searchResult(_foundItem,
