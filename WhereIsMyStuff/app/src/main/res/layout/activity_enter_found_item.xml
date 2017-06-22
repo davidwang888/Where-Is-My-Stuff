@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cs2340.whereismystuff.controller.EnterFoundItemActivity">
+
+    <TextView
+        android:id="@+id/enterFoundItemTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:text="@string/enter_found_item_title_text_view"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/enterFoundItemNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/enterFoundItemTypeSpinner"
+        android:layout_alignLeft="@+id/enterFoundItemTypeTextView"
+        android:layout_alignStart="@+id/enterFoundItemTypeTextView"
+        android:layout_marginBottom="47dp"
+        android:text="@string/enter_found_item_name_text_view"
+        android:textSize="18sp"/>
+
+    <EditText
+        android:id="@+id/enterFoundItemNameEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/enterFoundItemNameTextView"
+        android:layout_alignBottom="@+id/enterFoundItemNameTextView"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_toEndOf="@+id/enterFoundItemNameTextView"
+        android:layout_toRightOf="@+id/enterFoundItemNameTextView"
+        android:ems="10"
+        android:inputType="textPersonName"/>
+
+    <TextView
+        android:id="@+id/enterFoundItemTypeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/enterFoundItemTitleTextView"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="110dp"
+        android:text="@string/enter_found_item_type_text_view"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/enterFoundItemTypeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/enterFoundItemTypeTextView"
+        android:layout_toEndOf="@+id/enterFoundItemTypeTextView"
+        android:layout_toRightOf="@+id/enterFoundItemTypeTextView"/>
+
+    <TextView
+        android:id="@+id/enterFoundItemDescriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/enterFoundItemTypeTextView"
+        android:layout_alignStart="@+id/enterFoundItemTypeTextView"
+        android:layout_below="@+id/enterFoundItemTypeTextView"
+        android:layout_marginTop="65dp"
+        android:text="@string/enter_found_item_description_text_view"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/enterFoundItemDescriptionEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/enterFoundItemTitleTextView"
+        android:layout_alignLeft="@+id/enterFoundItemDescriptionTextView"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/enterFoundItemTitleTextView"
+        android:layout_alignStart="@+id/enterFoundItemDescriptionTextView"
+        android:layout_below="@+id/enterFoundItemDescriptionTextView"
+        android:layout_marginBottom="93dp"
+        android:backgroundTintMode="@android:color/holo_blue_dark"
+        android:ems="10"
+        android:gravity="top|left"
+        android:inputType="textMultiLine"/>
+
+    <Button
+        android:id="@+id/enterFoundItemEnterItemButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/enterFoundItemDescriptionEditText"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/enterFoundItemDescriptionEditText"
+        android:layout_marginBottom="23dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="@string/enter_found_item_button"/>
+
+</RelativeLayout>

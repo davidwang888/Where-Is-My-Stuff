@@ -6,15 +6,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="cs2340.whereismystuff.controller.WelcomeActivity">
-
+    <TextView
+        android:id="@+id/welcomeTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/welcome_welcome_text_view"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@android:color/black"
+        android:textSize="55sp"
+        android:textStyle="bold" />
     <Button
         android:id="@+id/welcomeLoginButton"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/welcomeWelcometextView"
+        android:layout_below="@+id/welcomeTitleTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="50dp"
         android:background="@android:color/holo_blue_dark"
         android:fontFamily="sans-serif-smallcaps"
         android:text="@string/welcome_login_button"
@@ -28,24 +40,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/welcomeLoginButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="50dp"
         android:background="@android:color/holo_blue_dark"
         android:fontFamily="sans-serif-smallcaps"
         android:text="@string/welcome_register_button"
         android:textAlignment="center"
         android:padding="5dip"/>
-
-    <TextView
-        android:id="@+id/welcomeWelcometextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="47dp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="@string/welcome_welcome_text_view"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@android:color/black"
-        android:textSize="55sp"
-        android:textStyle="bold" />
 </RelativeLayout>

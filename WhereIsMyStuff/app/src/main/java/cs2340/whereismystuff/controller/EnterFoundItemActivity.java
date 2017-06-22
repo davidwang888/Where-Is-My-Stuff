@@ -13,13 +13,13 @@ import cs2340.whereismystuff.R;
 import cs2340.whereismystuff.model.Model;
 
 /**
- * Represents the screen to enter a lost item
+ * Represents the screen to enter a found item
  *
  * Contains a text box for the user to enter the item's name, a spinner for
  * the item's type, and a text box for the item's description and allows them
- * to add a new lost item
+ * to add a new found item
  */
-public class EnterLostItemActivity extends AppCompatActivity {
+public class EnterFoundItemActivity extends AppCompatActivity {
     /**
      * Text box user will enter item name in
      */
@@ -49,15 +49,15 @@ public class EnterLostItemActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_enter_lost_item);
+        setContentView(R.layout.activity_enter_found_item);
         model  = Model.getInstance();
         _itemNameEditText = (EditText) findViewById(R.id
-                .enterLostItemNameEditText);
+                .enterFoundItemNameEditText);
         _itemTypeSpinner = (Spinner) findViewById(R.id
-                .enterLostItemTypeSpinner);
+                .enterFoundItemTypeSpinner);
         _itemDescription = (EditText) findViewById(R.id
-                .enterLostItemDescriptionEditText);
-        _enterItemButton = (Button) findViewById(R.id.enterLostItemButton);
+                .enterFoundItemDescriptionEditText);
+        _enterItemButton = (Button) findViewById(R.id.enterFoundItemButton);
         _enterItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,15 +70,15 @@ public class EnterLostItemActivity extends AppCompatActivity {
 
     /**
      * Upon the enter item button clicked, item is entered and screen is
-     * changed to the view lost items screen
+     * changed to the view found items screen
      */
     private void onEnterItemClick() {
         String name = _itemNameEditText.getText().toString();
         int type = _itemTypeSpinner.getSelectedItemPosition();
         String description = _itemDescription.getText().toString();
-        model.addLostItem(name, type, description, model.getCurrentUser());
-        Intent intent = new Intent(EnterLostItemActivity.this,
-                ViewLostItemsActivity.class);
+        model.addFoundItem(name, type, description, model.getCurrentUser());
+        Intent intent = new Intent(EnterFoundItemActivity.this,
+                ViewFoundItemsActivity.class);
         startActivity(intent);
     }
 }

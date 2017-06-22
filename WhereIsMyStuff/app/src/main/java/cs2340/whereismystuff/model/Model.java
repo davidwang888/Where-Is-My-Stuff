@@ -7,13 +7,16 @@ import java.util.ArrayList;
  * communicate with the backend
  */
 public class Model {
-
     /**
      * The one UserManager that will be used by this class to keep track of the
      * different users of the application
      */
     private static final UserManager userManager = UserManager.getInstance();
 
+    /**
+     * The one ItemManager that will be used by this class to keep track of the
+     * different items of the application
+     */
     private static final ItemManager itemManager = ItemManager.getInstance();
 
     /**
@@ -23,6 +26,7 @@ public class Model {
 
     /**
      * Returns the model
+     *
      * @return the model
      */
     public static Model getInstance() {
@@ -32,6 +36,7 @@ public class Model {
     /**
      * Adds the user's information to the appropriate variables in UserManager
      * and communicates with the controller to let it know what to tell the user
+     *
      * @param  firstName     The user's first name
      * @param  lastName      The user's last name
      * @param  email         The user's email address
@@ -63,22 +68,97 @@ public class Model {
         return userManager.loginUser(usernameEmail, password);
     }
 
-    public void addItem(String name, ItemType type, String description, User user) {
-        itemManager.addItem(name, type, description, user);
-    }
-
     /**
-     * Takes in the user's email and lets the UserManager use it to find and
-     * return the corresponding user's username
+     * Provides the current user's name
+     *
      * @return The user's name
      */
     public String getName() {
         return userManager.getName();
     }
 
+    /**
+     * Provides the current user logged in
+     *
+     * @return the current user
+     */
     public User getCurrentUser() {
         return userManager.getCurrentUser();
     }
 
-    public ArrayList<Item> getLostItems() {return itemManager.getLostItems(); }
+    /**
+     * Provides an array of all the item types
+     *
+     * @return an array of all the item types
+     */
+    public ItemType[] getItemTypes() {
+        return ItemType.values();
+    }
+
+    /**
+     * Adds a lost item to the lost item collection
+     *
+     * @param name the name of the new item
+     * @param type the int position of the type of the new item
+     * @param description the description of the new item
+     * @param user the user who entered the new item
+     */
+    public void addLostItem(String name, int type, String description, User
+            user) {
+        itemManager.addLostItem(name, type, description, user);
+    }
+
+    /**
+     * Adds a lost item to the found item collection
+     *
+     * @param name the name of the new item
+     * @param type the int position of the type of the new item
+     * @param description the description of the new item
+     * @param user the user who entered the new item
+     */
+    public void addFoundItem(String name, int type, String description,
+                             User user) {
+        itemManager.addFoundItem(name, type, description, user);
+    }
+
+    /**
+     * Returns a list of all the lost items for the list view
+     *
+     * @return a list of all the lost items
+     */
+    public ArrayList<Item> getLostItems() {
+        return itemManager.getLostItems();
+    }
+
+    /**
+     * Returns a list of all the found items for the list view
+     *
+     * @return a list of all the found items
+     */
+    public ArrayList<Item> getFoundItems() {
+        return itemManager.getFoundItems();
+    }
+
+    /**
+     * Looks for an item and returns whether the item is stored in the item
+     * manager
+     *
+     * @param foundItem whether the item is a found item or not
+     * @param name the name of the item
+     * @return a boolean whether the item is found
+     */
+    public boolean searchFound(Boolean foundItem, String name) {
+        return itemManager.searchFound(foundItem, name);
+    }
+
+    /**
+     * Looks for an item and returns the item from the item manager
+     *
+     * @param foundItem whether the item is a found item or not
+     * @param name the name of the item
+     * @return a boolean whether the item is found
+     */
+    public String searchResult(Boolean foundItem, String name) {
+        return itemManager.searchResult(foundItem, name);
+    }
 }

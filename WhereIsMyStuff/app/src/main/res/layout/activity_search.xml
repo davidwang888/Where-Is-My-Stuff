@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cs2340.whereismystuff.controller.SearchActivity">
+
+    <TextView
+        android:id="@+id/searchTypeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:text="Item Type:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/searchTypeTextView"
+                android:layout_alignLeft="@+id/searchTypeTextView"
+                android:layout_alignStart="@+id/searchTypeTextView"
+                android:checkedButton="@+id/searchFoundRadioButton"
+                android:id="@+id/searchRadioGroup">
+
+        <RadioButton
+            android:id="@+id/searchFoundRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClick"
+            android:text="Found Item"
+            app:buttonTint="@android:color/holo_blue_dark" />
+
+        <RadioButton
+            android:id="@+id/searchLostRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:onClick="onRadioButtonClick"
+            android:text="Lost Item"
+            app:buttonTint="@android:color/holo_blue_dark"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/searchNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/searchRadioGroup"
+        android:layout_alignStart="@+id/searchRadioGroup"
+        android:layout_below="@+id/searchRadioGroup"
+        android:layout_marginTop="59dp"
+        android:text="Item Name:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+    <EditText
+        android:id="@+id/searchNameEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/searchNameTextView"
+        android:layout_alignStart="@+id/searchNameTextView"
+        android:layout_below="@+id/searchNameTextView"
+        android:ems="10"
+        android:inputType="textPersonName"/>
+
+    <Button
+        android:id="@+id/searchSearchButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/searchNameEditText"
+        android:layout_alignStart="@+id/searchNameEditText"
+        android:layout_below="@+id/searchNameEditText"
+        android:layout_marginTop="82dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:text="Search"/>
+
+    <Button
+        android:id="@+id/searchCancelButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/searchSearchButton"
+        android:layout_toEndOf="@+id/searchTypeTextView"
+        android:layout_toRightOf="@+id/searchTypeTextView"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:text="Cancel"/>
+
+</RelativeLayout>

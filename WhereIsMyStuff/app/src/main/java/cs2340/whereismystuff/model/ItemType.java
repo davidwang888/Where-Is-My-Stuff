@@ -1,10 +1,12 @@
 package cs2340.whereismystuff.model;
 
 /**
- * Created by carolinekish on 6/15/17.
+ * A representation of all the types of items
  */
-
-public enum ItemType {
+enum ItemType {
+    /**
+     * The different types an item can be
+     */
     TECHNOLOGICAL ("Technological"),
     FURNITURE ("Furniture"),
     RECREATIONAL ("Recreational"),
@@ -12,13 +14,23 @@ public enum ItemType {
     PET ("Pet"),
     OTHER ("Other");
 
-    private final String type;
+    /**
+     * The string representation of the type
+     */
+    private final String _type;
 
+
+    /**
+     * Creates a new item type
+     *
+     * @param ptype the name of the item type
+     */
     ItemType(String ptype) {
-        type = ptype;
+        _type = ptype;
     }
 
-    public String getType() {return type; }
-
-    public String toString() { return type; }
+    @Override
+    public String toString() {
+        return _type;
+    }
 }

@@ -12,13 +12,13 @@ import cs2340.whereismystuff.R;
 import cs2340.whereismystuff.model.Model;
 
 /**
- * Represents the screen tha shows the user the list of all the lost items
+ * Represents the screen tha shows the user the list of all the found items
  */
-public class ViewLostItemsActivity extends AppCompatActivity {
+public class ViewFoundItemsActivity extends AppCompatActivity {
     /**
      * A list view of all the items
      */
-    private ListView _viewLostItemsListView;
+    private ListView _viewFoundItemsListView;
 
     /**
      * The button users will push to go back to the welcome screen
@@ -34,14 +34,16 @@ public class ViewLostItemsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_lost_items);
-        _homeButton = (Button) findViewById(R.id.viewLostItemsHomeButton);
+        setContentView(R.layout.activity_view_found_items);
         model = Model.getInstance();
+        _homeButton = (Button) findViewById(R.id.viewFoundItemsHomeButton);
 
-        _viewLostItemsListView = (ListView) findViewById(R.id.viewLostItemsListView);
+        _viewFoundItemsListView = (ListView) findViewById(R.id
+                .viewFoundItemsListView);
         ArrayAdapter adapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item,
-                model.getLostItems());
-        _viewLostItemsListView.setAdapter(adapter);
+                model.getFoundItems());
+        _viewFoundItemsListView.setAdapter(adapter);
+
         _homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +58,7 @@ public class ViewLostItemsActivity extends AppCompatActivity {
      * welcome screen
      */
     private void onHomeButtonClick() {
-        Intent intent = new Intent(ViewLostItemsActivity.this, MainActivity
+        Intent intent = new Intent(ViewFoundItemsActivity.this, MainActivity
                 .class);
         startActivity(intent);
     }
