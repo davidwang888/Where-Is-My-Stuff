@@ -57,7 +57,8 @@ public class EnterFoundItemActivity extends AppCompatActivity {
                 .enterFoundItemTypeSpinner);
         _itemDescription = (EditText) findViewById(R.id
                 .enterFoundItemDescriptionEditText);
-        _enterItemButton = (Button) findViewById(R.id.enterFoundItemButton);
+        _enterItemButton = (Button) findViewById(R.id
+                .enterFoundItemEnterItemButton);
         _enterItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

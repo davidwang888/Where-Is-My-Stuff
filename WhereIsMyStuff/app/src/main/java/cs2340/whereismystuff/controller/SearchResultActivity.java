@@ -29,8 +29,8 @@ public class SearchResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search_result);
 
         _itemDescription = (TextView) findViewById(R.id
-                .searchItemDescriptionTextView);
-        _backButton = (Button) findViewById(R.id.searchBackButton);
+                .searchResultDescriptionTextView);
+        _backButton = (Button) findViewById(R.id.searchResultHomeButton);
         Bundle extra = getIntent().getExtras();
         if (extra.containsKey("description")) {
             _itemDescription.setText(extra.getString("description"));

@@ -57,7 +57,8 @@ public class EnterLostItemActivity extends AppCompatActivity {
                 .enterLostItemTypeSpinner);
         _itemDescription = (EditText) findViewById(R.id
                 .enterLostItemDescriptionEditText);
-        _enterItemButton = (Button) findViewById(R.id.enterLostItemButton);
+        _enterItemButton = (Button) findViewById(R.id
+                .enterLostItemEnterItemButton);
         _enterItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

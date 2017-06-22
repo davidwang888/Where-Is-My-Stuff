@@ -126,9 +126,11 @@ class UserManager {
         int code = validateInput(firstName, lastName, email, username,
                 password1, password2);
         if (code == 0) {
-            _users.put(username, new User(firstName, lastName, email, username,
-                    password1, isAdmin));
+            User newUser = new User(firstName, lastName, email, username,
+                    password1, isAdmin);
+            _users.put(username, newUser);
             _emailUser.put(email, username);
+            _currentUser = newUser;
         }
         return code;
     }

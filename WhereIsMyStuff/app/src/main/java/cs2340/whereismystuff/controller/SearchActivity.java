@@ -111,7 +111,7 @@ public class SearchActivity extends AppCompatActivity {
                 if (checked)
                     _foundItem = true;
                 break;
-            case R.id.lostRadioButton:
+            case R.id.searchLostRadioButton:
                 if (checked)
                     _foundItem = false;
                 break;
