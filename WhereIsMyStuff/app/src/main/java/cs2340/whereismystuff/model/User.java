@@ -4,55 +4,6 @@ package cs2340.whereismystuff.model;
  * Represents a user and contains all of the information about that user
  */
 public class User {
-
-    public String get_firstName() {
-        return _firstName;
-    }
-
-    public String get_lastName() {
-        return _lastName;
-    }
-
-    public String get_email() {
-        return _email;
-    }
-
-    public String get_username() {
-        return _username;
-    }
-
-    public String get_password() {
-        return _password;
-    }
-
-    public boolean is_isAdmin() {
-        return _isAdmin;
-    }
-
-    public void set_firstName(String _firstName) {
-        this._firstName = _firstName;
-    }
-
-    public void set_lastName(String _lastName) {
-        this._lastName = _lastName;
-    }
-
-    public void set_email(String _email) {
-        this._email = _email;
-    }
-
-    public void set_username(String _username) {
-        this._username = _username;
-    }
-
-    public void set_password(String _password) {
-        this._password = _password;
-    }
-
-    public void set_isAdmin(boolean _isAdmin) {
-        this._isAdmin = _isAdmin;
-    }
-
     /**
      * The user's first name
      */
@@ -105,6 +56,54 @@ public class User {
     }
 
     public User() {
+    }
+
+    public String getFirstName() {
+        return _firstName;
+    }
+
+    public String getLastName() {
+        return _lastName;
+    }
+
+    public String getEmail() {
+        return _email;
+    }
+
+    public String getUsername() {
+        return _username;
+    }
+
+    public String getPassword() {
+        return _password;
+    }
+
+    public boolean isIsAdmin() {
+        return _isAdmin;
+    }
+
+    public void setFirstName(String _firstName) {
+        this._firstName = _firstName;
+    }
+
+    public void setLastName(String _lastName) {
+        this._lastName = _lastName;
+    }
+
+    public void setEmail(String _email) {
+        this._email = _email;
+    }
+
+    public void setUsername(String _username) {
+        this._username = _username;
+    }
+
+    public void setPassword(String _password) {
+        this._password = _password;
+    }
+
+    public void setIsAdmin(boolean _isAdmin) {
+        this._isAdmin = _isAdmin;
     }
 
     /**

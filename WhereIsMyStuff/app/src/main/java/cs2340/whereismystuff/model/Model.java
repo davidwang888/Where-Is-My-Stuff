@@ -2,8 +2,6 @@ package cs2340.whereismystuff.model;
 
 import com.google.android.gms.maps.model.LatLng;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -35,6 +33,10 @@ public class Model {
      */
     public static Model getInstance() {
         return instance;
+    }
+
+    public void setUp() {
+        itemManager.setUp();
     }
 
     /**
@@ -164,21 +166,5 @@ public class Model {
      */
     public String searchResult(Boolean foundItem, String name) {
         return itemManager.searchResult(foundItem, name);
-    }
-
-    void setUsers(HashMap<String, User> users) {
-        userManager.setUsers(users);
-    }
-
-    void setEmailUser(HashMap<String, String> emailUser) {
-        userManager.setEmailUser(emailUser);
-    }
-
-    void setLostItems(HashMap<String, Item> lostItems) {
-        itemManager.setLostItems(lostItems);
-    }
-
-    void setFoundItems(HashMap<String, Item> foundItems) {
-        itemManager.setFoundItems(foundItems);
     }
 }

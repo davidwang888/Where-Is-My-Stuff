@@ -1,6 +1,4 @@
 package cs2340.whereismystuff.model;
-import android.content.ContentValues;
-import android.provider.ContactsContract;
 
 import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.database.DataSnapshot;
@@ -28,6 +26,20 @@ class ItemManager {
      */
     private HashMap<String, Item> _foundItems;
 
+    /**
+     * The database reference to the whole Firebase database
+     */
+    private DatabaseReference _databaseRef;
+
+    /**
+     * The database reference to the lost item section of the Firebase database
+     */
+    private DatabaseReference _lostItemsDatabase;
+
+    /**
+     * The database reference to the found item section of the Firebase database
+     */
+    private DatabaseReference _foundItemsDatabase;
 
     /**
      * The singular instance of UserManager that will be used by the Model to
@@ -35,15 +47,15 @@ class ItemManager {
      */
     private static final ItemManager instance = new ItemManager();
 
-    private DatabaseReference _databaseRef = FirebaseDatabase.getInstance()
-            .getReference();
-
     /**
      * Creates a ItemManager
      */
     private ItemManager() {
         _lostItems = new HashMap<>();
         _foundItems = new HashMap<>();
+        _databaseRef = FirebaseDatabase.getInstance().getReference();
+        _lostItemsDatabase = _databaseRef.child("lost items");
+        _foundItemsDatabase = _databaseRef.child("found items");
     }
 
     /**
@@ -62,18 +74,41 @@ class ItemManager {
      * @param description the description of the new item
      * @param user the user who entered the new item
      */
+    private void setUpAddLostItem(String name, int typePosition, String
+            description, User user, LatLng latLng) {
+        ItemType type = ItemType.values()[typePosition];
+        _lostItems.put(name, new Item(name, type, description, user, latLng));
+    }
+
+    /**
+     * Adds a found item to the lost item collection
+     *
+     * @param name the name of the new item
+     * @param typePosition the type of the new item
+     * @param description the description of the new item
+     * @param user the user who entered the new item
+     */
+    private void setUpAddFoundItem(String name, int typePosition, String
+            description, User user, LatLng latLng) {
+        ItemType type = ItemType.values()[typePosition];
+        _lostItems.put(name, new Item(name, type, description, user, latLng));
+    }
+
+    /**
+     * Adds a lost item to the lost item collection
+     *
+     * @param name the name of the new item
+     * @param typePosition the type of the new item
+     * @param description the description of the new item
+     * @param user the user who entered the new item
+     */
     void addLostItem(String name, int typePosition, String description, User
             user, LatLng latLng) {
-        DatabaseReference lostItemsRef = _databaseRef.child("lost items");
         ItemType type = ItemType.values()[typePosition];
-        //start db stuff
-        ContentValues values = new ContentValues();
+        _lostItems.put(name, new Item(name, type, description, user, latLng));
         Map<String, Object> updates = new HashMap<>();
         updates.put(name, new Item(name, type, description, user, latLng));
-
-        //end db stuff
-        _lostItems.put(name, new Item(name, type, description, user, latLng));
-        lostItemsRef.updateChildren(updates);
+        _lostItemsDatabase.updateChildren(updates);
     }
 
     /**
@@ -86,15 +121,66 @@ class ItemManager {
      */
     void addFoundItem(String name, int typePosition, String description, User
             user, LatLng latLng) {
-        DatabaseReference foundItemsRef = _databaseRef.child("found items");
         ItemType type = ItemType.values()[typePosition];
+        _foundItems.put(name, new Item(name, type, description, user, latLng));
         Map<String, Object> updates = new HashMap<>();
         updates.put(name, new Item(name, type, description, user, latLng));
+        _foundItemsDatabase.updateChildren(updates);
+    }
 
-        //end db stuff
-        _lostItems.put(name, new Item(name, type, description, user, latLng));
-        foundItemsRef.updateChildren(updates);
-        _foundItems.put(name, new Item(name, type, description, user, latLng));
+    /**
+     * Sets up the ItemManage by adding a listener to the FirebaseDatabase.
+     * Anytime anything changes, the corresponding hashmaps will be updated
+     */
+    void setUp() {
+        _lostItemsDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snap : dataSnapshot.getChildren()) {
+                    String name = (String) snap.child("name").getValue();
+                    int type = ItemType.valueOf((String) snap.child("type")
+                            .getValue()).ordinal();
+                    String description = (String) snap.child("description")
+                            .getValue();
+                    User user = snap.child("user").getValue(User.class);
+                    Double latitude = (Double) snap.child("latLng").child
+                            ("latitude").getValue();
+                    Double longitude = (Double) snap.child("latLng").child
+                            ("longitude").getValue();
+                    LatLng latLng = new LatLng(latitude, longitude);
+                    setUpAddLostItem(name, type, description, user, latLng);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        _foundItemsDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snap : dataSnapshot.getChildren()) {
+                    String name = (String) snap.child("name").getValue();
+                    int type = ItemType.valueOf((String) snap.child("type")
+                            .getValue()).ordinal();
+                    String description = (String) snap.child("description")
+                            .getValue();
+                    User user = snap.child("_user").getValue(User.class);
+                    Double latitude = (Double) snap.child("latLng").child
+                            ("latitude").getValue();
+                    Double longitude = (Double) snap.child("latLng").child
+                            ("longitude").getValue();
+                    LatLng latLng = new LatLng(latitude, longitude);
+                    setUpAddFoundItem(name, type, description, user, latLng);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     /**
@@ -140,18 +226,10 @@ class ItemManager {
      */
     String searchResult(Boolean foundItem, String name) {
         if (foundItem) {
-            return _foundItems.get(name).getDescription();
+            return _foundItems.get(name).getSearchDescription();
         } else {
-            return _lostItems.get(name).getDescription();
+            return _lostItems.get(name).getSearchDescription();
         }
-    }
-
-    void setLostItems(HashMap<String, Item> lostItems) {
-        _lostItems = lostItems;
-    }
-
-    void setFoundItems(HashMap<String, Item> foundItems) {
-        _foundItems = foundItems;
     }
 }
 

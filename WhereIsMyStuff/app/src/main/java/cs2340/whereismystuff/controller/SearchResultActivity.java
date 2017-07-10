@@ -14,7 +14,7 @@ import cs2340.whereismystuff.R;
  */
 public class SearchResultActivity extends AppCompatActivity {
     /**
-     * The text box with the desription of the found item
+     * The text box with the description of the found item
      */
     TextView _itemDescription;
 

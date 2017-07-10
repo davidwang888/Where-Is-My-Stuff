@@ -193,12 +193,4 @@ class UserManager {
     User getCurrentUser() {
         return _currentUser;
     }
-
-    void setUsers(HashMap<String, User> users) {
-        _users = users;
-    }
-
-    void setEmailUser(HashMap<String, String> emailUser) {
-        _emailUser = emailUser;
-    }
 }

@@ -6,47 +6,6 @@ import com.google.android.gms.maps.model.LatLng;
  * Represents a item and contains all of the information about that item
  */
 public class Item {
-
-    public String get_name() {
-        return _name;
-    }
-
-    public ItemType get_type() {
-        return _type;
-    }
-
-    public String get_description() {
-        return _description;
-    }
-
-    public User get_user() {
-        return _user;
-    }
-
-    public LatLng get_latLng() {
-        return _latLng;
-    }
-
-    public void set_name(String _name) {
-        this._name = _name;
-    }
-
-    public void set_type(ItemType _type) {
-        this._type = _type;
-    }
-
-    public void set_description(String _description) {
-        this._description = _description;
-    }
-
-    public void set_user(User _user) {
-        this._user = _user;
-    }
-
-    public void set_latLng(LatLng _latLng) {
-        this._latLng = _latLng;
-    }
-
     /**
      * The item's name
      */
@@ -67,6 +26,9 @@ public class Item {
      */
     private User _user;
 
+    /**
+     * The location of the item
+     */
     private LatLng _latLng;
 
     /**
@@ -76,6 +38,7 @@ public class Item {
      * @param type the new item's type
      * @param description the new item's description
      * @param user the new item's user
+     * @param latLng the new item's location
      */
     Item(String name, ItemType type, String description, User user, LatLng
             latLng) {
@@ -87,8 +50,8 @@ public class Item {
     }
 
     public Item() {
-        this("a", ItemType.FURNITURE, "d", new User(), new LatLng(0, 0));
     }
+
     /**
      * Returns the item's name
      *
@@ -99,18 +62,86 @@ public class Item {
     }
 
     /**
+     * Returns the item's type
+     *
+     * @return the item's type
+     */
+    public ItemType getType() {
+        return _type;
+    }
+
+    /**
+     * Returns the item's description
+     *
+     * @return the item's user
+     */
+    public String getDescription() {
+        return _description;
+    }
+
+    /**
+     * Returns the item's user
+     *
+     * @return the item's user
+     */
+    public User getUser() {
+        return _user;
+    }
+
+    /**
+     * Returns the item's location
+     *
+     * @return the item's location
+     */
+    public LatLng getLatLng() {
+        return _latLng;
+    }
+
+    /**
+     * Sets the item's name
+     */
+    public void setName(String _name) {
+        this._name = _name;
+    }
+
+    /**
+     * Sets the item's type
+     */
+    public void setType(ItemType _type) {
+        this._type = _type;
+    }
+
+    /**
+     * Sets the item's description
+     */
+    public void setDescription(String _description) {
+        this._description = _description;
+    }
+
+    /**
+     * Sets the item's user
+     */
+    public void setUser(User _user) {
+        this._user = _user;
+    }
+
+    /**
+     * Sets the item's location
+     */
+    public void setLatLng(LatLng _latLng) {
+        this._latLng = _latLng;
+    }
+
+    /**
      * Returns a string with the item's description for the search screen
      *
      * @return a string of the item's description
      */
-    public String getDescription() {
+    public String getSearchDescription() {
         return "Name: " + _name + "\nType: " + _type + "\nDescription: " +
                 _description + "\nUser: " + _user.getName();
     }
 
-    public LatLng getLatLng() {
-        return _latLng;
-    }
     @Override
     public String toString() {
         return _type.toString() + ": " + _name;
