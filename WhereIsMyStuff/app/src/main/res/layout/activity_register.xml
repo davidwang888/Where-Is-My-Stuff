@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     tools:context="cs2340.whereismystuff.controller.RegisterActivity">
 
     <TextView
@@ -170,7 +171,7 @@
             android:layout_alignTop="@+id/registerAccountTypeTextView"
             android:onClick="onRadioButtonClick"
             android:text="@string/register_admin_radio_button"
-            app:buttonTint="@android:color/holo_blue_dark"/>
+            app:buttonTint="@color/buttonColor"/>
 
         <RadioButton
             android:id="@+id/registerUserRadioButton"
@@ -185,7 +186,7 @@
             android:layout_toRightOf="@+id/registerAdminRadioButton"
             android:onClick="onRadioButtonClick"
             android:text="@string/register_user_radio_button"
-            app:buttonTint="@android:color/holo_blue_dark"/>
+            app:buttonTint="@color/buttonColor"/>
 
     </RadioGroup>
 
@@ -209,7 +210,7 @@
             android:layout_alignBottom="@+id/registerCancelButton"
             android:layout_alignLeft="@+id/registerPasswordEditText2"
             android:layout_alignStart="@+id/registerPasswordEditText2"
-            android:backgroundTint="@android:color/holo_blue_dark"
+            android:backgroundTint="@color/buttonColor"
             android:text="@string/register_register_button"
             android:textAlignment="center"
             android:padding="5dip"
@@ -224,7 +225,7 @@
             android:layout_alignBottom="@+id/registerCancelButton"
             android:layout_alignLeft="@+id/registerPasswordEditText2"
             android:layout_alignStart="@+id/registerPasswordEditText2"
-            android:backgroundTint="@android:color/holo_blue_dark"
+            android:backgroundTint="@color/buttonColor"
             android:text="@string/register_cancel_button"
             android:textAlignment="center"
             android:padding="5dip"

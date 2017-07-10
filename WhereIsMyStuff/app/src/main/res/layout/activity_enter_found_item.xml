@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     tools:context="cs2340.whereismystuff.controller.EnterFoundItemActivity">
 
     <TextView
@@ -98,7 +99,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/enterFoundItemDescriptionEditText"
         android:layout_marginBottom="23dp"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@color/buttonColor"
         android:text="@string/enter_found_item_button"/>
 
 </RelativeLayout>

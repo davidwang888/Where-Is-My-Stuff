@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     tools:context="cs2340.whereismystuff.controller.WelcomeActivity">
     <TextView
         android:id="@+id/welcomeTitleTextView"
@@ -27,7 +28,7 @@
         android:layout_below="@+id/welcomeTitleTextView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@color/buttonColor"
         android:fontFamily="sans-serif-smallcaps"
         android:text="@string/welcome_login_button"
         android:textAlignment="center"
@@ -41,7 +42,7 @@
         android:layout_below="@+id/welcomeLoginButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@color/buttonColor"
         android:fontFamily="sans-serif-smallcaps"
         android:text="@string/welcome_register_button"
         android:textAlignment="center"

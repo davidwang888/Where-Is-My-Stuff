@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     tools:context="cs2340.whereismystuff.controller.ViewLostItemsActivity">
 
     <TextView
@@ -35,6 +36,6 @@
         android:layout_marginStart="52dp"
         android:layout_toEndOf="@+id/viewLostItemsTextView"
         android:layout_toRightOf="@+id/viewLostItemsTextView"
-        android:backgroundTint="@android:color/holo_blue_dark"
+        android:backgroundTint="@color/buttonColor"
         android:text="Home"/>
 </RelativeLayout>
