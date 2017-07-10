@@ -51,5 +51,6 @@
 
     <!--activity_view_lost_items-->
     <string name="view_found_items_text_view">Found Items:</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>

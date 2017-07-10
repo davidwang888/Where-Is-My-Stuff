@@ -107,8 +107,9 @@ public class MainActivity extends AppCompatActivity {
      * enter lost activity screen
      */
     private void onEnterLostItemButtonClick() {
-        Intent intent = new Intent(MainActivity.this, EnterLostItemActivity
+        Intent intent = new Intent(MainActivity.this, MapsActivity
                 .class);
+        intent.putExtra("isFoundItem", false);
         startActivity(intent);
     }
 
@@ -117,8 +118,9 @@ public class MainActivity extends AppCompatActivity {
      * enter found item screen
      */
     private void onEnterFoundItemButtonClick(){
-        Intent intent = new Intent(MainActivity.this, EnterFoundItemActivity
+        Intent intent = new Intent(MainActivity.this, MapsActivity
                 .class);
+        intent.putExtra("isFoundItem", true);
         startActivity(intent);
     }
 

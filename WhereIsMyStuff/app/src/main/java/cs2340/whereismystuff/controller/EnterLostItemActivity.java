@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import cs2340.whereismystuff.R;
 import cs2340.whereismystuff.model.Model;
 
@@ -77,7 +79,8 @@ public class EnterLostItemActivity extends AppCompatActivity {
         String name = _itemNameEditText.getText().toString();
         int type = _itemTypeSpinner.getSelectedItemPosition();
         String description = _itemDescription.getText().toString();
-        model.addLostItem(name, type, description, model.getCurrentUser());
+        LatLng latLng = (LatLng) getIntent().getExtras().get("latLng");
+        model.addLostItem(name, type, description, model.getCurrentUser(), latLng);
         Intent intent = new Intent(EnterLostItemActivity.this,
                 ViewLostItemsActivity.class);
         startActivity(intent);

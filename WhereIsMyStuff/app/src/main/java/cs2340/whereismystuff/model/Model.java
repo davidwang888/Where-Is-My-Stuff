@@ -1,6 +1,10 @@
 package cs2340.whereismystuff.model;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * Represents a singular instance of the model that the entire project uses to
@@ -104,8 +108,8 @@ public class Model {
      * @param user the user who entered the new item
      */
     public void addLostItem(String name, int type, String description, User
-            user) {
-        itemManager.addLostItem(name, type, description, user);
+            user, LatLng latLng) {
+        itemManager.addLostItem(name, type, description, user, latLng);
     }
 
     /**
@@ -117,8 +121,8 @@ public class Model {
      * @param user the user who entered the new item
      */
     public void addFoundItem(String name, int type, String description,
-                             User user) {
-        itemManager.addFoundItem(name, type, description, user);
+                             User user, LatLng latLng) {
+        itemManager.addFoundItem(name, type, description, user, latLng);
     }
 
     /**
@@ -126,7 +130,7 @@ public class Model {
      *
      * @return a list of all the lost items
      */
-    public ArrayList<Item> getLostItems() {
+    public List<Item> getLostItems() {
         return itemManager.getLostItems();
     }
 
@@ -135,7 +139,7 @@ public class Model {
      *
      * @return a list of all the found items
      */
-    public ArrayList<Item> getFoundItems() {
+    public List<Item> getFoundItems() {
         return itemManager.getFoundItems();
     }
 
@@ -160,5 +164,21 @@ public class Model {
      */
     public String searchResult(Boolean foundItem, String name) {
         return itemManager.searchResult(foundItem, name);
+    }
+
+    void setUsers(HashMap<String, User> users) {
+        userManager.setUsers(users);
+    }
+
+    void setEmailUser(HashMap<String, String> emailUser) {
+        userManager.setEmailUser(emailUser);
+    }
+
+    void setLostItems(HashMap<String, Item> lostItems) {
+        itemManager.setLostItems(lostItems);
+    }
+
+    void setFoundItems(HashMap<String, Item> foundItems) {
+        itemManager.setFoundItems(foundItems);
     }
 }

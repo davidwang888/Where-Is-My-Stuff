@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     tools:context="cs2340.whereismystuff.controller.SearchResultActivity">
 
     <TextView
@@ -38,6 +39,6 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:backgroundTint="@android:color/holo_blue_dark"
+        android:backgroundTint="@color/buttonColor"
         android:text="Home"/>
 </RelativeLayout>

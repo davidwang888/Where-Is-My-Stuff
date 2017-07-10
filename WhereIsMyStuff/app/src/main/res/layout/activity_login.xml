@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     tools:context="cs2340.whereismystuff.controller.LoginActivity">
 
     <TextView
@@ -64,7 +65,7 @@
         android:layout_marginTop="50dp"
         android:layout_alignLeft="@+id/loginPasswordEditText"
         android:layout_alignStart="@+id/loginPasswordEditText"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@color/buttonColor"
         android:fontFamily="sans-serif-smallcaps"
         android:padding="5dip"
         android:text="@string/login_login_button"
@@ -79,7 +80,7 @@
         android:layout_alignRight="@+id/loginPasswordEditText"
         android:layout_alignBaseline="@+id/loginLoginButton"
         android:layout_alignBottom="@+id/loginLoginButton"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@color/buttonColor"
         android:fontFamily="sans-serif-smallcaps"
         android:text="@string/login_cancel_button"
         android:textAlignment="center"

@@ -1,8 +1,17 @@
 package cs2340.whereismystuff.model;
 import android.content.ContentValues;
+import android.provider.ContactsContract;
+
+import com.google.android.gms.maps.model.LatLng;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Reprsents a item manager that stores all the lost and found items and is
@@ -25,6 +34,9 @@ class ItemManager {
      * manage the users
      */
     private static final ItemManager instance = new ItemManager();
+
+    private DatabaseReference _databaseRef = FirebaseDatabase.getInstance()
+            .getReference();
 
     /**
      * Creates a ItemManager
@@ -51,13 +63,17 @@ class ItemManager {
      * @param user the user who entered the new item
      */
     void addLostItem(String name, int typePosition, String description, User
-            user) {
+            user, LatLng latLng) {
+        DatabaseReference lostItemsRef = _databaseRef.child("lost items");
         ItemType type = ItemType.values()[typePosition];
         //start db stuff
         ContentValues values = new ContentValues();
+        Map<String, Object> updates = new HashMap<>();
+        updates.put(name, new Item(name, type, description, user, latLng));
 
         //end db stuff
-        _lostItems.put(name, new Item(name, type, description, user));
+        _lostItems.put(name, new Item(name, type, description, user, latLng));
+        lostItemsRef.updateChildren(updates);
     }
 
     /**
@@ -69,9 +85,16 @@ class ItemManager {
      * @param user the user who entered the new item
      */
     void addFoundItem(String name, int typePosition, String description, User
-            user) {
+            user, LatLng latLng) {
+        DatabaseReference foundItemsRef = _databaseRef.child("found items");
         ItemType type = ItemType.values()[typePosition];
-        _foundItems.put(name, new Item(name, type, description, user));
+        Map<String, Object> updates = new HashMap<>();
+        updates.put(name, new Item(name, type, description, user, latLng));
+
+        //end db stuff
+        _lostItems.put(name, new Item(name, type, description, user, latLng));
+        foundItemsRef.updateChildren(updates);
+        _foundItems.put(name, new Item(name, type, description, user, latLng));
     }
 
     /**
@@ -121,6 +144,14 @@ class ItemManager {
         } else {
             return _lostItems.get(name).getDescription();
         }
+    }
+
+    void setLostItems(HashMap<String, Item> lostItems) {
+        _lostItems = lostItems;
+    }
+
+    void setFoundItems(HashMap<String, Item> foundItems) {
+        _foundItems = foundItems;
     }
 }
 

@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     tools:context="cs2340.whereismystuff.controller.SearchActivity">
 
     <TextView
@@ -36,7 +37,7 @@
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClick"
             android:text="Found Item"
-            app:buttonTint="@android:color/holo_blue_dark" />
+            app:buttonTint="@color/buttonColor" />
 
         <RadioButton
             android:id="@+id/searchLostRadioButton"
@@ -46,7 +47,7 @@
             android:layout_marginStart="10dp"
             android:onClick="onRadioButtonClick"
             android:text="Lost Item"
-            app:buttonTint="@android:color/holo_blue_dark"/>
+            app:buttonTint="@color/buttonColor"/>
 
     </RadioGroup>
 
@@ -80,7 +81,7 @@
         android:layout_alignStart="@+id/searchNameEditText"
         android:layout_below="@+id/searchNameEditText"
         android:layout_marginTop="82dp"
-        android:backgroundTint="@android:color/holo_blue_dark"
+        android:backgroundTint="@color/buttonColor"
         android:text="Search"/>
 
     <Button
@@ -91,7 +92,7 @@
         android:layout_alignTop="@+id/searchSearchButton"
         android:layout_toEndOf="@+id/searchTypeTextView"
         android:layout_toRightOf="@+id/searchTypeTextView"
-        android:backgroundTint="@android:color/holo_blue_dark"
+        android:backgroundTint="@color/buttonColor"
         android:text="Cancel"/>
 
 </RelativeLayout>
