@@ -169,11 +169,7 @@ class UserManager {
         } else if (!user.checkPassword(password)) {
             return 4;
         } else {
-            if (username) {
-                _currentUser = _users.get(usernameEmail);
-            } else {
-                _currentUser = _users.get(_emailUser.get(usernameEmail));
-            }
+            _currentUser = user
             return 0;
         }
     }
