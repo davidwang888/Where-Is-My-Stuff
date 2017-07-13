@@ -45,6 +45,18 @@ public class MainActivity extends AppCompatActivity {
     private Button _searchItemsButton;
 
     /**
+     * Button the user will click when they want to see the lost items
+     */
+    private Button _viewLostItemsButton;
+
+    /**
+     * Button the user will click when they want to see the found items
+     */
+    private Button _viewFoundItemsButton;
+
+    private Button _viewMapButton;
+
+    /**
      * Singular instance of model that the entire project uses to communicate
      * with the backend
      */
@@ -61,6 +73,11 @@ public class MainActivity extends AppCompatActivity {
         _enterFoundItemButton = (Button) findViewById(R.id
                 .mainEnterFoundItemButton);
         _searchItemsButton = (Button) findViewById(R.id.mainSearchItemsButton);
+        _viewLostItemsButton = (Button) findViewById(R.id
+                .mainViewLostItemsButton);
+        _viewFoundItemsButton = (Button) findViewById(R.id
+                .mainViewFoundItemsButton);
+        _viewMapButton = (Button) findViewById(R.id.mainViewMapButton);
         model = Model.getInstance();
         String _name = model.getName();
         _text.setText("Welcome " + _name + "!");
@@ -88,6 +105,24 @@ public class MainActivity extends AppCompatActivity {
                 onSearchItemsButtonClick();
             }
         });
+        _viewLostItemsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onViewLostItemsButtonClick();
+            }
+        });
+        _viewFoundItemsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onViewFoundItemsButtonClick();
+            }
+        });
+        _viewMapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onViewMapButtonClick();
+            }
+        });
     }
 
     /**
@@ -109,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
     private void onEnterLostItemButtonClick() {
         Intent intent = new Intent(MainActivity.this, MapsActivity
                 .class);
-        intent.putExtra("isFoundItem", false);
+        intent.putExtra("isLostItem", true);
         startActivity(intent);
     }
 
@@ -120,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
     private void onEnterFoundItemButtonClick(){
         Intent intent = new Intent(MainActivity.this, MapsActivity
                 .class);
-        intent.putExtra("isFoundItem", true);
+        intent.putExtra("isLostItem", false);
         startActivity(intent);
     }
 
@@ -130,6 +165,31 @@ public class MainActivity extends AppCompatActivity {
      */
     private void onSearchItemsButtonClick() {
         Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Upon the view lost items button clicked, the screen is changed to the
+     * view lost item screen
+     */
+    private void onViewLostItemsButtonClick() {
+        Intent intent = new Intent(MainActivity.this, ViewLostItemsActivity
+                .class);
+        startActivity(intent);
+    }
+
+    /**
+     * Upon the view found items button clicked, the screen is changed to the
+     * view found item screen
+     */
+    private void onViewFoundItemsButtonClick() {
+        Intent intent = new Intent(MainActivity.this, ViewFoundItemsActivity
+                .class);
+        startActivity(intent);
+    }
+
+    private void onViewMapButtonClick() {
+        Intent intent = new Intent(MainActivity.this, MapsActivity.class);
         startActivity(intent);
     }
 }

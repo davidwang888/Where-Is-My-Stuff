@@ -133,7 +133,7 @@ class ItemManager {
     private void setUpAddFoundItem(String name, int typePosition, String
             description, User user, LatLng latLng) {
         ItemType type = ItemType.values()[typePosition];
-        _lostItems.put(name, new Item(name, type, description, user, latLng));
+        _foundItems.put(name, new Item(name, type, description, user, latLng));
     }
 
     /**
@@ -261,30 +261,31 @@ class ItemManager {
      * Looks for an item and returns whether the item is stored in the item
      * manager
      *
-     * @param foundItem whether the item is a found item or not
+     * @param lostItem whether the item is a lost item or not
      * @param name the name of the item
      * @return a boolean whether the item is found
      */
-    boolean searchFound(Boolean foundItem, String name) {
-        if (foundItem) {
-            return _foundItems.get(name) != null;
-        } else {
+    boolean searchFound(Boolean lostItem, String name) {
+        if (lostItem) {
             return _lostItems.get(name) != null;
+        } else {
+            return _foundItems.get(name) != null;
         }
     }
 
     /**
      * Looks for an item and returns the item from the item manager
      *
-     * @param foundItem whether the item is a found item or not
+     * @param lostItem whether the item is a found item or not
      * @param name the name of the item
      * @return a boolena whether the item is found
      */
-    String searchResult(Boolean foundItem, String name) {
-        if (foundItem) {
-            return _foundItems.get(name).getSearchDescription();
+    String searchResult(Boolean lostItem, String name) {
+        Item item = (lostItem) ? _lostItems.get(name) : _foundItems.get(name);
+        if (lostItem) {
+            return "LOST ITEM:\n" + _lostItems.get(name).getSearchDescription();
         } else {
-            return _lostItems.get(name).getSearchDescription();
+            return "FOUND ITEM:\n" + _foundItems.get(name).getSearchDescription();
         }
     }
 }

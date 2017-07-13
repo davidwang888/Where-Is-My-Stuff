@@ -26,9 +26,9 @@ public class SearchActivity extends AppCompatActivity {
     EditText _itemName;
 
     /**
-     * The boolean representing whether the user is an admin or not
+     * The boolean representing whether the item is lost or not
      */
-    boolean _foundItem;
+    boolean _lostItem;
 
     /**
      * Button user will click when they want to search for the item
@@ -77,10 +77,10 @@ public class SearchActivity extends AppCompatActivity {
      * item is not found, shows a warning that the item is not found
      */
     private void onSearchButtonClick() {
-        if (model.searchFound(_foundItem, _itemName.getText().toString())) {
+        if (model.searchFound(_lostItem, _itemName.getText().toString())) {
             Intent intent = new Intent(SearchActivity.this,
                     SearchResultActivity.class);
-            intent.putExtra("description", model.searchResult(_foundItem,
+            intent.putExtra("description", model.searchResult(_lostItem,
                     _itemName.getText().toString()));
             startActivity(intent);
         } else {
@@ -107,13 +107,13 @@ public class SearchActivity extends AppCompatActivity {
     public void onRadioButtonClick(View view) {
         boolean checked = ((RadioButton) view).isChecked();
         switch(view.getId()) {
-            case R.id.searchFoundRadioButton:
-                if (checked)
-                    _foundItem = true;
-                break;
             case R.id.searchLostRadioButton:
                 if (checked)
-                    _foundItem = false;
+                    _lostItem = true;
+                break;
+            case R.id.searchFoundRadioButton:
+                if (checked)
+                    _lostItem = false;
                 break;
         }
     }

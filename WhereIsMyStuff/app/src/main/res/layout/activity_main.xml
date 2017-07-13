@@ -16,10 +16,9 @@
         android:backgroundTint="@color/buttonColor"
         android:fontFamily="sans-serif-smallcaps"
         android:text="@string/main_logout_button"
-        android:layout_marginTop="32dp"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/mainTitleTextView"
-        android:layout_alignEnd="@+id/mainTitleTextView"/>
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
 
     <TextView
         android:id="@+id/mainTitleTextView"
@@ -40,32 +39,65 @@
         android:id="@+id/mainEnterLostItemButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/mainTitleTextView"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="23dp"
         android:backgroundTint="@color/buttonColor"
         android:text="@string/main_enter_lost_item_button"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/mainTitleTextView"
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:id="@+id/mainEnterFoundItemButton"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/mainEnterLostItemButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
         android:backgroundTint="@color/buttonColor"
-        android:text="@string/main_enter_found_item_button"/>
+        android:text="@string/main_enter_found_item_button"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/mainEnterLostItemButton"
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:id="@+id/mainSearchItemsButton"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/mainEnterFoundItemButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="15dp"
         android:backgroundTint="@color/buttonColor"
-        android:text="@string/main_search_item_button"/>
+        android:text="@string/main_search_item_button"
+        android:layout_below="@+id/mainEnterFoundItemButton"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/mainViewLostItemsButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mainSearchItemsButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:backgroundTint="@color/buttonColor"
+        android:text="View Lost Items"/>
+
+    <Button
+        android:id="@+id/mainViewFoundItemsButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mainViewLostItemsButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:backgroundTint="@color/buttonColor"
+        android:text="View Found Items"/>
+
+    <Button
+        android:id="@+id/mainViewMapButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="@color/buttonColor"
+        android:text="View Map"/>
 </RelativeLayout>

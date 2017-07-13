@@ -149,22 +149,22 @@ public class Model {
      * Looks for an item and returns whether the item is stored in the item
      * manager
      *
-     * @param foundItem whether the item is a found item or not
+     * @param lostItem whether the item is a lost item or not
      * @param name the name of the item
      * @return a boolean whether the item is found
      */
-    public boolean searchFound(Boolean foundItem, String name) {
-        return itemManager.searchFound(foundItem, name);
+    public boolean searchFound(Boolean lostItem, String name) {
+        return itemManager.searchFound(lostItem, name);
     }
 
     /**
      * Looks for an item and returns the item from the item manager
      *
-     * @param foundItem whether the item is a found item or not
+     * @param lostItem whether the item is a lost item or not
      * @param name the name of the item
      * @return a boolean whether the item is found
      */
-    public String searchResult(Boolean foundItem, String name) {
-        return itemManager.searchResult(foundItem, name);
+    public String searchResult(Boolean lostItem, String name) {
+        return itemManager.searchResult(lostItem, name);
     }
 }

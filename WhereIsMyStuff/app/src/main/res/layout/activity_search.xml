@@ -28,25 +28,25 @@
                 android:layout_below="@+id/searchTypeTextView"
                 android:layout_alignLeft="@+id/searchTypeTextView"
                 android:layout_alignStart="@+id/searchTypeTextView"
-                android:checkedButton="@+id/searchFoundRadioButton"
+                android:checkedButton="@+id/searchLostRadioButton"
                 android:id="@+id/searchRadioGroup">
-
-        <RadioButton
-            android:id="@+id/searchFoundRadioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onRadioButtonClick"
-            android:text="Found Item"
-            app:buttonTint="@color/buttonColor" />
 
         <RadioButton
             android:id="@+id/searchLostRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClick"
+            android:text="Lost Item"
+            app:buttonTint="@color/buttonColor" />
+
+        <RadioButton
+            android:id="@+id/searchFoundRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"
             android:onClick="onRadioButtonClick"
-            android:text="Lost Item"
+            android:text="Found Item"
             app:buttonTint="@color/buttonColor"/>
 
     </RadioGroup>

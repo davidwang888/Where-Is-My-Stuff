@@ -19,7 +19,8 @@ import cs2340.whereismystuff.model.Model;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    private boolean _isFoundItem;
+    private boolean _clickable;
+    private boolean _isLostItem;
     private GoogleMap mMap;
     private Model _model = Model.getInstance();
 
@@ -30,7 +31,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        _isFoundItem = getIntent().getExtras().getBoolean("isFoundItem");
+        _clickable = getIntent().getExtras() != null;
+        if (_clickable) {
+            _isLostItem = getIntent().getExtras().getBoolean("isLostItem");
+        }
     }
 
 
@@ -50,38 +54,49 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
-
             @Override
             public void onMapClick(LatLng latLng) {
-                MarkerOptions markerOptions = new MarkerOptions();
-                markerOptions.position(latLng);
-                mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
-                mMap.addMarker(markerOptions);
-                Intent intent;
-                if (_isFoundItem) {
-                    intent = new Intent(MapsActivity.this,
-                            EnterFoundItemActivity
-                            .class);
-                } else {
-                    intent = new Intent(MapsActivity.this,
-                            EnterLostItemActivity
-                                    .class);
+                if (_clickable) {
+                    onClick(mMap, latLng);
                 }
-                intent.putExtra("latLng", latLng);
-                startActivity(intent);
             }
         });
         List<Item> itemList;
-        if (_isFoundItem) {
-            itemList = _model.getFoundItems();
+        if (_clickable) {
+            if (_isLostItem) {
+                itemList = _model.getLostItems();
+            } else {
+                itemList = _model.getFoundItems();
+            }
         } else {
             itemList = _model.getLostItems();
+            itemList.addAll(_model.getFoundItems());
         }
         for (Item r : itemList) {
             LatLng loc = r.getLatLng();
-            mMap.addMarker(new MarkerOptions().position(loc).title(r.getName()).snippet(r.getDescription()));
+            mMap.addMarker(new MarkerOptions().position(loc).title(r.getName
+                    ()).snippet(r.getSearchDescription()));
             mMap.moveCamera(CameraUpdateFactory.newLatLng(loc));
         }
+    }
 
+    /**
+     * Creates a marker of the click location on the map. Starts correct
+     * intent to move to either EnterLostItem or EnterFoundItem
+     */
+    private void onClick(GoogleMap mMap, LatLng latLng) {
+        MarkerOptions markerOptions = new MarkerOptions();
+        markerOptions.position(latLng);
+        mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+        mMap.addMarker(markerOptions);
+        Intent intent;
+        if (_isLostItem) {
+            intent = new Intent(MapsActivity.this, EnterLostItemActivity.class);
+        } else {
+            intent = new Intent(MapsActivity.this, EnterFoundItemActivity
+                    .class);
+        }
+        intent.putExtra("latLng", latLng);
+        startActivity(intent);
     }
 }
