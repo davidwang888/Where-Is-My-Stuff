@@ -67,6 +67,48 @@ class ItemManager {
     }
 
     /**
+     * Determines whether or not the information the user has entered for an
+     * item is valid and returns 0 if it is valid and som eother number if it
+     * is not
+     *
+     * @param name The item's name
+     * @param typePosition The item's type
+     * @param description The item's description
+     * @param user The item's user
+     * @param latLng The item's location
+     * @return A number that the controller will eventually use in
+     * EnterLostItemActivity or EnterFoundItemActivity to display a message
+     * to the user that will explain how to fix their input if it is invalid
+     * 0 -> item successfully added
+     * 1 -> user entered invalid name, cannot add item
+     * 2 -> user entered invalid type, cannot add item
+     * 3 -> user entered invalid description, cannot add item
+     * 4 -> user not logged in correctly, cannot add item
+     * 5 -> location not valid, cannot add item
+     * 6 -> user entered item name already in data base, cannot add item
+     */
+    private int validateInput(String name, int typePosition, String
+            description, User user, LatLng latLng, boolean lostItem) {
+        if (name == null || name.length() == 0) {
+            return 1;
+        } else if (typePosition < 0 || typePosition >= ItemType.values()
+                .length) {
+            return 2;
+        } else if (description == null || description.length() == 0) {
+            return 3;
+        } else if (user == null) {
+            return 4;
+        } else if (latLng == null) {
+            return 5;
+        } else if (lostItem && _lostItems.containsKey(name) || !lostItem &&
+                _foundItems.containsKey(name)) {
+            return 6;
+        } else {
+            return 0;
+        }
+    }
+
+    /**
      * Adds a lost item to the lost item collection
      *
      * @param name the name of the new item
@@ -92,40 +134,6 @@ class ItemManager {
             description, User user, LatLng latLng) {
         ItemType type = ItemType.values()[typePosition];
         _lostItems.put(name, new Item(name, type, description, user, latLng));
-    }
-
-    /**
-     * Adds a lost item to the lost item collection
-     *
-     * @param name the name of the new item
-     * @param typePosition the type of the new item
-     * @param description the description of the new item
-     * @param user the user who entered the new item
-     */
-    void addLostItem(String name, int typePosition, String description, User
-            user, LatLng latLng) {
-        ItemType type = ItemType.values()[typePosition];
-        _lostItems.put(name, new Item(name, type, description, user, latLng));
-        Map<String, Object> updates = new HashMap<>();
-        updates.put(name, new Item(name, type, description, user, latLng));
-        _lostItemsDatabase.updateChildren(updates);
-    }
-
-    /**
-     * Adds a found item to the lost item collection
-     *
-     * @param name the name of the new item
-     * @param typePosition the type of the new item
-     * @param description the description of the new item
-     * @param user the user who entered the new item
-     */
-    void addFoundItem(String name, int typePosition, String description, User
-            user, LatLng latLng) {
-        ItemType type = ItemType.values()[typePosition];
-        _foundItems.put(name, new Item(name, type, description, user, latLng));
-        Map<String, Object> updates = new HashMap<>();
-        updates.put(name, new Item(name, type, description, user, latLng));
-        _foundItemsDatabase.updateChildren(updates);
     }
 
     /**
@@ -181,6 +189,54 @@ class ItemManager {
 
             }
         });
+    }
+
+    /**
+     * Adds a lost item to the lost item collection
+     *
+     * @param name the name of the new item
+     * @param typePosition the type of the new item
+     * @param description the description of the new item
+     * @param user the user who entered the new item
+     */
+    int addLostItem(String name, int typePosition, String description, User
+            user, LatLng latLng) {
+        name = name.trim();
+        description = description.trim();
+        int code = validateInput(name, typePosition, description, user,
+                latLng, true);
+        if (code == 0) {
+            ItemType type = ItemType.values()[typePosition];
+            _lostItems.put(name, new Item(name, type, description, user, latLng));
+            Map<String, Object> updates = new HashMap<>();
+            updates.put(name, new Item(name, type, description, user, latLng));
+            _lostItemsDatabase.updateChildren(updates);
+        }
+        return code;
+    }
+
+    /**
+     * Adds a found item to the lost item collection
+     *
+     * @param name the name of the new item
+     * @param typePosition the type of the new item
+     * @param description the description of the new item
+     * @param user the user who entered the new item
+     */
+    int addFoundItem(String name, int typePosition, String description, User
+            user, LatLng latLng) {
+        name = name.trim();
+        description = description.trim();
+        int code = validateInput(name, typePosition, description, user,
+                latLng, false);
+        if (code == 0) {
+            ItemType type = ItemType.values()[typePosition];
+            _foundItems.put(name, new Item(name, type, description, user, latLng));
+            Map<String, Object> updates = new HashMap<>();
+            updates.put(name, new Item(name, type, description, user, latLng));
+            _foundItemsDatabase.updateChildren(updates);
+        }
+        return code;
     }
 
     /**

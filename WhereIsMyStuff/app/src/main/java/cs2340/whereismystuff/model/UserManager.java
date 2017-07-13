@@ -169,7 +169,7 @@ class UserManager {
         } else if (!user.checkPassword(password)) {
             return 4;
         } else {
-            _currentUser = user
+            _currentUser = user;
             return 0;
         }
     }

@@ -109,9 +109,9 @@ public class Model {
      * @param description the description of the new item
      * @param user the user who entered the new item
      */
-    public void addLostItem(String name, int type, String description, User
+    public int addLostItem(String name, int type, String description, User
             user, LatLng latLng) {
-        itemManager.addLostItem(name, type, description, user, latLng);
+        return itemManager.addLostItem(name, type, description, user, latLng);
     }
 
     /**
@@ -122,9 +122,9 @@ public class Model {
      * @param description the description of the new item
      * @param user the user who entered the new item
      */
-    public void addFoundItem(String name, int type, String description,
+    public int addFoundItem(String name, int type, String description,
                              User user, LatLng latLng) {
-        itemManager.addFoundItem(name, type, description, user, latLng);
+        return itemManager.addFoundItem(name, type, description, user, latLng);
     }
 
     /**

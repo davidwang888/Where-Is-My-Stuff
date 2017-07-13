@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -80,10 +81,35 @@ public class EnterFoundItemActivity extends AppCompatActivity {
         int type = _itemTypeSpinner.getSelectedItemPosition();
         String description = _itemDescription.getText().toString();
         LatLng latLng = (LatLng) getIntent().getExtras().get("latLng");
-        model.addFoundItem(name, type, description, model.getCurrentUser(),
-                latLng);
-        Intent intent = new Intent(EnterFoundItemActivity.this,
-                ViewFoundItemsActivity.class);
-        startActivity(intent);
+        int code = model.addFoundItem(name, type, description, model
+                        .getCurrentUser(), latLng);
+        if (code == 0) {
+            Toast.makeText(EnterFoundItemActivity.this, "Item Added!", Toast
+                    .LENGTH_SHORT).show();
+            Intent intent = new Intent(EnterFoundItemActivity.this,
+                    ViewFoundItemsActivity.class);
+            startActivity(intent);
+        } else if (code == 1) {
+            Toast.makeText(EnterFoundItemActivity.this, "Name Invalid", Toast
+                    .LENGTH_SHORT).show();
+        } else if (code == 2) {
+            Toast.makeText(EnterFoundItemActivity.this, "Type Invalid", Toast
+                    .LENGTH_SHORT).show();
+        } else if (code == 3) {
+            Toast.makeText(EnterFoundItemActivity.this, "Description Invalid",
+                    Toast.LENGTH_SHORT).show();
+        } else if (code == 4) {
+            Toast.makeText(EnterFoundItemActivity.this, "User Invalid (Try "
+                    + "Logging Out and Log Back In", Toast.LENGTH_SHORT).show();
+        } else if (code == 5) {
+            Toast.makeText(EnterFoundItemActivity.this, "Location Invalid (Try "
+                    + "Going Back to Map", Toast.LENGTH_SHORT).show();
+        } else if (code == 6) {
+            Toast.makeText(EnterFoundItemActivity.this, "Item Name Already in"
+                    + " Database", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(EnterFoundItemActivity.this, "Item NOT added",
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 }
