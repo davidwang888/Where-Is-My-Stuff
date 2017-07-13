@@ -81,6 +81,8 @@ public class EnterLostItemActivity extends AppCompatActivity {
         int type = _itemTypeSpinner.getSelectedItemPosition();
         String description = _itemDescription.getText().toString();
         LatLng latLng = (LatLng) getIntent().getExtras().get("latLng");
+        System.out.println("EnterLostItemActivity/onEnterItemClick: "
+                + "currentUser is " + model.getCurrentUser());
         int code = model.addLostItem(name, type, description, model
                 .getCurrentUser(), latLng);
         if (code == 0) {

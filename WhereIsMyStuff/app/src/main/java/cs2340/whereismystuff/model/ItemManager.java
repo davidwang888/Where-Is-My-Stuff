@@ -56,8 +56,6 @@ class ItemManager {
         _databaseRef = FirebaseDatabase.getInstance().getReference();
         _lostItemsDatabase = _databaseRef.child("lost items");
         _foundItemsDatabase = _databaseRef.child("found items");
-        //_lostItemsDatabase.setValue(_lostItems);
-       // _foundItemsDatabase.setValue(_foundItems);
     }
 
     /**
@@ -283,6 +281,7 @@ class ItemManager {
      * @return a boolena whether the item is found
      */
     String searchResult(Boolean lostItem, String name) {
+        System.out.println("ItemManager/searchResult: name is " + name);
         Item item = (lostItem) ? _lostItems.get(name) : _foundItems.get(name);
         if (lostItem) {
             return "LOST ITEM:\n" + _lostItems.get(name).getSearchDescription();

@@ -54,8 +54,6 @@ public class WelcomeActivity extends AppCompatActivity {
                 onRegisterButtonClick();
             }
         });
-        FirebaseAuth auth = FirebaseAuth.getInstance();
-        auth.createUserWithEmailAndPassword("bursar@duke.edu", "123456789");
         _model.setUp();
     }
 

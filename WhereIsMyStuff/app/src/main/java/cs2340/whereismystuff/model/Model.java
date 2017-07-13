@@ -37,6 +37,7 @@ public class Model {
 
     public void setUp() {
         itemManager.setUp();
+        userManager.setUp();
     }
 
     /**
