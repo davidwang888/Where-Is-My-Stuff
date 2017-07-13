@@ -56,6 +56,8 @@ class ItemManager {
         _databaseRef = FirebaseDatabase.getInstance().getReference();
         _lostItemsDatabase = _databaseRef.child("lost items");
         _foundItemsDatabase = _databaseRef.child("found items");
+        //_lostItemsDatabase.setValue(_lostItems);
+       // _foundItemsDatabase.setValue(_foundItems);
     }
 
     /**

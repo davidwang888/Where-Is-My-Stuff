@@ -1,5 +1,10 @@
 package cs2340.whereismystuff.model;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 
 /**
@@ -28,6 +33,10 @@ class UserManager {
      * manage the users
      */
     private static final UserManager instance = new UserManager();
+
+    private DatabaseReference _databaseRef;
+
+    private DatabaseReference _usersDatabase;
 
     /**
      * Creates a UserManager containing only the default administrator
