@@ -107,7 +107,7 @@ class UserManager {
      * @param  email         The user's email
      * @param  username      The user's username
      * @param  password1     The user's password
-     * @param  password2     Verification of the user's password                                                            password2 [description]
+     * @param  password2     Verification of the user's password
      * @return A number that the controller will eventually use in
      *         RegisterActivity to display a message to the user that will
      *         explain how to fix their input if it is invalid
@@ -204,17 +204,19 @@ class UserManager {
      */
     int loginUser(String usernameEmail, String password) {
         usernameEmail = usernameEmail.trim();
-        String email;
+        String email = null;
         User user;
         boolean username;
         if (usernameEmail.indexOf('@') == -1) { //not the email
-            email = _users.get(usernameEmail).getEmail();
-            user = _users.get(usernameEmail);
+            user = _users.getOrDefault(usernameEmail, null);
             username = true;
         } else { //the email
-            email = usernameEmail;
-            user = _users.get(_emailUser.get(usernameEmail));
+            user = _users.getOrDefault(_emailUser.getOrDefault(usernameEmail, ""),
+                    null);
             username = false;
+        }
+        if (user != null) {
+            email = user.getEmail();
         }
         if (usernameEmail.length() == 0 || password.length() == 0) {
             return 1;
