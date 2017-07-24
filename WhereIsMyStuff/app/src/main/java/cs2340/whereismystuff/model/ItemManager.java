@@ -1,11 +1,11 @@
 package cs2340.whereismystuff.model;
 
 import com.google.android.gms.maps.model.LatLng;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+//import com.google.firebase.database.DataSnapshot;
+//import com.google.firebase.database.DatabaseError;
+//import com.google.firebase.database.DatabaseReference;
+//import com.google.firebase.database.FirebaseDatabase;
+//import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,17 +29,17 @@ class ItemManager {
     /**
      * The database reference to the whole Firebase database
      */
-    private DatabaseReference _databaseRef;
+//    private DatabaseReference _databaseRef;
 
     /**
      * The database reference to the lost item section of the Firebase database
      */
-    private DatabaseReference _lostItemsDatabase;
+//    private DatabaseReference _lostItemsDatabase;
 
     /**
      * The database reference to the found item section of the Firebase database
      */
-    private DatabaseReference _foundItemsDatabase;
+//    private DatabaseReference _foundItemsDatabase;
 
     /**
      * The singular instance of UserManager that will be used by the Model to
@@ -53,9 +53,9 @@ class ItemManager {
     private ItemManager() {
         _lostItems = new HashMap<>();
         _foundItems = new HashMap<>();
-        _databaseRef = FirebaseDatabase.getInstance().getReference();
-        _lostItemsDatabase = _databaseRef.child("lost items");
-        _foundItemsDatabase = _databaseRef.child("found items");
+//        _databaseRef = FirebaseDatabase.getInstance().getReference();
+//        _lostItemsDatabase = _databaseRef.child("lost items");
+//        _foundItemsDatabase = _databaseRef.child("found items");
     }
 
     /**
@@ -141,54 +141,54 @@ class ItemManager {
      * Anytime anything changes, the corresponding hashmaps will be updated
      */
     void setUp() {
-        _lostItemsDatabase.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot snap : dataSnapshot.getChildren()) {
-                    String name = (String) snap.child("name").getValue();
-                    int type = ItemType.valueOf((String) snap.child("type")
-                            .getValue()).ordinal();
-                    String description = (String) snap.child("description")
-                            .getValue();
-                    User user = snap.child("user").getValue(User.class);
-                    Double latitude = (Double) snap.child("latLng").child
-                            ("latitude").getValue();
-                    Double longitude = (Double) snap.child("latLng").child
-                            ("longitude").getValue();
-                    LatLng latLng = new LatLng(latitude, longitude);
-                    setUpAddLostItem(name, type, description, user, latLng);
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-        _foundItemsDatabase.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot snap : dataSnapshot.getChildren()) {
-                    String name = (String) snap.child("name").getValue();
-                    int type = ItemType.valueOf((String) snap.child("type")
-                            .getValue()).ordinal();
-                    String description = (String) snap.child("description")
-                            .getValue();
-                    User user = snap.child("_user").getValue(User.class);
-                    Double latitude = (Double) snap.child("latLng").child
-                            ("latitude").getValue();
-                    Double longitude = (Double) snap.child("latLng").child
-                            ("longitude").getValue();
-                    LatLng latLng = new LatLng(latitude, longitude);
-                    setUpAddFoundItem(name, type, description, user, latLng);
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
+//        _lostItemsDatabase.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                for (DataSnapshot snap : dataSnapshot.getChildren()) {
+//                    String name = (String) snap.child("name").getValue();
+//                    int type = ItemType.valueOf((String) snap.child("type")
+//                            .getValue()).ordinal();
+//                    String description = (String) snap.child("description")
+//                            .getValue();
+//                    User user = snap.child("user").getValue(User.class);
+//                    Double latitude = (Double) snap.child("latLng").child
+//                            ("latitude").getValue();
+//                    Double longitude = (Double) snap.child("latLng").child
+//                            ("longitude").getValue();
+//                    LatLng latLng = new LatLng(latitude, longitude);
+//                    setUpAddLostItem(name, type, description, user, latLng);
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
+//        _foundItemsDatabase.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                for (DataSnapshot snap : dataSnapshot.getChildren()) {
+//                    String name = (String) snap.child("name").getValue();
+//                    int type = ItemType.valueOf((String) snap.child("type")
+//                            .getValue()).ordinal();
+//                    String description = (String) snap.child("description")
+//                            .getValue();
+//                    User user = snap.child("_user").getValue(User.class);
+//                    Double latitude = (Double) snap.child("latLng").child
+//                            ("latitude").getValue();
+//                    Double longitude = (Double) snap.child("latLng").child
+//                            ("longitude").getValue();
+//                    LatLng latLng = new LatLng(latitude, longitude);
+//                    setUpAddFoundItem(name, type, description, user, latLng);
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
     }
 
     /**
@@ -210,7 +210,7 @@ class ItemManager {
             _lostItems.put(name, new Item(name, type, description, user, latLng));
             Map<String, Object> updates = new HashMap<>();
             updates.put(name, new Item(name, type, description, user, latLng));
-            _lostItemsDatabase.updateChildren(updates);
+//            _lostItemsDatabase.updateChildren(updates);
         }
         return code;
     }
@@ -234,7 +234,7 @@ class ItemManager {
             _foundItems.put(name, new Item(name, type, description, user, latLng));
             Map<String, Object> updates = new HashMap<>();
             updates.put(name, new Item(name, type, description, user, latLng));
-            _foundItemsDatabase.updateChildren(updates);
+//            _foundItemsDatabase.updateChildren(updates);
         }
         return code;
     }

@@ -1,12 +1,12 @@
 package cs2340.whereismystuff.model;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+//import com.google.firebase.auth.FirebaseAuth;
+//import com.google.firebase.auth.FirebaseUser;
+//import com.google.firebase.database.DataSnapshot;
+//import com.google.firebase.database.DatabaseError;
+//import com.google.firebase.database.DatabaseReference;
+//import com.google.firebase.database.FirebaseDatabase;
+//import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,17 +42,17 @@ class UserManager {
     /**
      * The database reference to the authentification of the users.
      */
-    private FirebaseAuth _auth = FirebaseAuth.getInstance();
+//    private FirebaseAuth _auth = FirebaseAuth.getInstance();
 
     /**
      * The database reference to the whole Firebase database
      */
-    private DatabaseReference _databaseRef;
+//    private DatabaseReference _databaseRef;
 
     /**
      * The database reference to the users section of the Firebase database
      */
-    private DatabaseReference _usersDatabase;
+//    private DatabaseReference _usersDatabase;
 
     /**
      * Creates a UserManager containing only the default administrator
@@ -60,8 +60,8 @@ class UserManager {
     private UserManager() {
         _users = new HashMap<>();
         _emailUser = new HashMap<>();
-        _databaseRef = FirebaseDatabase.getInstance().getReference();
-        _usersDatabase = _databaseRef.child("users");
+//        _databaseRef = FirebaseDatabase.getInstance().getReference();
+//        _usersDatabase = _databaseRef.child("users");
         setUp();
     }
 
@@ -83,20 +83,20 @@ class UserManager {
     void setUp() {
         addUser("admin", "one", "admin@gatech.edu", "user", "pass", "pass",
                 true);
-        _usersDatabase.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot snap : dataSnapshot.getChildren()) {
-                    User user = snap.getValue(User.class);
-                    setUpAddUser(user);
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
+//        _usersDatabase.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                for (DataSnapshot snap : dataSnapshot.getChildren()) {
+//                    User user = snap.getValue(User.class);
+//                    setUpAddUser(user);
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
     }
 
     /**
@@ -182,7 +182,7 @@ class UserManager {
             Map<String, Object> updates = new HashMap<>();
             updates.put(username,new User(firstName, lastName, email, username,
                     password1, isAdmin));
-            _usersDatabase.updateChildren(updates);
+//            _usersDatabase.updateChildren(updates);
 
         }
         return code;
@@ -227,9 +227,9 @@ class UserManager {
         } else if (!user.checkPassword(password)) {
             return 4;
         } else {
-            _auth.createUserWithEmailAndPassword(email, password);
+//            _auth.createUserWithEmailAndPassword(email, password);
             _currentUser = user;
-            FirebaseUser _firebaseCurrentUser = _auth.getCurrentUser();
+//            FirebaseUser _firebaseCurrentUser = _auth.getCurrentUser();
             return 0;
         }
     }
