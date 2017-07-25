@@ -23,6 +23,7 @@ import static org.junit.Assert.*;
  This method adds a lost item to the database depending on whether or not input
  is valid. It notifies the user that the item they entered was successfully
  entered or what piece of information she or he is missing.
+ 
  Preconditions:
  User is valid (in terms of the app)
  User is logged in to the app
@@ -46,13 +47,13 @@ import static org.junit.Assert.*;
 
  Returns:
  an integer code representing whether or not the item is added correctly
- 0 if item successfully added
- 1 if user entered invalid name
- 2 if user entered invalid type
- 3 if user entered invalid description
- 4 if user not logged in correctly
- 5 if location not valid
- 6 if user entered item name already in database
+  -> 0 if item successfully added
+  -> 1 if user entered invalid name
+  -> 2 if user entered invalid type
+  -> 3 if user entered invalid description
+  -> 4 if user not logged in correctly
+  -> 5 if location not valid
+  -> 6 if user entered item name already in database
 
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
