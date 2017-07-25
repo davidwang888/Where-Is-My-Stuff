@@ -8,6 +8,66 @@ import com.google.android.gms.maps.model.LatLng;
  * Created by kippmorris on 7/20/17.
  */
 
+// method contract
+
+// private int validateInput(String name, int typePosition, String description,
+//     User user, LatLng latLng, boolean lostItem)
+//
+// preconditions:
+//     -the variable "name" is a string of nonzero length, the empty string, or
+//      null
+//     -the variable "typePosition" is an integer that is either a valid index into
+//      our array containing ItemTypes or an invalid index
+//     -the variable "description" is a string of nonzero length, the empty string,
+//      or null
+//     -the variable "user" is either a non-null object of type User or null
+//     -the variable "latlng" is either a non-null object of type LatLng or null
+//     -the variable "lostItem" is true if the item the item the user is attempting
+//      to add is a lost item or false if the item the user is attempting to add is
+//      a found item
+//
+// postconditions:
+//     -if "name" is null or the empty string -> return 1
+//     -if "name" is a string of nonzero length but "typePosition" is less than
+//      zero or greater than or equal to the number of entries in our array
+//      containing ItemTypes -> return 2
+//     -if "name" is a string of nonzero length, "typePosition" is between zero
+//      and the length of our array containing ItemTypes (not including the
+//      length), and description is null or the empty string -> return 3
+//     -if "name" is a string of nonzero length, "typePosition" is between zero
+//      and the length of our array containing ItemTypes (not including the
+//      length), "description" is a string of nonzero length, and "user" is null
+//      -> return 4
+//     -if "name" is a string of nonzero length, "typePosition" is between zero
+//      and the length of our array containing ItemTypes (not including the
+//      length), "description" is a string of nonzero length, "user" is a non-null
+//      object of type User, and "latLng" is null -> return 5
+//     -if "name" is a string of nonzero length, "typePosition" is between zero
+//      and the length of our array containing ItemTypes (not including the
+//      length), "description" is a string of nonzero length, "user" is a non-null
+//      object of type User, "latLng" is a non-null object of type LatLng, and
+//      either "lostItem" is true and our HashMap mapping names of lost items to
+//      items contains the key "name" or "lostItem" is false and our HashMap
+//      mapping names of found items to items contains the key "name", -> return 6
+//     -if "name" is a string of nonzero length, "typePosition" is between zero
+//      and the length of our array containing ItemTypes (not including the
+//      length), "description" is a string of nonzero length, "user" is a non-null
+//      object of type User, "latLng" is a non-null object of type LatLng, and
+//      either "lostItem" is true and our HashMap mapping names of lost items to
+//      items does not contain the key "name" or "lostItem" is false and our
+//      HashMap mapping names of found items to items does not contain the key
+//      "name", -> return 0
+//
+// invariants:
+//     -none
+//
+// framing conditions:
+//     -if the input is all valid, 0 will be returned and the item will be added
+//     -if the input is not valid, a different integer will be returned
+//      representing an error to display to the user based on which part of their
+//      input is invalid
+
+
 public class KippItemManagerValidateInputTest {
 
     private static ItemManager itemManager = ItemManager.getInstance();
