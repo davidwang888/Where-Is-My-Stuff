@@ -214,7 +214,7 @@ class UserManager {
             username = usernameEmail.indexOf('@') == -1;
             if (username && !_users.containsKey(usernameEmail)) {
                 return 2;
-            } else if (!_emailUser.containsKey(usernameEmail)) {
+            } else if (!username && !_emailUser.containsKey(usernameEmail)) {
                 return 3;
             }
             if (username) {
