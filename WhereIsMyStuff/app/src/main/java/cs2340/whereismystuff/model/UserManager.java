@@ -207,30 +207,29 @@ class UserManager {
         String email = null;
         User user;
         boolean username;
-        if (usernameEmail.indexOf('@') == -1) { //not the email
-            user = _users.getOrDefault(usernameEmail, null);
-            username = true;
-        } else { //the email
-            user = _users.getOrDefault(_emailUser.getOrDefault(usernameEmail, ""),
-                    null);
-            username = false;
-        }
-        if (user != null) {
-            email = user.getEmail();
-        }
         if (usernameEmail.length() == 0 || password.length() == 0) {
             return 1;
-        } else if (user == null && username) {
-            return 2;
-        } else if (user == null) {
-            return 3;
-        } else if (!user.checkPassword(password)) {
-            return 4;
         } else {
-            _auth.createUserWithEmailAndPassword(email, password);
-            _currentUser = user;
-            FirebaseUser _firebaseCurrentUser = _auth.getCurrentUser();
-            return 0;
+            username = usernameEmail.indexOf('@') == -1;
+            if (username && !_users.containsKey(usernameEmail)) {
+                return 2;
+            } else if (!_emailUser.containsKey(usernameEmail)) {
+                return 3;
+            }
+            if (username) {
+                user = _users.get(usernameEmail);
+            } else {
+                user = _users.get(_emailUser.get(usernameEmail));
+            }
+            email = user.getEmail();
+            if (!user.checkPassword(password)) {
+                return 4;
+            } else {
+                _auth.createUserWithEmailAndPassword(email, password);
+                _currentUser = user;
+                FirebaseUser _firebaseCurrentUser = _auth.getCurrentUser();
+                return 0;
+            }
         }
     }
 

@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClick"
             android:text="Lost Item"
-            app:buttonTint="@color/buttonColor" />
+            android:buttonTint="@color/buttonColor" />
 
         <RadioButton
             android:id="@+id/searchFoundRadioButton"
@@ -47,7 +47,7 @@
             android:layout_marginStart="10dp"
             android:onClick="onRadioButtonClick"
             android:text="Found Item"
-            app:buttonTint="@color/buttonColor"/>
+            android:buttonTint="@color/buttonColor"/>
 
     </RadioGroup>
 
