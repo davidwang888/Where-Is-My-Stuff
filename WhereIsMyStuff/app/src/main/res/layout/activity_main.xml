@@ -77,7 +77,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="17dp"
         android:backgroundTint="@color/buttonColor"
-        android:text="View Lost Items"/>
+        android:text="@string/main_view_lost_items_button"/>
 
     <Button
         android:id="@+id/mainViewFoundItemsButton"
@@ -88,7 +88,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="19dp"
         android:backgroundTint="@color/buttonColor"
-        android:text="View Found Items"/>
+        android:text="@string/main_view_found_items_button"/>
 
     <Button
         android:id="@+id/mainViewMapButton"
@@ -99,5 +99,5 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="12dp"
         android:backgroundTint="@color/buttonColor"
-        android:text="View Map"/>
+        android:text="@string/main_view_map_button"/>
 </RelativeLayout>

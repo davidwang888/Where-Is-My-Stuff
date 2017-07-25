@@ -35,5 +35,5 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:backgroundTint="@color/buttonColor"
-        android:text="Home"/>
+        android:text="@string/view_found_items_home_button"/>
 </RelativeLayout>

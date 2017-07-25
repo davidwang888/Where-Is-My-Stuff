@@ -30,6 +30,13 @@
     <string name="main_logout_button">Ausloggen</string>
     <string name="main_enter_lost_item_button">Verlorene Element Eingeben</string>
 
+    <string name="main_enter_found_item_button">Enter Found Item</string>
+    <string name="main_search_item_button">Search Items</string>
+    <string name="main_view_lost_items_button">View Lost Items</string>
+    <string name="main_view_found_items_button">View Found Items</string>
+    <string name="main_view_map_button">View Map</string>
+
+
     <!--activity_enter_lost_item-->
     <string name="enter_lost_item_title_text_view">Geben Sie Ihren Verlorenen
         Gegenstand Ein!</string>
@@ -37,8 +44,33 @@
     <string name="enter_lost_item_description_text_view">Artikelbeschreibung:</string>
     <string name="enter_lost_item_button">Geben Sie Item Ein</string>
 
+    <string name="enter_lost_item_name_text_view">Item Name</string>
+
+    <!--activity_enter_found_item-->
+    <string name="enter_found_item_title_text_view">Enter A Found
+        Item!</string>
+    <string name="enter_found_item_type_text_view">Item Type:</string>
+    <string name="enter_found_item_description_text_view">Item Description
+        :</string>
+    <string name="enter_found_item_button">Enter Item</string>
+    <string name="enter_found_item_name_text_view">Item Name:</string>
+
     <!--activity_view_lost_items-->
-    <string name="view_lost_items_text_view">Verlorenen Gegenstand:</string>
+    <string name="view_lost_items_text_view">Lost Items:</string>
+    <string name="view_lost_items_home_button">Home</string>
+
+    <!--activity_view_found_items-->
+    <string name="view_found_items_text_view">Found Items:</string>
+    <string name="view_found_items_home_button">Home</string>
+
+
+    <string name="title_activity_maps">Map</string>
+
+    <!--activity_maps-->
+    <string name="maps_found_text_view">Click on where you found the
+        item!</string>
+    <string name="maps_lost_text_view">Click on where you lost the
+        item!</string>
 
 
 </resources>

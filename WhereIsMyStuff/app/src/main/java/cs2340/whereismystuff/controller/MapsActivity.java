@@ -3,6 +3,7 @@ package cs2340.whereismystuff.controller;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -24,6 +25,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     private Model _model = Model.getInstance();
 
+    private TextView _mapsTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         _clickable = getIntent().getExtras() != null;
+        _mapsTextView = (TextView) findViewById(R.id.mapsTitleTextView);
         if (_clickable) {
             _isLostItem = getIntent().getExtras().getBoolean("isLostItem");
         }
@@ -64,11 +68,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         List<Item> itemList;
         if (_clickable) {
             if (_isLostItem) {
+                _mapsTextView.setText("Click on where you lost the item!");
                 itemList = _model.getLostItems();
             } else {
+                _mapsTextView.setText("Click on where you found the item!");
                 itemList = _model.getFoundItems();
             }
         } else {
+            _mapsTextView.setText("Locations of All Items");
             itemList = _model.getLostItems();
             itemList.addAll(_model.getFoundItems());
         }
