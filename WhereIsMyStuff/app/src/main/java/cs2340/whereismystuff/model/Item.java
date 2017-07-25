@@ -40,8 +40,8 @@ public class Item {
      * @param user the new item's user
      * @param latLng the new item's location
      */
-    Item(String name, ItemType type, String description, User user, LatLng
-            latLng) {
+    public Item(String name, ItemType type, String description, User user,
+                LatLng latLng) {
         _name = name;
         _type = type;
         _description = description;

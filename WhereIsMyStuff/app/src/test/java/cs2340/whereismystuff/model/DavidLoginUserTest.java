@@ -1,4 +1,4 @@
-package cs2340.whereismystuff;
+package cs2340.whereismystuff.model;
 
 import org.junit.Test;
 

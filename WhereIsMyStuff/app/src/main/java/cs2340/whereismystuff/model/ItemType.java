@@ -3,7 +3,7 @@ package cs2340.whereismystuff.model;
 /**
  * A representation of all the types of items
  */
-enum ItemType {
+public enum ItemType {
     /**
      * The different types an item can be
      */

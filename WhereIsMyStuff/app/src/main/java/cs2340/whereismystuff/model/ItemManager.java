@@ -15,7 +15,7 @@ import java.util.Map;
  * Reprsents a item manager that stores all the lost and found items and is
  * used to search for items
  */
-class ItemManager {
+public class ItemManager {
     /**
      * A hashmap of all the lost items
      */

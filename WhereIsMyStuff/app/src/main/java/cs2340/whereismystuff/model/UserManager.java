@@ -16,7 +16,7 @@ import java.util.Map;
  * Represents a user manager that stores all of the users and is capable of
  * validating user input and logging users in
  */
-class UserManager {
+public class UserManager {
     /**
      * The current user logged in
      */
@@ -69,7 +69,7 @@ class UserManager {
      * Returns the user manager
      * @return The user manager
      */
-    static UserManager getInstance() {
+    public static UserManager getInstance() {
         return instance;
     }
 
@@ -162,12 +162,12 @@ class UserManager {
      * @param  password2     Verification of the user's password
      * @return The integer code from validateInput
      */
-    int addUser(String firstName, String lastName, String email, String
+    public int addUser(String firstName, String lastName, String email, String
             username, String password1, String password2, boolean isAdmin) {
-        firstName = firstName.trim();
-        lastName = lastName.trim();
-        email = email.trim();
-        username = username.trim();
+//        firstName = firstName.trim();
+//        lastName = lastName.trim();
+//        email = email.trim();
+//        username = username.trim();
         int code = validateInput(firstName, lastName, email, username,
                 password1, password2);
         if (code == 0) {

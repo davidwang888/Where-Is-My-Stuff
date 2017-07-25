@@ -1,4 +1,4 @@
-package cs2340.whereismystuff;
+package cs2340.whereismystuff.model;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 //assertEquals(expected, actual)
-public class AddLostItemTest {
+public class CarolineAddLostItemTest {
     Item item;
     LatLng latLng;
     User user;
