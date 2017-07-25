@@ -201,8 +201,12 @@ class ItemManager {
      */
     int addLostItem(String name, int typePosition, String description, User
             user, LatLng latLng) {
-        name = name.trim();
-        description = description.trim();
+        if (!(name == null)) {
+            name = name.trim();
+        }
+        if (!(description == null)) {
+            description = description.trim();
+        }
         int code = validateInput(name, typePosition, description, user,
                 latLng, true);
         if (code == 0) {
