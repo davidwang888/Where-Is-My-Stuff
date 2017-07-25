@@ -13,7 +13,47 @@ import cs2340.whereismystuff.model.User;
 import static org.junit.Assert.*;
 
 /**
- * Example local unit test, which will execute on the development machine (host).
+ *
+ Contract: addLostItem
+
+ Signature:
+ addLostItem(name: String, typePosition: int, description: String, user: User,
+ latLng: LatLng) : int
+
+ This method adds a lost item to the database depending on whether or not input
+ is valid. It notifies the user that the item they entered was successfully
+ entered or what piece of information she or he is missing.
+ Preconditions:
+ User is valid (in terms of the app)
+ User is logged in to the app
+ User has clicked on map denoting location of lost item
+ User has clicked “Enter Item” button on AddLostItem page
+ Parameters must match their assigned type (or be null because this is checked
+ for in the method)
+
+ Postconditions:
+ Item created and added to lost item database if all input is valid (if all
+ preconditions are true)
+ int is returned depending on whether or not the lost item is correctly added to
+ the database
+ int notifies controller which pop up message to display to the user
+
+ Invariant:
+ None
+
+ Frame Condition:
+ validateInput() is called an an integer is returned
+
+ Returns:
+ an integer code representing whether or not the item is added correctly
+ 0 if item successfully added
+ 1 if user entered invalid name
+ 2 if user entered invalid type
+ 3 if user entered invalid description
+ 4 if user not logged in correctly
+ 5 if location not valid
+ 6 if user entered item name already in database
+
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
