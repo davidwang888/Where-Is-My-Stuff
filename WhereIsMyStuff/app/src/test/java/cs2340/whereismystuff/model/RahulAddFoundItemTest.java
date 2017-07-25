@@ -11,10 +11,51 @@ import cs2340.whereismystuff.model.Model;
 import cs2340.whereismystuff.model.User;
 
 import static org.junit.Assert.*;
-
 /**
- * Example local unit test, which will execute on the development machine (host).
+ * Contract: AddFoundItemTest
+ * Signature: addFoundItem(name: String, typePosition: Int,
+ * Description: String, user: User, latLng: LatLng): Int
  *
+ * The method above adds Found Items to the database.
+ * It is dependent on whether or not the input for the function
+ * is valid. If the item is successfully entered, it will prompt
+ * the user with a successfull added message prompt. However, if
+ * not, it will notify the user of the specific item lost.
+ *
+ * Preconditions:
+ *  -The User has been entered validly
+ *  -The User is logged into the app
+ *  -The User has clicked on the location
+ *  of the found item in the app.
+ *  -The User has clicked on the "Enter Item": button
+ *  in the AddFoundItem page
+ *  -Parameters must match their assigned types.
+ *
+ * Postconditions:
+ * The item is created and added to the found items database if
+ * all the inputs are valid, and if all the preconditions are
+ * true. An integer is returned depending on whether the found item
+ * has been correctly added to the database. The integer value
+ * returned notifies the controller of which Toast error message
+ * to throw at the user
+ *
+ * Invariant:
+ * - None
+ *
+ * Frame Condition:
+ * - validateInput() is called, and an integer is returned
+ *
+ * Returns:
+ *  - 0: Item successfully added
+ *  - 1: User enters invalid name
+ *  - 2: User enters invalid type
+ *  - 3: User enters invalid description
+ *  - 4: User not logged in correctly
+ *  - 5: Location not valid
+ *  - 6: Item name is already in the database
+ *
+ *
+
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 //assertEquals(expected, actual)
