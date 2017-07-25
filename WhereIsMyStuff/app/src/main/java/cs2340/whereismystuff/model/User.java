@@ -106,6 +106,7 @@ public class User {
         this._isAdmin = _isAdmin;
     }
 
+
     /**
      * Returns the user's first and last name if they have a last name or just
      * their first name if they don't
