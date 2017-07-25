@@ -54,6 +54,7 @@ class UserManager {
      */
     private DatabaseReference _usersDatabase;
 
+
     /**
      * Creates a UserManager containing only the default administrator
      */

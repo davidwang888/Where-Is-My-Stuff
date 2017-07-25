@@ -44,6 +44,8 @@ public class LoginActivity extends AppCompatActivity {
      */
     private static Model model;
 
+    private int _loginAttemps;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
         _loginButton = (Button) findViewById(R.id.loginLoginButton);
         _cancelButton = (Button) findViewById(R.id.loginCancelButton);
         model = Model.getInstance();
+        _loginAttemps = 0;
         _loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,9 +76,15 @@ public class LoginActivity extends AppCompatActivity {
      * user has entered and responds appropriately
      */
     private void onLoginButtonClick() {
+        _loginAttemps++;
         int code = model.loginUser(_usernameEmail.getText().toString(),
                 _password.getText().toString());
-        if (code == 0) {
+        if (_loginAttemps > 5) {
+            Toast.makeText(LoginActivity.this, "User locked out. Contact "
+                    + "admin wheres.my.stuff@gmail.com to regain access.", Toast
+                    .LENGTH_SHORT)
+                    .show();
+        } else if (code == 0) {
             Toast.makeText(LoginActivity.this, "Login Successful!",
                     Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(LoginActivity.this, MainActivity
@@ -93,6 +102,11 @@ public class LoginActivity extends AppCompatActivity {
         } else if (code == 4) {
             Toast.makeText(LoginActivity.this, "Username/Email Or Password "
                     + "Incorrect", Toast.LENGTH_SHORT).show();
+        } else if (_loginAttemps == 5) {
+            Toast.makeText(LoginActivity.this, "User locked out. Contact "
+                    + "admin wheres.my.stuff@gmail.com to regain access.", Toast
+                    .LENGTH_SHORT)
+                    .show();
         } else {
             Toast.makeText(LoginActivity.this, "ERROR", Toast
                     .LENGTH_SHORT).show();

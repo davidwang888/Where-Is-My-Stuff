@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
     tools:context="cs2340.whereismystuff.controller.WelcomeActivity">
+
     <TextView
         android:id="@+id/welcomeTitleTextView"
         android:layout_width="wrap_content"
@@ -19,7 +20,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@android:color/black"
         android:textSize="55sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"/>
     <Button
         android:id="@+id/welcomeLoginButton"
         style="@style/Widget.AppCompat.Button.Colored"
