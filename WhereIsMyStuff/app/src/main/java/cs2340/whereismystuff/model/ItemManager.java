@@ -282,7 +282,6 @@ class ItemManager {
      */
     String searchResult(Boolean lostItem, String name) {
         System.out.println("ItemManager/searchResult: name is " + name);
-        Item item = (lostItem) ? _lostItems.get(name) : _foundItems.get(name);
         if (lostItem) {
             return "LOST ITEM:\n" + _lostItems.get(name).getSearchDescription();
         } else {

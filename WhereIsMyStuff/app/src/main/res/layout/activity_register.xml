@@ -147,7 +147,7 @@
         android:layout_alignStart="@+id/registerPasswordTextView2"
         android:layout_below="@+id/registerPasswordEditText2"
         android:layout_marginTop="35dp"
-        android:text="Account Type:"
+        android:text="@string/register_account_text_view"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"

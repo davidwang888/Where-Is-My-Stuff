@@ -18,7 +18,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="37dp"
-        android:text="Search Result:"
+        android:text="@string/search_result_search_result_text"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
     <TextView
@@ -28,7 +28,7 @@
         android:layout_alignLeft="@+id/searchResultTitleTextView"
         android:layout_alignStart="@+id/searchResultTitleTextView"
         android:layout_below="@+id/searchResultTitleTextView"
-        android:text="Description"
+        android:text="@string/search_result_description_text"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
     <Button
@@ -40,5 +40,5 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:backgroundTint="@color/buttonColor"
-        android:text="Home"/>
+        android:text="@string/search_result_description_text"/>
 </RelativeLayout>

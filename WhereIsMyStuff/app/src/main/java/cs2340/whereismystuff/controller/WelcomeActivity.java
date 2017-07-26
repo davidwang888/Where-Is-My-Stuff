@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 import cs2340.whereismystuff.R;
 import cs2340.whereismystuff.model.Model;
 
