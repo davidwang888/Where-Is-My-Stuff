@@ -9,7 +9,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 import java.util.Map;
-
+import java.util.concurrent.SynchronousQueue;
 
 
 /**
@@ -59,6 +59,7 @@ class UserManager {
 
     private void setUpAddUser(User user) {
         _users.put(user.getUsername(), user);
+        _emailUser.put(user.getEmail(), user.getUsername());
     }
 
     /**
@@ -211,7 +212,6 @@ class UserManager {
             } else {
                 _auth.createUserWithEmailAndPassword(email, password);
                 _currentUser = user;
-                FirebaseUser _firebaseCurrentUser = _auth.getCurrentUser();
                 return 0;
             }
         }
