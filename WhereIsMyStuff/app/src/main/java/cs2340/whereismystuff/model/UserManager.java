@@ -10,7 +10,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-
 /**
  * Represents a user manager that stores all of the users and is capable of
  * validating user input and logging users in
@@ -58,6 +57,7 @@ class UserManager {
 
     private void setUpAddUser(User user) {
         _users.put(user.getUsername(), user);
+        _emailUser.put(user.getEmail(), user.getUsername());
     }
 
     /**
