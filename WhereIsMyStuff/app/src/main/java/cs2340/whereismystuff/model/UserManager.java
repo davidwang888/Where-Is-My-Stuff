@@ -20,58 +20,41 @@ class UserManager {
     /**
      * The current user logged in
      */
-    private User _currentUser;
+    private static User _currentUser;
 
     /**
-     * A HashMap that maps usernames to the the corresponding users
+     * A HashMap that maps username to the the corresponding user
      */
-    private HashMap<String, User> _users;
+    private static HashMap<String, User> _users = new HashMap<>();
 
     /**
-     * A HashMap that maps a email addresses to the corresponding users'
-     * usernames
+     * A HashMap that maps a email addresses to the corresponding user's
+     * username
      */
-    private HashMap<String, String> _emailUser;
+    private static HashMap<String, String> _emailUser = new HashMap<>();
 
     /**
-     * The singular instance of UserManager that will be used by the Model to
-     * manage the users
-     */
-    private static final UserManager instance = new UserManager();
-
-    /**
-     * The database reference to the authentification of the users.
+     * The database reference to the authentication of the users.
      */
     private FirebaseAuth _auth = FirebaseAuth.getInstance();
 
     /**
      * The database reference to the whole Firebase database
      */
-    private DatabaseReference _databaseRef;
+    private DatabaseReference _databaseRef = FirebaseDatabase.getInstance()
+            .getReference();
 
     /**
      * The database reference to the users section of the Firebase database
      */
-    private DatabaseReference _usersDatabase;
+    private DatabaseReference _usersDatabase = _databaseRef.child("users");
 
 
     /**
      * Creates a UserManager containing only the default administrator
      */
-    private UserManager() {
-        _users = new HashMap<>();
-        _emailUser = new HashMap<>();
-        _databaseRef = FirebaseDatabase.getInstance().getReference();
-        _usersDatabase = _databaseRef.child("users");
+    UserManager() {
         setUp();
-    }
-
-    /**
-     * Returns the user manager
-     * @return The user manager
-     */
-    static UserManager getInstance() {
-        return instance;
     }
 
     private void setUpAddUser(User user) {

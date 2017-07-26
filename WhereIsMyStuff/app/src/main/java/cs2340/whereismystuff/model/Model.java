@@ -13,13 +13,13 @@ public class Model {
      * The one UserManager that will be used by this class to keep track of the
      * different users of the application
      */
-    private static final UserManager userManager = UserManager.getInstance();
+    private static final UserManager userManager = new UserManager();
 
     /**
      * The one ItemManager that will be used by this class to keep track of the
      * different items of the application
      */
-    private static final ItemManager itemManager = ItemManager.getInstance();
+    private static final ItemManager itemManager = new ItemManager();
 
     /**
      * The singular instance of this class that will be used by other classes

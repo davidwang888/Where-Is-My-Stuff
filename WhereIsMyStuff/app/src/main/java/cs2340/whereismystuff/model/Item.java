@@ -139,8 +139,6 @@ public class Item {
      * @return a string of the item's description
      */
     public String getSearchDescription() {
-//        return "Name: " + _name + "\nType: " + _type + "\nDescription: " +
-//                _description + "\nUser: " + _user.getName();
         return "Name: " + _name + "\nType: " + _type + "\nDescription: " +
                 _description;
     }

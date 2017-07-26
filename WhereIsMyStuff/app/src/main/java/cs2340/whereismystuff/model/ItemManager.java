@@ -12,63 +12,41 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Reprsents a item manager that stores all the lost and found items and is
+ * Represents a item manager that stores all the lost and found items and is
  * used to search for items
  */
 class ItemManager {
     /**
      * A hashmap of all the lost items
      */
-    private HashMap<String, Item> _lostItems;
+    private static HashMap<String, Item> _lostItems = new HashMap<>();
 
     /**
      * A hashmap of all the found items
      */
-    private HashMap<String, Item> _foundItems;
+    private static HashMap<String, Item> _foundItems = new HashMap<>();
 
     /**
      * The database reference to the whole Firebase database
      */
-    private DatabaseReference _databaseRef;
+    private static DatabaseReference _databaseRef =FirebaseDatabase
+            .getInstance().getReference();
 
     /**
      * The database reference to the lost item section of the Firebase database
      */
-    private DatabaseReference _lostItemsDatabase;
+    private DatabaseReference _lostItemsDatabase = _databaseRef.child("lost "
+            + "items");
 
     /**
      * The database reference to the found item section of the Firebase database
      */
-    private DatabaseReference _foundItemsDatabase;
-
-    /**
-     * The singular instance of UserManager that will be used by the Model to
-     * manage the users
-     */
-    private static final ItemManager instance = new ItemManager();
-
-    /**
-     * Creates a ItemManager
-     */
-    private ItemManager() {
-        _lostItems = new HashMap<>();
-        _foundItems = new HashMap<>();
-        _databaseRef = FirebaseDatabase.getInstance().getReference();
-        _lostItemsDatabase = _databaseRef.child("lost items");
-        _foundItemsDatabase = _databaseRef.child("found items");
-    }
-
-    /**
-     * Returns the single instance of item manager
-     * @return The item manager
-     */
-    static ItemManager getInstance() {
-        return instance;
-    }
+    private DatabaseReference _foundItemsDatabase = _databaseRef.child("found"
+            + " items");
 
     /**
      * Determines whether or not the information the user has entered for an
-     * item is valid and returns 0 if it is valid and som eother number if it
+     * item is valid and returns 0 if it is valid and some other number if it
      * is not
      *
      * @param name The item's name
@@ -278,7 +256,7 @@ class ItemManager {
      *
      * @param lostItem whether the item is a found item or not
      * @param name the name of the item
-     * @return a boolena whether the item is found
+     * @return a boolean whether the item is found
      */
     String searchResult(Boolean lostItem, String name) {
         System.out.println("ItemManager/searchResult: name is " + name);
