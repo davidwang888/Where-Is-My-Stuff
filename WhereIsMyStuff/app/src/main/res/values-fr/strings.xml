@@ -17,6 +17,8 @@
     <string name="register_cancel_button">Annuler</string>
     <string name="register_admin_radio_button">Admin</string>
     <string name="register_user_radio_button">Utilisateur</string>
+    <string name="register_account_text_view">Type de compte:</string>
+
 
     <!--activity_login-->
     <string name="login_username_email_text_view">Nom d\'Utilisateur ou Email:</string>
@@ -29,11 +31,12 @@
     <string name="main_logout_button">Connectez - Out</string>
     <string name="main_enter_lost_item_button">Entrez l\'élément perdu</string>
 
-    <string name="main_enter_found_item_button">Enter Found Item</string>
-    <string name="main_search_item_button">Search Items</string>
-    <string name="main_view_lost_items_button">View Lost Items</string>
-    <string name="main_view_found_items_button">View Found Items</string>
-    <string name="main_view_map_button">View Map</string>
+    <string name="main_enter_found_item_button">Entrez l\'article
+        trouvé</string>
+    <string name="main_search_item_button">Rechercher des articles</string>
+    <string name="main_view_lost_items_button">Afficher les objets perdus</string>
+    <string name="main_view_found_items_button">Afficher les articles trouvés</string>
+    <string name="main_view_map_button">Voir la carte</string>
 
     <!--activity_enter_lost_item-->
     <string name="enter_lost_item_title_text_view">Entrez Votre Article Perdu!</string>
@@ -41,7 +44,7 @@
     <string name="enter_lost_item_description_text_view">Description de l\'article:</string>
     <string name="enter_lost_item_button">Entrez l\'article</string>
 
-    <string name="enter_lost_item_name_text_view">Item Name</string>
+    <string name="enter_lost_item_name_text_view">Nom de l\'article</string>
 
     <!--activity_enter_found_item-->
     <string name="enter_found_item_title_text_view">Entrez L\'Article
@@ -61,12 +64,25 @@
     <string name="view_found_items_text_view">Objets Trouvés:</string>
     <string name="view_found_items_home_button">Page D\'Accueil</string>
 
+    <!--activity_search-->
+    <string name="search_item_type_text">Type d\'élément:</string>
+    <string name="search_lost_item_radio_button">Objet perdu</string>
+    <string name="search_found_item_radio_button">Objet trouvé</string>
+    <string name="search_item_name_text">Nom de l\'article:</string>
+    <string name="search_search_button">Chercher</string>
+    <string name="search_cancel_button">Annuler</string>
+    <string name="search_result_search_result_text">Résultat de la recherche:</string>
+
+    <!--activity_search_result-->
+    <string name="search_result_description_text">La Description</string>
+
+    <!--activity_map-->
+    <string name="maps_text_view">Carte</string>
+
+    <!--activity_message-->
+    <string name="message_title_text_view">Envoyer le message!</string>
+    <string name="message_send_button">Envoyer</string>
+    <string name="message_home_button">Accueil</string>
 
     <string name="title_activity_maps">Carte</string>
-
-    <!--activity_maps-->
-    <string name="maps_found_text_view">Cliquez Sur Où Vous Avez Trouvé L\'élément!</string>
-    <string name="maps_lost_text_view">Cliquez Sur Où Vous Avez Laissez
-        L\'élément!</string>
-
 </resources>

@@ -8,6 +8,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,6 +17,11 @@ import java.util.Map;
  * used to search for items
  */
 class ItemManager {
+    /**
+     * The last item selected
+     */
+    private static Item _currentItem;
+
     /**
      * A hashmap of all the lost items
      */
@@ -43,6 +49,12 @@ class ItemManager {
      */
     private DatabaseReference _foundItemsDatabase = _databaseRef.child("found"
             + " items");
+
+    /**
+     * The database reference to the message section of the Firebase database
+     */
+    private DatabaseReference _messagesDatabase = _databaseRef.child
+            ("messages");
 
     /**
      * Determines whether or not the information the user has entered for an
@@ -265,5 +277,35 @@ class ItemManager {
         } else {
             return "FOUND ITEM:\n" + _foundItems.get(name).getSearchDescription();
         }
+    }
+
+    Item getCurrentItem() {
+        return _currentItem;
+    }
+
+    /**
+     * Sets the current item to the item passed in
+     *
+     * @param item the new current item
+     */
+    void setCurrentItem(Item item) {
+        _currentItem = item;
+    }
+
+    /**
+     * Adds an entry into Firebase for admins to approve and send an email
+     *
+     * @param u the user sending the email
+     * @param m the message the sender is sending
+     */
+    void sendMessage(User u, String m) {
+        m = m.trim();
+        String sender = u.getEmail();
+        String receiver = _currentItem.getUser().getEmail();
+        Map<String, Object> updates = new HashMap<>();
+        Date date = new Date();
+        updates.put(date.toString(), "Sender: " + sender + ", Receiver: " +
+                receiver + ", Message: " + m);
+        _messagesDatabase.updateChildren(updates);
     }
 }

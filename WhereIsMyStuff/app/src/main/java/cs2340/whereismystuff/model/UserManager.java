@@ -1,7 +1,6 @@
 package cs2340.whereismystuff.model;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -211,7 +210,6 @@ class UserManager {
             } else {
                 _auth.createUserWithEmailAndPassword(email, password);
                 _currentUser = user;
-                FirebaseUser _firebaseCurrentUser = _auth.getCurrentUser();
                 return 0;
             }
         }
