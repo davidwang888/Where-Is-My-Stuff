@@ -102,9 +102,10 @@ public class LoginActivity extends AppCompatActivity {
         } else if (code == 4) {
             Toast.makeText(LoginActivity.this, "Username/Email Or Password "
                     + "Incorrect", Toast.LENGTH_SHORT).show();
-        } else if (_loginAttemps == 5) {
+        } else if (_loginAttemps >= 3) {
             Toast.makeText(LoginActivity.this, "User locked out. Contact "
-                    + "admin wheres.my.stuff@gmail.com to regain access.", Toast
+                    + "admin where.is.my.stuff@gmail.com to regain access.",
+                    Toast
                     .LENGTH_SHORT)
                     .show();
         } else {
