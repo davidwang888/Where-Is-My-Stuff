@@ -23,23 +23,23 @@ public class SearchActivity extends AppCompatActivity {
     /**
      * Text box user will enter the item's name
      */
-    EditText _itemName;
+    private EditText _itemName;
 
     /**
      * The boolean representing whether the item is lost or not
      */
-    boolean _lostItem;
+    private boolean _lostItem;
 
     /**
      * Button user will click when they want to search for the item
      */
-    Button _searchButton;
+    private Button _searchButton;
 
     /**
      * Button user will click when they want to cancel the search and go back
      * to the main screen
      */
-    Button _cancelButton;
+    private Button _cancelButton;
 
     /**
      * Singular instance of model that the entire project uses to communicate

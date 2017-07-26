@@ -15,6 +15,7 @@
     <string name="register_password_text_view2">Retype\nPassword:</string>
     <string name="register_register_button">Register</string>
     <string name="register_cancel_button">Cancel</string>
+    <string name="register_account_text_view">Account Type:</string>
     <string name="register_admin_radio_button">Admin</string>
     <string name="register_user_radio_button">User</string>
 
@@ -67,4 +68,16 @@
     <string name="maps_lost_text_view">Click on where you lost the
         item!</string>
 
+    <!--activity_search-->
+    <string name="search_item_type_text">Item Type:</string>
+    <string name="search_lost_item_radio_button">Lost Item</string>
+    <string name="search_found_item_radio_button">Found Item</string>
+    <string name="search_item_name_text">Item Name:</string>
+    <string name="search_search_button">Search</string>
+    <string name="search_cancel_button">Cancel</string>
+
+    <!--activity_search_result-->
+    <string name="search_result_search_result_text">Search Result:</string>
+    <string name="search_result_description_text">Description</string>
+    <string name="search_resutl_home_button">Home</string>
 </resources>

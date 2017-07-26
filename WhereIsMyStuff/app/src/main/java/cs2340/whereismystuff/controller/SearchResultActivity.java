@@ -16,12 +16,12 @@ public class SearchResultActivity extends AppCompatActivity {
     /**
      * The text box with the description of the found item
      */
-    TextView _itemDescription;
+    private TextView _itemDescription;
 
     /**
      * The button users will push to go back to the welcome screen
      */
-    Button _backButton;
+    private Button _backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

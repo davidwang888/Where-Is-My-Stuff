@@ -205,7 +205,7 @@ class UserManager {
      */
     int loginUser(String usernameEmail, String password) {
         usernameEmail = usernameEmail.trim();
-        String email = null;
+        String email;
         User user;
         boolean username;
         if (usernameEmail.length() == 0 || password.length() == 0) {
