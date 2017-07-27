@@ -35,6 +35,15 @@ public class Model {
         return instance;
     }
 
+    /**
+     * Private constructor to set up Singleton design
+     */
+    private Model() {
+    }
+
+    /**
+     * Sets up ItemManager and UserManager
+     */
     public void setUp() {
         itemManager.setUp();
         userManager.setUp();
