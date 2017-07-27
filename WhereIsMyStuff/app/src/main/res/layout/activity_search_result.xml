@@ -28,7 +28,7 @@
         android:layout_alignLeft="@+id/searchResultTitleTextView"
         android:layout_alignStart="@+id/searchResultTitleTextView"
         android:layout_below="@+id/searchResultTitleTextView"
-        android:text="@string/search_result_description_text"
+        android:text="@string/search_result_back_button"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
     <Button
@@ -40,5 +40,5 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:backgroundTint="@color/buttonColor"
-        android:text="@string/search_result_description_text"/>
+        android:text="@string/search_result_back_button"/>
 </RelativeLayout>

@@ -73,7 +73,7 @@
 
     <!--activity_search_result-->
     <string name="search_result_search_result_text">Search Result:</string>
-    <string name="search_result_description_text">Description</string>
+    <string name="search_result_back_button">Back</string>
 
     <!--activity_map-->
     <string name="maps_text_view">Map</string>

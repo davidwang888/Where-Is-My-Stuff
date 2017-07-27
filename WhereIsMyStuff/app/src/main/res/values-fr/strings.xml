@@ -73,10 +73,10 @@
     <string name="search_item_name_text">Nom de l\'article:</string>
     <string name="search_search_button">Chercher</string>
     <string name="search_cancel_button">Annuler</string>
-    <string name="search_result_search_result_text">Résultat de la recherche:</string>
 
     <!--activity_search_result-->
-    <string name="search_result_description_text">La Description</string>
+    <string name="search_result_search_result_text">Résultat de la recherche:</string>
+    <string name="search_result_back_button">Arriere</string>
 
     <!--activity_map-->
     <string name="maps_text_view">Carte</string>

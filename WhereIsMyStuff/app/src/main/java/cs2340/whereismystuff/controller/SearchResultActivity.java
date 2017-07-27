@@ -49,7 +49,7 @@ public class SearchResultActivity extends AppCompatActivity {
      * welcome screen
      */
     private void onBackButtonClick() {
-        Intent intent = new Intent(SearchResultActivity.this, WelcomeActivity
+        Intent intent = new Intent(SearchResultActivity.this, MainActivity
                 .class);
         startActivity(intent);
     }
