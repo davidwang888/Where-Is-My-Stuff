@@ -16,8 +16,19 @@ import java.util.ArrayList;
 import cs2340.whereismystuff.R;
 import cs2340.whereismystuff.model.Model;
 
+/**
+ * Activity representing the page with stats
+ */
 public class PieChartActivity extends AppCompatActivity {
+    /**
+     * The pie chart object data will be plotted on
+     */
     private PieChart _pieChart;
+
+    /**
+     * Singular instance of model that the entire project uses to communicate
+     * with the backend
+     */
     private Model _model = Model.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +38,9 @@ public class PieChartActivity extends AppCompatActivity {
         addData();
     }
 
+    /**
+     * Adds data to the pie chart
+     */
     private void addData() {
         _pieChart = (PieChart) findViewById(R.id.piechart);
         _pieChart.setRotationEnabled(true);
