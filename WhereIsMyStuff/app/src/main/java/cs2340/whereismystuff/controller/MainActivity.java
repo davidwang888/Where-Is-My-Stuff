@@ -55,10 +55,14 @@ public class MainActivity extends AppCompatActivity {
     private Button _viewFoundItemsButton;
 
     /**
-     * Button that user will clikc if they want to see the map
+     * Button that user will click if they want to see the map
      */
     private Button _viewMapButton;
 
+    /**
+     * Button that user will click if they want to view the graph displaying
+     * the amount of lost items in comparison to found items
+     */
     private Button _viewStatsButton;
 
     /**
@@ -208,6 +212,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Upon the view stat button clicked, the screen is changed to the view
+     * graph screen
+     */
     private void onViewStatsButtonClick() {
         Intent intent = new Intent(MainActivity.this, PieChartActivity
                 .class);

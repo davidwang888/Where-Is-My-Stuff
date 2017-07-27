@@ -54,6 +54,7 @@
             android:label="@string/title_activity_maps">
         </activity>
         <activity android:name=".controller.PieChartActivity">
+            </activity>
         <activity android:name=".controller.MessageActivity">
         </activity>
     </application>

@@ -21,9 +21,12 @@ import java.util.List;
 
 import cs2340.whereismystuff.R;
 import cs2340.whereismystuff.model.Item;
-import cs2340.whereismystuff.model.ItemType;
 import cs2340.whereismystuff.model.Model;
 
+/**
+ * Represents the screen that shows user the lost and found items locations
+ * on the map
+ */
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private boolean _clickable;
@@ -51,9 +54,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
+     * This is where we can add markers or lines, add listeners or move the
+     * camera.
+     * If Google Play services is not installed on the device, the user will be
+     * prompted to install
+     * it inside the SupportMapFragment. This method will only be triggered
+     * once the user has
      * installed Google Play services and returned to the app.
      *
      * Specific to this app, either all the lost items or the found items
@@ -98,7 +104,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.setInfoWindowAdapter(new CustomInfoWindowAdapter());
     }
 
-    class CustomInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
+    /**
+     * Class that defines the custom window that pops up when the location
+     * mark is clicked on
+     */
+    private class CustomInfoWindowAdapter implements GoogleMap
+            .InfoWindowAdapter {
 
         private final View myContentsView;
 
