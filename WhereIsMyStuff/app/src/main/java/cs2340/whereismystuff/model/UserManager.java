@@ -1,7 +1,6 @@
 package cs2340.whereismystuff.model;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -9,7 +8,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.SynchronousQueue;
 
 
 /**
@@ -229,6 +227,11 @@ class UserManager {
         return "Anonymous";
     }
 
+    /**
+     * Gets the current user logged in
+     *
+     * @return the current user logged in
+     */
     User getCurrentUser() {
         return _currentUser;
     }

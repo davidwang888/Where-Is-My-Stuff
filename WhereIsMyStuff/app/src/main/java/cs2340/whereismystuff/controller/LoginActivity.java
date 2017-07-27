@@ -44,6 +44,9 @@ public class LoginActivity extends AppCompatActivity {
      */
     private static Model model;
 
+    /**
+     * Number of login attempts that the user has currently used
+     */
     private int _loginAttempts;
 
     @Override

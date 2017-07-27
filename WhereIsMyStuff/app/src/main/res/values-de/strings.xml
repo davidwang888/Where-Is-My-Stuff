@@ -18,6 +18,8 @@
     <string name="register_cancel_button">Stornieren</string>
     <string name="register_admin_radio_button">Administrator</string>
     <string name="register_user_radio_button">Benutzer</string>
+    <string name="register_account_text_view">Konto Typ:</string>
+
 
     <!--activity_login-->
     <string name="login_username_email_text_view">Benutzername oder Email:</string>
@@ -34,8 +36,8 @@
     <string name="main_search_item_button">Search Items</string>
     <string name="main_view_lost_items_button">View Lost Items</string>
     <string name="main_view_found_items_button">View Found Items</string>
-    <string name="main_view_map_button">Karte Anshauen</string>
     <string name="main_view_stats_button">Statistik Anshauen</string>
+    <string name="main_view_map_button">Ansichts Karte</string>
 
 
     <!--activity_enter_lost_item-->
@@ -50,7 +52,7 @@
     <!--activity_enter_found_item-->
     <string name="enter_found_item_title_text_view">Geben Sie Ein Gefundenes
         Element Ein!</string>
-    <string name="enter_found_item_type_text_view">Item Type:</string>
+    <string name="enter_found_item_type_text_view">Gegenstandsart:</string>
     <string name="enter_found_item_description_text_view">Artikelbeschreibung
         :</string>
     <string name="enter_found_item_button">Geben Sie Item Ein</string>
@@ -58,20 +60,32 @@
 
     <!--activity_view_lost_items-->
     <string name="view_lost_items_text_view">Verlorene Gegenstände:</string>
-    <string name="view_lost_items_home_button">Home</string>
+    <string name="view_lost_items_home_button">Zuhause</string>
 
     <!--activity_view_found_items-->
     <string name="view_found_items_text_view">
                     Gefundene Gegenstände:</string>
     <string name="view_found_items_home_button">Homepage</string>
 
+    <!--activity_search-->
+    <string name="search_item_type_text">Gegenstandsart:</string>
+    <string name="search_lost_item_radio_button">Verlorener Gegenstand</string>
+    <string name="search_found_item_radio_button">Gefundenes Item</string>
+    <string name="search_item_name_text">Artikelname:</string>
+    <string name="search_search_button">Suche</string>
+    <string name="search_cancel_button">Stornieren</string>
+    <string name="search_result_search_result_text">Suchergebnis:</string>
+
+    <!--activity_search_result-->
+    <string name="search_result_description_text">Beschreibung</string>
+
+    <!--activity_map-->
+    <string name="maps_text_view">Landkarte</string>
+
+    <!--activity_message-->
+    <string name="message_title_text_view">Nachricht senden!</string>
+    <string name="message_send_button">Senden</string>
+    <string name="message_home_button">Zuhause</string>
 
     <string name="title_activity_maps">Landkarte</string>
-
-    <!--activity_maps-->
-    <string name="maps_found_text_view">Klicken Sie auf, wo Sie den Artikel gefunden haben!</string>
-    <string name="maps_lost_text_view">Klicken Sie auf, wo Sie den Artikel
-        verloren haben!</string>
-
-
 </resources>

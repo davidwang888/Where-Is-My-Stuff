@@ -168,4 +168,32 @@ public class Model {
     public String searchResult(Boolean lostItem, String name) {
         return itemManager.searchResult(lostItem, name);
     }
+
+    /**
+     * Returns the current item selected
+     *
+     * @return the last item to be selected
+     */
+    public Item getCurrentItem() {
+        return itemManager.getCurrentItem();
+    }
+
+    /**
+     * Sets the current item to the item passed in
+     *
+     * @param item the new current item
+     */
+    public void setCurrentItem(Item item) {
+        itemManager.setCurrentItem(item);
+    }
+
+    /**
+     * Adds an entry into Firebase for admins to approve and send an email
+     *
+     * @param m the message the sender is sending
+     */
+    public void sendMessage(String m) {
+        itemManager.sendMessage(userManager.getCurrentUser(),
+                m);
+    }
 }

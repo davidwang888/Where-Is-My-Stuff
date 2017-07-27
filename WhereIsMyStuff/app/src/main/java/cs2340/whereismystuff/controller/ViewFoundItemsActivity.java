@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
 import cs2340.whereismystuff.R;
+import cs2340.whereismystuff.model.Item;
 import cs2340.whereismystuff.model.Model;
 
 /**
@@ -51,6 +53,28 @@ public class ViewFoundItemsActivity extends AppCompatActivity {
             }
         });
 
+        _viewFoundItemsListView.setOnItemClickListener(new AdapterView
+                .OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                onItemClicked(position);
+            }
+        });
+    }
+
+    /**
+     * Upon an item being clicked, the screen will change so there is a way
+     * to message the finder of the item
+     *
+     * @param position the position of the clicked item in the listview
+     */
+    private void onItemClicked(int position) {
+        model.setCurrentItem((Item) _viewFoundItemsListView
+                .getItemAtPosition(position));
+        Intent intent = new Intent(ViewFoundItemsActivity.this,
+                MessageActivity.class);
+        intent.putExtra("isLostItem", false);
+        startActivity(intent);
     }
 
     /**

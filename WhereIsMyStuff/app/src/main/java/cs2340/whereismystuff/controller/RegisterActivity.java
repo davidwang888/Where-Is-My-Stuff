@@ -174,8 +174,6 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-
-
     /**
      * Upon being clicked, creates and intent to return to the welcome screen
      * and starts it

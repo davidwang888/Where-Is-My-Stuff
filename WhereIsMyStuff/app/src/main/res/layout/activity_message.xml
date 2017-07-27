@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context="cs2340.whereismystuff.controller.MessageActivity">
+    <TextView
+        android:id="@+id/message_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/message_title_text_view"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_marginTop="43dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/message_message_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/message_title_text_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:ems="10"
+        android:inputType="textMultiLine"/>
+
+    <Button
+        android:id="@+id/message_send_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:background="@color/buttonColor"
+        android:text="@string/message_send_button"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/message_home_button"
+        android:layout_toEndOf="@+id/message_home_button"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"/>
+
+    <Button
+        android:id="@+id/message_home_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/message_send_button"
+        android:layout_alignBottom="@+id/message_send_button"
+        android:layout_alignLeft="@+id/message_message_edit_text"
+        android:layout_alignStart="@+id/message_message_edit_text"
+        android:background="@color/buttonColor"
+        android:text="@string/message_home_button"/>
+
+</RelativeLayout>

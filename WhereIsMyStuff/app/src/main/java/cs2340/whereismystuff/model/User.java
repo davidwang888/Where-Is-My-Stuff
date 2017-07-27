@@ -55,53 +55,110 @@ public class User {
         _isAdmin = isAdmin;
     }
 
+    /**
+     * Default constructor for FireBase
+     */
     public User() {
     }
 
+    /**
+     * Gets the first name of the user
+     *
+     * @return the first name
+     */
     public String getFirstName() {
         return _firstName;
     }
 
+    /**
+     * Gets the last name of the user
+     *
+     * @return the last name
+     */
     public String getLastName() {
         return _lastName;
     }
 
+    /**
+     * Gets the email of the user
+     *
+     * @return the email
+     */
     public String getEmail() {
         return _email;
     }
 
+    /**
+     * Gets the username of the user
+     *
+     * @return the username
+     */
     public String getUsername() {
         return _username;
     }
 
+    /**
+     * Gets the password of the user
+     *
+     * @return the password
+     */
     public String getPassword() {
         return _password;
     }
 
+    /**
+     * Gets the isAdmin attribute of the user
+     *
+     * @return the isAdmin
+     */
     public boolean isIsAdmin() {
         return _isAdmin;
     }
 
+    /**
+     * Sets the first name of the user
+     * @param _firstName the new first name of the user
+     */
     public void setFirstName(String _firstName) {
         this._firstName = _firstName;
     }
 
+    /**
+     * Sets the last name of the user
+     * @param _lastName the new last name of the user
+     */
     public void setLastName(String _lastName) {
         this._lastName = _lastName;
     }
 
+    /**
+     * Sets the email of the user
+     * @param _email the new email of the user
+     */
     public void setEmail(String _email) {
         this._email = _email;
     }
 
+    /**
+     * Sets the username of the user
+     * @param _username the new username of the user
+     */
     public void setUsername(String _username) {
         this._username = _username;
     }
 
+    /**
+     * Sets the password of the user
+     * @param _password the new password of the user
+     */
     public void setPassword(String _password) {
         this._password = _password;
     }
 
+    /**
+     * Sets the isAdmin attribute of the user
+     * @param _isAdmin the new isAdmin attribute of the user
+     */
     public void setIsAdmin(boolean _isAdmin) {
         this._isAdmin = _isAdmin;
     }

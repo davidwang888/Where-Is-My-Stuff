@@ -53,7 +53,10 @@ public class MainActivity extends AppCompatActivity {
      * Button the user will click when they want to see the found items
      */
     private Button _viewFoundItemsButton;
-    
+
+    /**
+     * Button that user will clikc if they want to see the map
+     */
     private Button _viewMapButton;
 
     private Button _viewStatsButton;
@@ -197,6 +200,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Upon the view map button clicked, the screen is changed to the map
+     */
     private void onViewMapButtonClick() {
         Intent intent = new Intent(MainActivity.this, MapsActivity.class);
         startActivity(intent);

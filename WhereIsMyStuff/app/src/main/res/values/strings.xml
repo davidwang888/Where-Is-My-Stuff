@@ -63,12 +63,6 @@
 
     <string name="title_activity_maps">Map</string>
 
-    <!--activity_maps-->
-    <string name="maps_found_text_view">Click on where you found the
-        item!</string>
-    <string name="maps_lost_text_view">Click on where you lost the
-        item!</string>
-
     <!--activity_search-->
     <string name="search_item_type_text">Item Type:</string>
     <string name="search_lost_item_radio_button">Lost Item</string>
@@ -80,5 +74,12 @@
     <!--activity_search_result-->
     <string name="search_result_search_result_text">Search Result:</string>
     <string name="search_result_description_text">Description</string>
-    <string name="search_resutl_home_button">Home</string>
+
+    <!--activity_map-->
+    <string name="maps_text_view">Map</string>
+
+    <!--activity_message-->
+    <string name="message_title_text_view">Send Message!</string>
+    <string name="message_send_button">Send</string>
+    <string name="message_home_button">Home</string>
 </resources>
