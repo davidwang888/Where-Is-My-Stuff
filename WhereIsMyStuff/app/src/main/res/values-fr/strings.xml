@@ -32,7 +32,7 @@
     <string name="main_enter_lost_item_button">Entrez l\'élément perdu</string>
 
 
-    <string name="main_view_stats_button">View Stats</string>
+    <string name="main_view_stats_button">Voir les statistiques</string>
     <string name="main_enter_found_item_button">Entrez l\'article
         trouvé</string>
     <string name="main_search_item_button">Rechercher des articles</string>

@@ -30,24 +30,24 @@
         android:layout_marginTop="15dp"
         android:backgroundTintMode="@android:color/holo_blue_dark"
         android:ems="10"
+        android:hint="@string/register_first_name_edit_text"
         android:inputType="textPersonName"
-        android:text="@string/register_first_name_edit_text"
-        android:textSize="12sp" />
+        android:textSize="12sp"/>
 
     <EditText
-        android:backgroundTintMode="@android:color/holo_blue_dark"
         android:id="@+id/registerLastNameEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/register_last_name_edit_text"
-        android:textSize="12sp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
         android:layout_alignBaseline="@+id/registerFirstNameEditText"
         android:layout_alignBottom="@+id/registerFirstNameEditText"
-        android:layout_toRightOf="@+id/registerFirstNameEditText" />
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_toRightOf="@+id/registerFirstNameEditText"
+        android:backgroundTintMode="@android:color/holo_blue_dark"
+        android:ems="10"
+        android:hint="@string/register_last_name_edit_text"
+        android:inputType="textPersonName"
+        android:textSize="12sp"/>
 
     <TextView
         android:id="@+id/registerEmailTextView"

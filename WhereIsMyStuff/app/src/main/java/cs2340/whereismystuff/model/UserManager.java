@@ -154,9 +154,6 @@ class UserManager {
         int code = validateInput(firstName, lastName, email, username,
                 password1, password2);
         if (code == 0) {
-            //Object newUser = new User(firstName, lastName, email, username,
-                   // password1, isAdmin);
-
             _users.put(username, new User(firstName, lastName, email, username,
                      password1, isAdmin));
             _emailUser.put(email, username);

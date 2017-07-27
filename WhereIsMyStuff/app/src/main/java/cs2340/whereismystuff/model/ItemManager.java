@@ -164,7 +164,7 @@ class ItemManager {
                             .getValue()).ordinal();
                     String description = (String) snap.child("description")
                             .getValue();
-                    User user = snap.child("_user").getValue(User.class);
+                    User user = snap.child("user").getValue(User.class);
                     Double latitude = (Double) snap.child("latLng").child
                             ("latitude").getValue();
                     Double longitude = (Double) snap.child("latLng").child
@@ -271,7 +271,6 @@ class ItemManager {
      * @return a boolean whether the item is found
      */
     String searchResult(Boolean lostItem, String name) {
-        System.out.println("ItemManager/searchResult: name is " + name);
         if (lostItem) {
             return "LOST ITEM:\n" + _lostItems.get(name).getSearchDescription();
         } else {
