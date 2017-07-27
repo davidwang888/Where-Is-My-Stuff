@@ -9,6 +9,18 @@
     tools:context="cs2340.whereismystuff.controller.MainActivity">
 
     <Button
+        android:id="@+id/mainViewStatsButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/mainEnterFoundItemButton"
+        android:layout_toRightOf="@+id/mainEnterFoundItemButton"
+        android:backgroundTint="@color/buttonColor"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/main_view_stats_button"/>
+
+    <Button
         android:id="@+id/mainLogoutButton"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
@@ -17,8 +29,8 @@
         android:fontFamily="sans-serif-smallcaps"
         android:text="@string/main_logout_button"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_toLeftOf="@+id/mainEnterFoundItemButton"
+        android:layout_toStartOf="@+id/mainEnterFoundItemButton"/>
 
     <TextView
         android:id="@+id/mainTitleTextView"

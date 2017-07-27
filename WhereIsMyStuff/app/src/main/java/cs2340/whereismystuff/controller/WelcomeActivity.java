@@ -72,4 +72,5 @@ public class WelcomeActivity extends AppCompatActivity {
                 RegisterActivity.class);
         startActivity(intent);
     }
+
 }

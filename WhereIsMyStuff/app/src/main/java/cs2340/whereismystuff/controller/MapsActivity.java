@@ -1,8 +1,12 @@
 package cs2340.whereismystuff.controller;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -10,12 +14,14 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.List;
 
 import cs2340.whereismystuff.R;
 import cs2340.whereismystuff.model.Item;
+import cs2340.whereismystuff.model.ItemType;
 import cs2340.whereismystuff.model.Model;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -81,10 +87,71 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         for (Item r : itemList) {
             LatLng loc = r.getLatLng();
-            mMap.addMarker(new MarkerOptions().position(loc).title(r.getName
+
+            Marker m = mMap.addMarker(new MarkerOptions().position(loc).title(r
+                    .getName
                     ()).snippet(r.getDescription()));
+            m.setTag(r.getType().ordinal());
             mMap.moveCamera(CameraUpdateFactory.newLatLng(loc));
         }
+
+        mMap.setInfoWindowAdapter(new CustomInfoWindowAdapter());
+    }
+
+    class CustomInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
+
+        private final View myContentsView;
+
+        CustomInfoWindowAdapter(){
+            myContentsView = getLayoutInflater().inflate(R.layout.custom_info_contents, null);
+        }
+
+        @Override
+        public View getInfoContents(Marker marker) {
+
+            TextView tvTitle = ((TextView) myContentsView.findViewById(R.id
+                    .customInfoContentsTitle));
+            tvTitle.setText(marker.getTitle());
+            TextView tvSnippet = ((TextView) myContentsView.findViewById(R.id
+                    .customInfoContentsSnippet));
+            tvSnippet.setText(marker.getSnippet());
+
+            ImageView imageView = (ImageView) myContentsView.findViewById(R
+                    .id.customInfoContentsImageView);
+            //Drawable drawable = getResources().getDrawable(R.drawable
+                    //.furniture);
+            Drawable drawable = null;
+            if (marker.getTag().equals(0)) {
+                drawable = ContextCompat.getDrawable
+                        (getApplicationContext(),R.drawable.technological);
+            } else if (marker.getTag().equals(1)) {
+                drawable = ContextCompat.getDrawable
+                        (getApplicationContext(),R.drawable.furniture);
+            } else if (marker.getTag().equals(2)) {
+                drawable = ContextCompat.getDrawable
+                        (getApplicationContext(),R.drawable.recreational);
+            } else if (marker.getTag().equals(3)) {
+                drawable = ContextCompat.getDrawable
+                        (getApplicationContext(),R.drawable.personal);
+            } else if (marker.getTag().equals(4)) {
+                drawable = ContextCompat.getDrawable
+                        (getApplicationContext(),R.drawable.pet);
+            } else {
+                drawable = ContextCompat.getDrawable
+                        (getApplicationContext(),R.drawable.other);
+            }
+
+            imageView.setBackground(drawable);
+
+            return myContentsView;
+        }
+
+        @Override
+        public View getInfoWindow(Marker marker) {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
     }
 
     /**
@@ -95,7 +162,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
-        mMap.addMarker(markerOptions);
+        Marker m = mMap.addMarker(markerOptions);
+        m.setTag(0);
         Intent intent;
         if (_isLostItem) {
             intent = new Intent(MapsActivity.this, EnterLostItemActivity.class);

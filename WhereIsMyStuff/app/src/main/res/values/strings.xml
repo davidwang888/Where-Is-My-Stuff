@@ -34,6 +34,7 @@
     <string name="main_view_lost_items_button">View Lost Items</string>
     <string name="main_view_found_items_button">View Found Items</string>
     <string name="main_view_map_button">View Map</string>
+    <string name="main_view_stats_button">View Stats</string>
 
     <!--activity_enter_lost_item-->
     <string name="enter_lost_item_title_text_view">Enter Your Lost Item!</string>

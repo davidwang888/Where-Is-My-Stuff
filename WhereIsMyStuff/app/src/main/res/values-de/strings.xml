@@ -34,7 +34,8 @@
     <string name="main_search_item_button">Search Items</string>
     <string name="main_view_lost_items_button">View Lost Items</string>
     <string name="main_view_found_items_button">View Found Items</string>
-    <string name="main_view_map_button">View Map</string>
+    <string name="main_view_map_button">Karte Anshauen</string>
+    <string name="main_view_stats_button">Statistik Anshauen</string>
 
 
     <!--activity_enter_lost_item-->

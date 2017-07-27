@@ -53,8 +53,10 @@ public class MainActivity extends AppCompatActivity {
      * Button the user will click when they want to see the found items
      */
     private Button _viewFoundItemsButton;
-
+    
     private Button _viewMapButton;
+
+    private Button _viewStatsButton;
 
     /**
      * Singular instance of model that the entire project uses to communicate
@@ -78,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         _viewFoundItemsButton = (Button) findViewById(R.id
                 .mainViewFoundItemsButton);
         _viewMapButton = (Button) findViewById(R.id.mainViewMapButton);
+        _viewStatsButton = (Button) findViewById(R.id.mainViewStatsButton);
         model = Model.getInstance();
         String _name = model.getName();
         _text.setText("Welcome " + _name + "!");
@@ -121,6 +124,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onViewMapButtonClick();
+            }
+        });
+        _viewStatsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onViewStatsButtonClick();
             }
         });
     }
@@ -190,6 +199,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void onViewMapButtonClick() {
         Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+        startActivity(intent);
+    }
+
+    private void onViewStatsButtonClick() {
+        Intent intent = new Intent(MainActivity.this, PieChartActivity
+                .class);
         startActivity(intent);
     }
 }
