@@ -279,6 +279,11 @@ class ItemManager {
         }
     }
 
+    /**
+     * Returns the current item selected
+     *
+     * @return the last item to be selected
+     */
     Item getCurrentItem() {
         return _currentItem;
     }

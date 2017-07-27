@@ -50,6 +50,9 @@ public class Item {
         _latLng = latLng;
     }
 
+    /**
+     * Default constructor for FireBase
+     */
     public Item() {
     }
 

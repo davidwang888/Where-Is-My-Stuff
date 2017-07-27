@@ -169,6 +169,11 @@ public class Model {
         return itemManager.searchResult(lostItem, name);
     }
 
+    /**
+     * Returns the current item selected
+     *
+     * @return the last item to be selected
+     */
     public Item getCurrentItem() {
         return itemManager.getCurrentItem();
     }

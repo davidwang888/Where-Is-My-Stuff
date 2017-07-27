@@ -227,6 +227,11 @@ class UserManager {
         return "Anonymous";
     }
 
+    /**
+     * Gets the current user logged in
+     *
+     * @return the current user logged in
+     */
     User getCurrentUser() {
         return _currentUser;
     }

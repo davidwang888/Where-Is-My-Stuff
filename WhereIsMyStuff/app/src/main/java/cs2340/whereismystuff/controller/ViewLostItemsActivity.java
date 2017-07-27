@@ -69,6 +69,12 @@ public class ViewLostItemsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Upon an item being clicked, the screen will change so there is a way
+     * to message the finder of the item
+     *
+     * @param position the position of the clicked item in the listview
+     */
     private void onItemClicked(int position) {
         model.setCurrentItem((Item) _viewLostItemsListView
                 .getItemAtPosition(position));

@@ -12,11 +12,34 @@ import android.widget.Toast;
 import cs2340.whereismystuff.R;
 import cs2340.whereismystuff.model.Model;
 
+/**
+ * Represents the screen that users will use to message other users
+ */
 public class MessageActivity extends AppCompatActivity {
+    /**
+     * Displays the title of the screen
+     */
     private TextView _title_text_view;
+
+    /**
+     * Text box users will enter the message
+     */
     private EditText _message_edit_text;
+
+    /**
+     * Button the user will click if they want to send the message
+     */
     private Button _send_button;
+
+    /**
+     * Button the user will click if they want to return to the home page
+     */
     private Button _home_button;
+
+    /**
+     * Singular instance of model that the entire project uses to communicate
+     * with the backend
+     */
     private static Model model;
 
     @Override
@@ -48,6 +71,10 @@ public class MessageActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Sets up the title correctly depending on if the item is a lost or
+     * found item
+     */
     private void setUp() {
         boolean lostItem = getIntent().getExtras().getBoolean("isLostItem");
         if (lostItem) {
@@ -59,6 +86,9 @@ public class MessageActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Adds the message to the firebase for admins to analyze
+     */
     private void onSendButtonClick() {
         model.sendMessage(_message_edit_text.getText().toString());
         Toast.makeText(MessageActivity.this, "Admins notified of message. The"
